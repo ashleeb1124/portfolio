@@ -363,6 +363,59 @@ SITE.PROJECTS = [
     featured: false, tags: ['presentation'], year: '', format: "Brand strategy \u00b7 Image", status: 'live'
   },
 
+  {
+    id: 'resume-coo-sample', title: "Executive Resume Design: COO", category: 'Brand + Design',
+    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
+    thumbnail: 'assets/work/thumb-resume-coo-sample.jpg',
+    short_description: "A two-column executive resume with a profile, key skills, experience and a bold photo-and-landscape header.",
+    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
+    what_i_built: "An executive resume layout: positioning summary, skills sidebar, role-by-role results and credentials, in a palette that matches a personal brand.",
+    my_role: 'Resume writing and design.',
+    tools_used: ['Canva', 'Resume writing', 'Brand system'],
+    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
+    file_url: 'assets/work/resume-coo-sample.jpg', preview_url: 'assets/work/resume-coo-sample.jpg',
+    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 Image", status: 'live'
+  },
+  {
+    id: 'resume-hr-director-sample', title: "Resume Design: HR Director (Manufacturing)", category: 'Brand + Design',
+    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
+    thumbnail: 'assets/work/thumb-resume-hr-director-sample.jpg',
+    short_description: "An HR leadership resume with a headline tagline, quantified achievements and certifications.",
+    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
+    what_i_built: "A landscape resume with a branded header, experience with measurable results, a key-achievements panel and credentials.",
+    my_role: 'Resume writing and design.',
+    tools_used: ['Canva', 'Resume writing', 'Brand system'],
+    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
+    file_url: 'assets/work/resume-hr-director-sample.jpg', preview_url: 'assets/work/resume-hr-director-sample.jpg',
+    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 Image", status: 'live'
+  },
+  {
+    id: 'resume-systems-engineer-sample', title: "Resume Design: Systems Engineer", category: 'Brand + Design',
+    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
+    thumbnail: 'assets/work/thumb-resume-systems-engineer-sample.jpg',
+    short_description: "A technical resume with a dark theme, skills visualization and tools list.",
+    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
+    what_i_built: "A resume that shows experience, skills and tooling at a glance, with a distinct visual identity for a technical candidate.",
+    my_role: 'Resume writing and design.',
+    tools_used: ['Canva', 'Resume writing', 'Brand system'],
+    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
+    file_url: 'assets/work/resume-systems-engineer-sample.jpg', preview_url: 'assets/work/resume-systems-engineer-sample.jpg',
+    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 Image", status: 'live'
+  },
+  {
+    id: 'resume-entry-level-sample', title: "Resume Design: Entry-Level Apprentice", category: 'Brand + Design',
+    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
+    thumbnail: 'assets/work/thumb-resume-entry-level-sample.jpg',
+    short_description: "A one-page apprentice resume that leads with momentum, skills and quick-scan achievements.",
+    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
+    what_i_built: "A one-page resume for an early-career candidate: profile, core strengths, relevant experience and selected achievements.",
+    my_role: 'Resume writing and design.',
+    tools_used: ['Canva', 'Resume writing', 'Brand system'],
+    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
+    file_url: 'assets/work/resume-entry-level-sample.pdf', preview_url: 'assets/work/resume-entry-level-sample.pdf',
+    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 PDF", status: 'live'
+  },
+
   /* ---------- COMING SOON (placeholders: edit in place when the sample is ready) ---------- */
   {
     id: 'workforce-model', title: 'Workforce + Capacity Planning Model', category: 'Dashboards + Data',

@@ -25,6 +25,11 @@ SAMPLES=(
   "peo-to-adp-playbook|PEO to ADP Workforce Now Playbook.png"
   "handbook-before-after|RivermarkB&A.png"
   "onboarding-kit|Onboarding Kit Preview.png"
+  # Resume design (fictional sample candidates)
+  "resume-coo-sample|Reese Resume.png"
+  "resume-hr-director-sample|TAYLOR RESUME.png"
+  "resume-systems-engineer-sample|Brooks Resume.png"
+  "resume-entry-level-sample|PDF:Caidden_Toles_2026 Apprentice_Resume.pdf"
   # Branding + Design
   "everwell-brand-launch|Branding Work/Everwell Brand Launch Portfolio.png"
   "tidewell-hospitality-brand|Branding Work/Tidewell.png"
