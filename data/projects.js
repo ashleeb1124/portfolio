@@ -10,6 +10,9 @@
      (image, PDF or embeddable URL), featured, tags[], year, format,
      status ('live' | 'coming')  — 'coming' renders the "case study coming soon" state.
 
+   Snow Story Studios work: set company_or_project to include 'Snow Story Studios' and it appears
+   in the studio filter and section automatically. Add a couple of samples at a time.
+
    Filter tags used by the filter bar:
      dashboard, presentation, systems, process, healthcare, energy, ai, writing
    ========================================================== */
@@ -17,6 +20,7 @@ window.SITE = window.SITE || {};
 
 SITE.FILTERS = [
   { id: 'all', label: 'All' },
+  { id: 'sss', label: 'Snow Story Studios', co: 'Snow Story Studios' },
   { id: 'ops', label: 'Business Operations', lane: 'ops' },
   { id: 'people', label: 'People + HR', lane: 'people' },
   { id: 'brand', label: 'Brand + Design', lane: 'brand' },
@@ -147,6 +151,20 @@ SITE.PROJECTS = [
     outcome: 'A one-page way to say what the studio does.',
     file_url: 'assets/work/consulting-services.jpg', preview_url: 'assets/work/consulting-services.jpg',
     featured: true, tags: ['presentation'], year: '', format: 'Flyer · Image', status: 'live'
+  },
+
+  {
+    id: 'consultant-one-pager', title: 'Strategy, Operations + Brand One-Pager', category: 'Brand + Design',
+    career_lane: ['brand', 'ops'], company_or_project: 'Snow Story Studios',
+    thumbnail: 'assets/work/consultant-one-pager.webp',
+    short_description: 'Ten services, one page: brand, operations, systems, startups and people for growing businesses.',
+    problem: 'A consultant who does brand and operations has to explain both without sounding scattered.',
+    what_i_built: 'A one-page services overview: positioning line, ten capabilities and a closing promise, designed as a single system.',
+    my_role: 'Positioning, copy and design.',
+    tools_used: ['Canva', 'Brand system', 'Marketing collateral'],
+    outcome: 'One page that says what the work is and who it is for.',
+    file_url: 'assets/work/consultant-one-pager.webp', preview_url: 'assets/work/consultant-one-pager.webp',
+    featured: true, tags: ['presentation'], year: '', format: 'One-pager · Image', status: 'live'
   },
 
   /* ---------- COMING SOON (placeholders: edit in place when the sample is ready) ---------- */

@@ -14,15 +14,19 @@ SITE.CONFIG = {
   PORTFOLIO_URL: 'https://ashleebryantbrand.netlify.app',
   LOCATION: 'San Antonio, Florida',
 
-  /* BOOKING_URL — paste a Calendly, Cal.com, Google Calendar or any scheduler link.
-     While empty, every "Book a conversation" button opens a pre-written email instead. */
-  BOOKING_URL: '',
+  /* BOOKING_URL — Calendly opens as a popup on the page. Any other link opens in a new tab.
+     If emptied, every "Book a conversation" button opens a pre-written email instead. */
+  BOOKING_URL: 'https://calendly.com/ashleebryant',
 
   /* VIDEO_URL — paste a YouTube, Vimeo or .mp4 link (or any embeddable URL).
      While empty, the branded "coming soon" thumbnail shows.
      VIDEO_POSTER — optional image shown as the thumbnail once a video exists. */
   VIDEO_URL: '',
   VIDEO_POSTER: '',
+
+  /* Snow Story Studios — tagline + descriptor shown in the studio section. */
+  SSS_TAGLINE: 'Your story, designed to be remembered.',
+  SSS_DESCRIPTOR: 'A brand + design studio: identities, investor decks, packaging, event design and web.',
 
   AVAILABILITY: ['Remote U.S.', 'Open to travel', 'Open to relocation', 'Available immediately'],
 

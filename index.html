@@ -10,14 +10,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Glacial Indifference is not on Google Fonts: Josefin Sans is the stand-in. Self-host Glacial and put it first in --label to use it. -->
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Poppins:wght@300;400;500;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Pinyon+Script&family=Poppins:wght@300;400;500;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 <style>
+/* Amsterdam One is a Canva font. Drop the licensed file at assets/fonts/AmsterdamOne.woff2 (or .otf/.ttf); Pinyon Script shows until then. */
+@font-face{font-family:'Amsterdam One';font-display:swap;src:local('Amsterdam One'),local('AmsterdamOne'),url('assets/fonts/AmsterdamOne.woff2') format('woff2'),url('assets/fonts/AmsterdamOne.otf') format('opentype'),url('assets/fonts/AmsterdamOne.ttf') format('truetype')}
 :root{
   --teal:#12495A; --teal-d:#0B3140; --teal-l:#2F6A7B; --mist:#B5CBCF;
   --ivory:#FAF6EC; --ivory2:#F3ECDC; --sand:#E2D6BE; --line:#DDD1B9;
   --gold:#C9A24D; --terra:#B8664A;
   --ink:#1B2A2F; --muted:#586769;
   --serif:'Quattrocento',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+  --script:'Amsterdam One','Pinyon Script','Snell Roundhand',cursive;
   --label:'Glacial Indifference','Josefin Sans',system-ui,sans-serif;
   --max:1180px; --r:6px;
 }
@@ -55,7 +59,7 @@ em{font-style:italic;color:var(--terra)}
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
 .nav.scrolled{background:rgba(250,246,236,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{font-family:var(--serif);font-size:21px;letter-spacing:.08em;color:var(--teal);text-decoration:none}
+.brand{font-family:var(--script);font-size:30px;line-height:1;color:var(--teal);text-decoration:none}
 .nav ul{display:flex;gap:24px;list-style:none;align-items:center}
 .nav ul a:not(.btn){text-decoration:none;font-family:var(--label);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d)}
 .nav ul a:not(.btn):hover{color:var(--terra)}
@@ -66,7 +70,8 @@ em{font-style:italic;color:var(--terra)}
 /* hero */
 .hero{padding:132px 0 72px;background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory2) 100%)}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(40px,6.4vw,76px);letter-spacing:-.01em;margin:14px 0 20px}
+.hero .name{font-family:var(--script);font-size:clamp(54px,8.5vw,104px);line-height:1;color:var(--teal);margin:12px 0 4px;font-weight:400}
+.hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.01em;margin:14px 0 20px}
 .hero .sub{font-size:19px;color:var(--muted);max-width:600px}
 .hero .quick{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
 .portrait{position:relative;justify-self:center;width:min(100%,340px)}
@@ -111,6 +116,19 @@ em{font-style:italic;color:var(--terra)}
 .roles{margin-top:22px;font-family:var(--label);font-size:14px;letter-spacing:.06em;color:var(--mist)}
 .roles b{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:12px;margin-right:6px}
 
+.does{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:34px}
+.does div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:16px 18px}
+.does h4{font-size:20px;color:var(--gold);margin-bottom:4px}
+.does p{font-size:14px;color:var(--mist);line-height:1.5}
+.does .more{display:flex;align-items:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ivory)}
+/* studio */
+.sss{background:var(--teal-d);color:var(--ivory)}
+.sss h2{color:var(--ivory)}
+.sss .tag{font-family:var(--script);font-size:clamp(36px,5vw,58px);color:var(--gold);line-height:1.1;margin:6px 0 10px}
+.sss .lede{color:var(--mist)}
+.sss .acts{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+.sss .svc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sss .svc span{border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:4px 14px;font-size:13px}
 /* results */
 .results{padding:64px 0;background:var(--ivory2)}
 .mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:28px}
@@ -195,6 +213,7 @@ em{font-style:italic;color:var(--terra)}
 .clist{display:flex;gap:10px 28px;justify-content:center;flex-wrap:wrap;font-size:15px}
 .clist a{color:var(--ivory);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
 footer{background:var(--teal-d);color:var(--mist);padding:22px 0;font-size:13px;border-top:1px solid rgba(255,255,255,.12)}
+footer b{font-family:var(--script);font-weight:400;font-size:20px;color:var(--ivory)}
 footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 /* dialogs */
@@ -258,6 +277,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <div class="hero-grid">
       <div>
         <div class="eyebrow">Operator · Builder · Strategist</div>
+        <div class="name" id="heroName">Ashlee Bryant</div>
         <h1>One executive.<br><em>Three ways I build.</em></h1>
         <p class="sub">I build the operating system behind growth: the business, the People function and the brand. Twenty-plus years across healthcare, construction, manufacturing and technology. Pick what you need built and the site reorganizes around it.</p>
         <div class="quick">
@@ -301,6 +321,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <ol class="steps" id="lensSteps"></ol>
       </div>
     </div>
+    <div class="does" id="lensDoes"></div>
     <div class="caps" id="lensCaps"></div>
   </div>
 </section>
@@ -324,6 +345,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <p class="empty" id="noTiles" hidden>Nothing in this filter yet.</p>
 
     <div class="video" id="video" aria-label="Introduction video"></div>
+  </div>
+</section>
+
+<section class="sss" id="studio">
+  <div class="wrap">
+    <div class="eyebrow gold">Snow Story Studios</div>
+    <div class="tag" id="sssTag"></div>
+    <p class="lede" id="sssDesc"></p>
+    <div class="svc" id="sssSvc"></div>
+    <div class="acts">
+      <button class="btn gold" id="sssWork" type="button">See studio work</button>
+      <a class="btn ghost" href="#contact" data-book>Start a brand project</a>
+    </div>
   </div>
 </section>
 
@@ -442,16 +476,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
   /* ---------- static content from config ---------- */
   document.title=C.NAME+' · One Executive, Three Ways I Build';
-  $('creds').textContent=C.CREDENTIALS;
+  $('creds').textContent=C.CREDENTIALS;$('brandName').textContent=C.NAME;$('heroName').textContent=C.NAME;
   fold(C.AVAILABILITY,function(a){$('avail').appendChild(el('span',null,a))});
-  $('foot').textContent='© '+new Date().getFullYear()+' '+C.NAME;
+  $('foot').textContent='© '+new Date().getFullYear()+' ';var fb=el('b',null,C.NAME);$('foot').appendChild(fb);
   $('footLoc').textContent=C.LOCATION+' · Remote U.S.';
   $('liBtn').href=C.LINKEDIN_URL;
   var cl=$('clist');
   [[C.EMAIL,'mailto:'+C.EMAIL],[C.PHONE,'tel:+1'+C.PHONE.replace(/\D/g,'')],['linkedin.com/in/'+C.LINKEDIN_URL.split('/in/')[1],C.LINKEDIN_URL]].forEach(function(p){
     var a=el('a',null,p[0]);a.href=p[1];cl.appendChild(a);
   });
-  fold(document.querySelectorAll('[data-book]'),function(a){a.href=bookHref();if(C.BOOKING_URL){a.target='_blank';a.rel='noopener'}});
+  var calLoaded=false;
+  function isCal(){return /calendly\.com/.test(C.BOOKING_URL||'')}
+  function loadCal(cb){
+    if(window.Calendly)return cb(true);
+    if(calLoaded)return;calLoaded=true;
+    var sc=document.createElement('script');sc.src='https://assets.calendly.com/assets/external/widget.js';sc.async=true;
+    sc.onload=function(){cb(!!window.Calendly)};sc.onerror=function(){cb(false)};document.head.appendChild(sc);
+  }
+  function wireBook(a){
+    a.href=bookHref();
+    if(!C.BOOKING_URL)return;
+    a.target='_blank';a.rel='noopener';
+    if(isCal())a.addEventListener('click',function(e){
+      if(window.Calendly){e.preventDefault();Calendly.initPopupWidget({url:C.BOOKING_URL})}
+    });
+  }
+  fold(document.querySelectorAll('[data-book]'),wireBook);
+  if(isCal())loadCal(function(){});
 
   /* ---------- video ---------- */
   (function(){
@@ -478,6 +529,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     $('paths').appendChild(b);
   });
   $('reset').addEventListener('click',function(){setLens(null,true)});
+
+  /* ---------- studio ---------- */
+  $('sssTag').textContent=C.SSS_TAGLINE;$('sssDesc').textContent=C.SSS_DESCRIPTOR;
+  ['Brand strategy','Visual identity','Logo + packaging','Investor decks','Marketing collateral','Event design','Websites'].forEach(function(t){$('sssSvc').appendChild(el('span',null,t))});
+  $('sssWork').addEventListener('click',function(){filter='sss';renderFilters();renderTiles();$('built').scrollIntoView({behavior:reduce?'auto':'smooth'})});
 
   /* ---------- results ---------- */
   var metricNodes=[];
@@ -513,6 +569,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   function filterMatch(p,f){
     if(f==='all')return true;
     var d=S.FILTERS.filter(function(x){return x.id===f})[0];if(!d)return true;
+    if(d.co)return p.company_or_project.indexOf(d.co)>-1;
     return d.lane?p.career_lane.indexOf(d.lane)>-1:p.tags.indexOf(d.tag)>-1;
   }
   function renderFilters(){
@@ -620,6 +677,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       if(ru){rb.href=ru;rb.setAttribute('download','')}else{rb.href='#resumes';rb.removeAttribute('download')}
       var st=$('lensSteps');clear(st);
       l.framework.forEach(function(f,i){var li=el('li');li.appendChild(el('b',null,f));li.appendChild(el('span',null,l.frameworkNote[i]));st.appendChild(li)});
+      var dz=$('lensDoes');clear(dz);
+      l.does.forEach(function(d){var c=el('div');c.appendChild(el('h4',null,d[0]));c.appendChild(el('p',null,d[1]));dz.appendChild(c)});
+      var mo=el('div','more','…and much, much more.');dz.appendChild(mo);
       var cp=$('lensCaps');clear(cp);l.capabilities.forEach(function(c){cp.appendChild(el('span',null,c))});
       $('contactTitle').textContent='';
       $('contactTitle').appendChild(document.createTextNode(l.ctaTalk.replace(/ Let’s talk\.$/,'')+' '));
@@ -648,7 +708,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     });
     $('qRoles').textContent=['Chief Operating Officer','VP People / CHRO','Healthcare COO','Chief of Staff','Brand + marketing lead'].join(' · ');
     $('qAvail').textContent=C.AVAILABILITY.join(' · ');
-    var qa=$('qActs'),a=el('a','btn','Book a conversation');a.href=bookHref();if(C.BOOKING_URL){a.target='_blank';a.rel='noopener'}qa.appendChild(a);
+    var qa=$('qActs'),a=el('a','btn','Book a conversation');wireBook(a);qa.appendChild(a);
     var ru=resumeFor('coo');if(ru){var d=el('a','btn ghost','Download resume');d.href=ru;d.setAttribute('download','');qa.appendChild(d)}
     var li=el('a','btn ghost','LinkedIn');li.href=C.LINKEDIN_URL;li.target='_blank';li.rel='noopener';qa.appendChild(li);
   })();

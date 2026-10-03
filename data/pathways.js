@@ -12,7 +12,8 @@ SITE.BUILD_WALL = [
 SITE.LENSES = {
   ops: {
     id: 'ops', num: '01',
-    title: 'Scale the business', sub: 'Business Operations + COO',
+    does: [['Business & Operations', 'Operational assessments, process improvement, workflows, SOPs, dashboards, automation, systems, accountability and scaling.'], ['Business Strategy', 'Strategic planning, executive support, organizational design, financial and operational analysis, and decision support.'], ['Startups & Growth', '0-to-1 business builds, launch planning, operating models, market positioning, implementation and go-to-market support.']],
+    title: 'Scale the business', sub: 'Business + Operations',
     short: 'Operations',
     positioning: 'I turn strategy into an operating business.',
     intro: 'Strategy is cheap until someone owns the P&L, the vendors, the systems and the Monday meeting. I build the structure that makes a plan run without heroics.',
@@ -35,7 +36,8 @@ SITE.LENSES = {
   },
   people: {
     id: 'people', num: '02',
-    title: 'Build the People function', sub: 'People + HR',
+    does: [['Workforce strategy', 'Headcount, capacity and hiring plans tied to where the business is going.'], ['Organizational structure', 'Org design, roles, decision rights and the HR operating model.'], ['HR infrastructure', 'HRIS, payroll, benefits, compliance, policies and SOPs that hold up.'], ['Employee processes + people systems', 'Onboarding, performance, pay, ER and the systems that run them.']],
+    title: 'Build the People function', sub: 'HR + People Operations',
     short: 'People',
     positioning: 'I build People systems that scale with the business.',
     intro: 'Hiring, pay, compliance, culture and leadership should hold up when the company doubles. I build the structure first, then make it feel human.',
@@ -59,7 +61,8 @@ SITE.LENSES = {
   },
   brand: {
     id: 'brand', num: '03',
-    title: 'Build the brand', sub: 'Marketing + Branding + Design',
+    does: [['Brand strategy + visual identity', 'Positioning, naming, logo systems and the identity built around them.'], ['Creative direction', 'One point of view across every touchpoint, from deck to storefront.'], ['Marketing collateral, presentations + digital assets', 'Investor decks, brochures, social, landing pages and web.'], ['Brand systems', 'Guidelines and templates so the brand stays consistent without me.'], ['Logo, product design + packaging', 'Marks, labels and packaging that earn a second look.'], ['Event design + branding', 'Signage, collateral and experience design for launches and events.']],
+    title: 'Build the brand', sub: 'Branding + Design',
     short: 'Brand',
     positioning: 'I turn business ideas into brands people can understand, trust and remember.',
     intro: 'A brand is an operating decision: what you say, how it looks, and whether the experience matches. I design all three, from the logo to the deck to the landing page.',
@@ -67,7 +70,7 @@ SITE.LENSES = {
     ctaWork: 'Explore the brand work',
     ctaTalk: 'Have an idea that needs a brand? Let’s talk.',
     resumeKey: 'creative', resumeLabel: 'Download the creative portfolio',
-    capabilities: ['Brand strategy', 'Brand positioning', 'Naming', 'Logo systems', 'Visual identity', 'Brand guidelines', 'Marketing collateral', 'Healthcare collateral', 'Investor decks', 'Pitch decks', 'Executive presentations', 'Training decks', 'Social media assets', 'LinkedIn carousels', 'Business cards', 'Brochures', 'Referral forms', 'Letterhead', 'Employee communications', 'Employee handbooks', 'Onboarding kits', 'Websites', 'Landing pages', 'HTML', 'CSS', 'Digital assets', 'Presentation systems', 'Infographics', 'Business storytelling', 'Executive portfolios'],
+    capabilities: ['Brand strategy', 'Brand positioning', 'Naming', 'Logo systems', 'Visual identity', 'Brand guidelines', 'Marketing collateral', 'Healthcare collateral', 'Investor decks', 'Pitch decks', 'Executive presentations', 'Training decks', 'Social media assets', 'LinkedIn carousels', 'Business cards', 'Brochures', 'Referral forms', 'Letterhead', 'Employee communications', 'Employee handbooks', 'Onboarding kits', 'Logo design', 'Product design', 'Packaging', 'Event design', 'Event branding', 'Websites', 'Landing pages', 'HTML', 'CSS', 'Digital assets', 'Presentation systems', 'Infographics', 'Business storytelling', 'Executive portfolios'],
     proof: [{ name: 'Snow Story Studios', story: 'sss' }, { name: 'Spiro Senior launch brand', story: 'spiro' }],
     metrics: [],
     framework: ['Discover', 'Position', 'Name', 'Design', 'Systemize', 'Launch'],
