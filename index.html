@@ -59,7 +59,9 @@ em{font-style:italic;color:var(--terra)}
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
 .nav.scrolled{background:rgba(250,246,236,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{font-family:var(--script);font-size:30px;line-height:1;color:var(--teal);text-decoration:none}
+.brand img{height:48px;width:auto}
+.hero .name-logo{width:min(100%,520px);height:auto;margin:10px 0 6px}
+.brand{color:var(--teal);text-decoration:none}
 .nav ul{display:flex;gap:24px;list-style:none;align-items:center}
 .nav ul a:not(.btn){text-decoration:none;font-family:var(--label);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d)}
 .nav ul a:not(.btn):hover{color:var(--terra)}
@@ -260,7 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 <nav class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" id="brandName">Ashlee Bryant</a>
+    <a class="brand" href="#top" aria-label="Ashlee Bryant, home"><img src="assets/images/logo-sm.png" alt="Ashlee Bryant" id="brandLogo" width="187" height="56"></a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul id="menu">
       <li><a href="#built">Things I have built</a></li>
@@ -277,7 +279,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <div class="hero-grid">
       <div>
         <div class="eyebrow">Operator · Builder · Strategist</div>
-        <div class="name" id="heroName">Ashlee Bryant</div>
+        <img class="name-logo" src="assets/images/logo.png" alt="Ashlee Bryant · Strengthening businesses. Supporting people. Styling brands." width="560" height="168">
         <h1>One executive.<br><em>Three ways I build.</em></h1>
         <p class="sub">I build the operating system behind growth: the business, the People function and the brand. Twenty-plus years across healthcare, construction, manufacturing and technology. Pick what you need built and the site reorganizes around it.</p>
         <div class="quick">
@@ -476,7 +478,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
   /* ---------- static content from config ---------- */
   document.title=C.NAME+' · One Executive, Three Ways I Build';
-  $('creds').textContent=C.CREDENTIALS;$('brandName').textContent=C.NAME;$('heroName').textContent=C.NAME;
+  $('creds').textContent=C.CREDENTIALS;
   fold(C.AVAILABILITY,function(a){$('avail').appendChild(el('span',null,a))});
   $('foot').textContent='© '+new Date().getFullYear()+' ';var fb=el('b',null,C.NAME);$('foot').appendChild(fb);
   $('footLoc').textContent=C.LOCATION+' · Remote U.S.';

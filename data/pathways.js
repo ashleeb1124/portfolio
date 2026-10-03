@@ -32,7 +32,7 @@ SITE.LENSES = {
     frameworkNote: ['Go to the work. Find the real constraint, not the loudest one.', 'Define ownership, decision rights and the target model.', 'Write the SOP and playbook that survive personnel changes.', 'Remove manual work with systems, integrations and AI, reviewed by people.', 'KPI dashboards and an operating cadence leaders actually use.', 'Replicate what works at the next site, market or team.'],
     quote: 'The goal is not a better workaround. It is a better operating model.',
     roles: ['Chief Operating Officer', 'VP Operations', 'Healthcare COO', 'Chief of Staff', 'Operations consultant'],
-    startHere: ['operating-dashboard', 'management-review', 'sec-duke-bartow-workflow']
+    startHere: ['operating-dashboard', 'scaling-case-study', 'wave-site-launch-playbook']
   },
   people: {
     id: 'people', num: '02',
@@ -57,7 +57,7 @@ SITE.LENSES = {
     frameworkNote: ['Tie the People plan to where the business is going.', 'Org design, roles, decision rights and the HR operating model.', 'Recruit, onboard and develop for the plan, not the last one.', 'Pay, benefits and total rewards that are fair and defensible.', 'Manager habits and rituals that make the culture real.', 'People analytics that show what is working and what isn’t.'],
     quote: 'Build the structure first. Then make it feel human.',
     roles: ['VP People / CHRO', 'Head of People Operations', 'HR consultant', 'People Ops builder (0-to-1)', 'Healthcare HR executive'],
-    startHere: ['hris-implementation', 'comp-framework', 'handbook-onboarding']
+    startHere: ['hris-implementation-plan', 'ca-hr-90-day-roadmap', 'onboarding-kit']
   },
   brand: {
     id: 'brand', num: '03',
@@ -77,6 +77,6 @@ SITE.LENSES = {
     frameworkNote: ['Learn the business, the audience and what has to be true.', 'Say one clear thing, and say it better than anyone nearby.', 'Names and taglines that survive a skim.', 'Logo, palette, type and layout with a reason behind each.', 'Guidelines and templates so the brand stays consistent without me.', 'Web, collateral and decks, out the door and in use.'],
     quote: 'A good brand makes the next decision easier for everyone who touches it.',
     roles: ['Brand strategist', 'Marketing + brand lead', 'Creative consultant', 'Presentation + deck design', 'Healthcare marketing collateral'],
-    startHere: ['everbloom-care-continuum', 'executive-portfolio', 'consulting-services']
+    startHere: ['everwell-brand-launch', 'tidewell-hospitality-brand', 'harbourlight-brochure']
   }
 };
