@@ -1,0 +1,272 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>WeWhiten Studio Pulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: brand header, filter bar, KPI strip with sparklines, state chart + studio table, studio drill-down, what-if simulator, 90-day plan */
+:root{
+  --bg:#F5FAFE; --panel:#FFFFFF; --ink:#18323F; --muted:#5E7482; --line:#DCEAF3;
+  --sky:#1EA7F2; --sky-soft:#E3F4FE; --silver:#A9B3BA; --silver-soft:#EEF1F3;
+  --good:#1F8A55; --good-soft:#DDF3E7; --warn:#A8700F; --warn-soft:#FBEFD6; --bad:#C0453A; --bad-soft:#FBE3E0;
+  --display:"Nunito",ui-rounded,system-ui,sans-serif; --body:"Nunito Sans",system-ui,sans-serif; --mono:"DM Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1820; --panel:#132430; --ink:#E6F2F9; --muted:#9DB3C1; --line:#233A48;
+  --sky:#4DBBF7; --sky-soft:#12324A; --silver:#6F7C85; --silver-soft:#1D2E3A;
+  --good:#6FD39E; --good-soft:#153828; --warn:#E8B45A; --warn-soft:#3A2E16; --bad:#F08A7E; --bad-soft:#402120; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1820; --panel:#132430; --ink:#E6F2F9; --muted:#9DB3C1; --line:#233A48;
+  --sky:#4DBBF7; --sky-soft:#12324A; --silver:#6F7C85; --silver-soft:#1D2E3A;
+  --good:#6FD39E; --good-soft:#153828; --warn:#E8B45A; --warn-soft:#3A2E16; --bad:#F08A7E; --bad-soft:#402120; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14.5px;line-height:1.5;padding:0 16px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:26px 56px;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px}
+.brand{display:flex;align-items:center;gap:14px}
+.tooth{width:52px;height:52px;border-radius:50%;background:var(--sky);display:grid;place-items:center;flex-shrink:0}
+.tooth svg{width:28px;height:28px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.5px;line-height:1.05}
+h1 .we{color:var(--silver)} h1 .wh{color:var(--sky)}
+.byline{font-size:13px;color:var(--muted);text-align:right}
+.byline b{color:var(--ink);font-family:var(--display);font-weight:800;font-size:15px;display:block}
+.sample{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;background:var(--warn-soft);color:var(--warn);border-radius:999px;padding:3px 10px;margin-top:6px}
+.lede{max-width:70ch;color:var(--muted);margin:0}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.bar .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-right:2px}
+.chip{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sky);border-color:var(--sky);color:#fff}
+.chip:focus-visible,button:focus-visible,input:focus-visible,tr:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.kpi .l{font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:.3px}
+.kpi .n{font-family:var(--display);font-weight:900;font-size:26px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .d{font-family:var(--mono);font-size:11.5px}
+.up{color:var(--good)} .down{color:var(--bad)}
+.kpi svg{width:100%;height:34px;margin-top:4px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+.card h2{font-size:18px;font-weight:800;margin-bottom:2px}
+.card .sub{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+.sbar{display:grid;grid-template-columns:92px 1fr 64px;align-items:center;gap:8px;margin:8px 0;font-size:13px}
+.sbar .track{height:14px;background:var(--sky-soft);border-radius:7px;overflow:hidden}
+.sbar .fill{height:100%;background:var(--sky);border-radius:7px;transition:width .4s}
+.sbar .v{font-family:var(--mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);text-align:right;padding:6px 8px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap;user-select:none}
+th:first-child,td:first-child{text-align:left}
+th[aria-sort="descending"]::after{content:" ↓"} th[aria-sort="ascending"]::after{content:" ↑"}
+td{padding:8px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:12.5px}
+td:first-child{font-family:var(--body);font-weight:700;font-size:13.5px;white-space:nowrap}
+tbody tr{cursor:pointer}
+tbody tr:hover td,tbody tr.sel td{background:var(--sky-soft)}
+.pill{display:inline-block;font-family:var(--body);font-size:11px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.g{background:var(--good-soft);color:var(--good)} .y{background:var(--warn-soft);color:var(--warn)} .r{background:var(--bad-soft);color:var(--bad)}
+.detail{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;align-items:start}
+.detail h3{font-size:22px;font-weight:900}
+.detail .meta{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.trend svg{width:100%;height:150px}
+.act{background:var(--sky-soft);border-radius:12px;padding:12px 14px}
+.act h4{margin:0 0 6px;font-family:var(--display);font-size:14px;font-weight:800;color:var(--sky)}
+.act ul{margin:0;padding-left:18px;font-size:13.5px}
+.act li{margin-bottom:5px}
+.sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}
+.slider{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+.slider label{display:flex;justify-content:space-between;font-weight:700;font-size:13.5px}
+.slider output{font-family:var(--mono);color:var(--sky)}
+.slider .hint{font-size:12px;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--sky)}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,54px);color:var(--sky);line-height:1;font-variant-numeric:tabular-nums}
+.bigl{font-size:13px;color:var(--muted);margin-top:6px}
+.split{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+.split div{font-size:12.5px;color:var(--muted)} .split b{display:block;font-family:var(--mono);font-size:15px;color:var(--ink)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.step{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
+.step b{font-family:var(--display);font-size:14.5px;display:block;margin-bottom:4px}
+.step p{margin:0;font-size:13px;color:var(--muted)}
+.why{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.why span{background:var(--silver-soft);border-radius:10px;padding:8px 12px;font-size:13px}
+.why b{font-family:var(--display);font-weight:900;color:var(--sky);font-size:17px;margin-right:4px}
+footer{font-size:12px;color:var(--muted);text-align:center}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grid2,.detail,.sim{grid-template-columns:1fr}}
+@media (max-width:560px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.plan{grid-template-columns:1fr}.byline{text-align:left}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="brand">
+    <div class="tooth" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7.2 2.5c1.6 0 2.8.9 4.8.9s3.2-.9 4.8-.9c2.7 0 4.2 2.4 4.2 5.3 0 2.2-.8 3.7-1.5 5.5-.8 2-1 5.6-2.1 7.4-.5.8-1.3.9-1.8.1-.8-1.4-.9-4.9-2.4-4.9s-1.6 3.5-2.4 4.9c-.5.8-1.3.7-1.8-.1-1.1-1.8-1.3-5.4-2.1-7.4C4.2 11.5 3 10 3 7.8 3 4.9 4.5 2.5 7.2 2.5z"/></svg></div>
+    <div>
+      <div class="eyebrow">Director of Operations · work sample</div>
+      <h1><span class="we">we</span><span class="wh">whiten</span> Studio Pulse</h1>
+      <span class="sample">● Illustrative sample data, not WeWhiten figures</span>
+    </div>
+  </div>
+  <div class="byline"><b>Built by Ashlee Bryant</b>For Sherman &amp; Kat · September 30, 2026<br>352.769.9599 · ashlee.bryant@yahoo.com</div>
+</header>
+
+<p class="lede">A working prototype of the weekly view I'd build in my first 30 days: every studio scored the same way, problems flagged before they reach the founders, and a clear next step for each one. Tap a state, a status, or any studio to explore.</p>
+
+<div class="bar" role="toolbar" aria-label="Filters">
+  <span class="lbl">State</span><span id="states"></span>
+  <span class="sep"></span>
+  <span class="lbl">Status</span><span id="statuses"></span>
+</div>
+
+<section class="kpis" id="kpis" aria-label="Network KPIs"></section>
+
+<section class="grid2">
+  <div class="card">
+    <h2>Revenue by state</h2>
+    <p class="sub">This week, filtered studios · <span id="nstud"></span></p>
+    <div id="statebars"></div>
+  </div>
+  <div class="card">
+    <h2>Studio scorecard</h2>
+    <p class="sub">Click a column to sort. Click a studio for its trend and next step.</p>
+    <div class="tablewrap"><table id="tbl"><thead><tr>
+      <th data-k="name">Studio</th><th data-k="rev">Rev vs plan</th><th data-k="util">Utilization</th><th data-k="rebook">Intro → rebook</th><th data-k="ticket">Avg ticket</th><th data-k="noshow">No-show</th><th data-k="rating">Reviews</th><th data-k="labor">Labor %</th><th data-k="score">Status</th>
+    </tr></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<section class="card detail" id="detail" aria-live="polite"></section>
+
+<section class="card">
+  <h2>What if we moved two numbers?</h2>
+  <p class="sub">A quick model of what better rebooking and fuller chairs could mean across all 22 studios, using the sample figures above.</p>
+  <div class="sim">
+    <div>
+      <div class="slider"><label for="s-rebook">Intro guests who rebook <output id="o-rebook"></output></label><input type="range" id="s-rebook" min="0" max="15" step="1" value="5"><span class="hint">Percentage points added through in-chair rebooking and a follow-up text sequence</span></div>
+      <div class="slider"><label for="s-util">Chair utilization <output id="o-util"></output></label><input type="range" id="s-util" min="0" max="12" step="1" value="4"><span class="hint">Points added by staffing to demand and filling slow weekday afternoons</span></div>
+      <div class="slider"><label for="s-noshow">No-show rate <output id="o-noshow"></output></label><input type="range" id="s-noshow" min="0" max="6" step="1" value="2"><span class="hint">Points removed with reminder timing and deposit rules</span></div>
+    </div>
+    <div>
+      <div class="big" id="gain"></div>
+      <div class="bigl">Estimated added revenue per year, network-wide</div>
+      <div class="split" id="gainsplit"></div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>How I'd run it</h2>
+  <p class="sub">The routine that turns this dashboard into results.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="plan" id="plan"></div>
+</section>
+
+<section class="card">
+  <h2>Why me</h2>
+  <div class="why">
+    <span><b>$24M</b>grown from about $500K as COO</span>
+    <span><b>30</b>locations launched across two companies</span>
+    <span><b>1,000+</b>person multi-state workforce led</span>
+    <span><b>20+ yrs</b>in operations, people and compliance</span>
+  </div>
+  <p class="sub" style="margin-top:12px;margin-bottom:0">My recent work includes women's behavioral health: specialty services where guest experience, location performance, staffing, compliance and reputation all have to work together. I build the dashboards, routines and playbooks that let founders stop fighting fires and focus on growth.</p>
+</section>
+
+<footer>Studio names and locations from wewhiten.com (Sept 30, 2026). All performance figures are randomly generated sample data to show the format and say nothing about any real studio.</footer>
+</div>
+
+<script>
+const STUDIOS=[["Plano","TX"],["Southlake","TX"],["San Antonio","TX"],["Katy","TX"],["Sugar Land","TX"],["Austin","TX"],["Fort Worth","TX"],["Dallas","TX"],["Houston","TX"],["Draper","UT"],["Murray","UT"],["Vineyard","UT"],["Farmington","UT"],["Lehi","UT"],["Tempe","AZ"],["Gilbert","AZ"],["Tucson","AZ"],["Henderson","NV"],["Summerlin","NV"],["Reno","NV"],["Denver","CO"],["Albuquerque","NM"]];
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+const CAP=180; // chair-hours per week (3 chairs x 60 open hours)
+const data=STUDIOS.map(([city,st])=>{
+  const q=rnd();const util=Math.round(63+q*25);const ticket=Math.round(128+rnd()*28);
+  const rebook=Math.round(30+q*18+rnd()*3);const noshow=Math.round(12-q*7+rnd()*2);const rating=+(4.55+q*0.4).toFixed(1);
+  const labor=Math.round(35-q*9+rnd()*2);const rev=Math.round((q-0.3)*22+rnd()*3);
+  const weekly=Math.round(CAP*util/100*ticket);
+  const trend=Array.from({length:8},(_,i)=>Math.round(weekly*(0.86+i*0.02*(q>0.4?1:-0.3)+rnd()*0.06)));
+  trend[7]=weekly;
+  let score=0;[rev>=0,util>=72,rebook>=38,noshow<=8,rating>=4.8,labor<=30].forEach(b=>score+=b?1:0);
+  return {name:city+", "+st,city,st,util,ticket,rebook,noshow,rating,labor,rev,weekly,trend,score,status:score>=4?"g":score>=1?"y":"r"};
+});
+const LAB={g:"On track",y:"Watch",r:"Act now"};
+let fState="All",fStatus="All",sortK="score",sortDir=1,selName=null;
+const $=id=>document.getElementById(id);
+const fmt$=n=>"$"+Math.round(n).toLocaleString();
+function chips(el,vals,cur,set){el.innerHTML=vals.map(v=>`<button type="button" class="chip" aria-pressed="${v===cur}" data-v="${v}">${v==="g"||v==="y"||v==="r"?LAB[v]:v}</button>`).join(" ");el.onclick=e=>{const b=e.target.closest("button");if(b){set(b.dataset.v);render()}}}
+function spark(vals,color){const w=120,h=34,mn=Math.min(...vals),mx=Math.max(...vals),r=mx-mn||1;
+  const pts=vals.map((v,i)=>[i*(w-6)/(vals.length-1)+3,h-4-(v-mn)/r*(h-10)]);
+  const d=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");
+  const last=pts[pts.length-1];
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="${d} L${last[0]} ${h} L3 ${h} Z" fill="${color}" opacity=".13"/><path d="${d}" fill="none" stroke="${color}" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${last[0]}" cy="${last[1]}" r="2.8" fill="${color}"/></svg>`}
+function filtered(){return data.filter(d=>(fState==="All"||d.st===fState)&&(fStatus==="All"||d.status===fStatus))}
+function avg(a,k){return a.length?a.reduce((s,d)=>s+d[k],0)/a.length:0}
+function render(){
+  chips($("states"),["All","TX","UT","AZ","NV","CO","NM"],fState,v=>fState=v);
+  chips($("statuses"),["All","g","y","r"],fStatus,v=>fStatus=v);
+  const f=filtered();const css=getComputedStyle(document.documentElement);const sky=css.getPropertyValue("--sky").trim();
+  const tot=f.reduce((s,d)=>s+d.weekly,0);
+  const series=Array.from({length:8},(_,i)=>f.reduce((s,d)=>s+d.trend[i],0));
+  const k=[
+    ["Weekly revenue",fmt$(tot),avg(f,"rev"),"% vs plan",series],
+    ["Chair utilization",Math.round(avg(f,"util"))+"%",avg(f,"util")-72,"pts vs 72% goal",series.map((v,i)=>v*(0.95+i*0.007))],
+    ["Intro → rebook",Math.round(avg(f,"rebook"))+"%",avg(f,"rebook")-38,"pts vs 38% goal",series.map((v,i)=>v*(1+Math.sin(i)*0.03))],
+    ["Avg ticket","$"+Math.round(avg(f,"ticket")),avg(f,"ticket")-140,"$ vs $140",series.map((v,i)=>v*(0.97+i*0.004))],
+    ["Review rating",avg(f,"rating").toFixed(2),avg(f,"rating")-4.8,"vs 4.8 goal",series.map((v,i)=>v*(1+Math.cos(i)*0.02))],
+    ["Labor % of revenue",Math.round(avg(f,"labor"))+"%",30-avg(f,"labor"),"pts vs 30% cap",series.map((v,i)=>v*(1.03-i*0.004))]
+  ];
+  $("kpis").innerHTML=f.length?k.map(([l,n,dv,u,s])=>{const good=dv>=0;return `<div class="kpi"><span class="l">${l}</span><span class="n">${n}</span><span class="d ${good?"up":"down"}">${good?"▲":"▼"} ${Math.abs(dv).toFixed(dv%1&&Math.abs(dv)<5?1:0)} ${u}</span>${spark(s,good?css.getPropertyValue("--good").trim():css.getPropertyValue("--bad").trim())}</div>`}).join(""):`<div class="kpi" style="grid-column:1/-1">No studios match these filters.</div>`;
+  const byS={};f.forEach(d=>byS[d.st]=(byS[d.st]||0)+d.weekly);const mx=Math.max(1,...Object.values(byS));
+  $("nstud").textContent=f.length+" of 22 studios";
+  $("statebars").innerHTML=Object.entries(byS).sort((a,b)=>b[1]-a[1]).map(([s,v])=>`<div class="sbar"><span>${s} · ${data.filter(d=>d.st===s&&f.includes(d)).length}</span><span class="track"><span class="fill" style="display:block;width:${v/mx*100}%"></span></span><span class="v">${fmt$(v/1000)}K</span></div>`).join("")||`<p class="sub">No studios match.</p>`;
+  const rows=[...f].sort((a,b)=>{const x=a[sortK],y=b[sortK];return (typeof x==="string"?x.localeCompare(y):x-y)*sortDir});
+  document.querySelectorAll("#tbl th").forEach(th=>th.setAttribute("aria-sort",th.dataset.k===sortK?(sortDir>0?"ascending":"descending"):"none"));
+  $("tbl").tBodies[0].innerHTML=rows.map(d=>`<tr tabindex="0" data-n="${d.name}" class="${d.name===selName?"sel":""}"><td>${d.name}</td><td class="${d.rev>=0?"up":"down"}">${d.rev>0?"+":""}${d.rev}%</td><td>${d.util}%</td><td>${d.rebook}%</td><td>$${d.ticket}</td><td>${d.noshow}%</td><td>${d.rating.toFixed(1)}</td><td>${d.labor}%</td><td><span class="pill ${d.status}">${LAB[d.status]}</span></td></tr>`).join("");
+  if(!selName||!f.find(d=>d.name===selName))selName=(rows.find(d=>d.status==="r")||rows[0]||{}).name;
+  detail(data.find(d=>d.name===selName),sky);
+  document.querySelectorAll("#tbl tbody tr").forEach(tr=>tr.classList.toggle("sel",tr.dataset.n===selName));
+}
+function actions(d){const a=[];
+  if(d.rebook<38)a.push(`Rebooking is ${d.rebook}%. Add an in-chair rebook offer and a day-2 and day-10 follow-up text for every $99 intro guest.`);
+  if(d.util<72)a.push(`Chairs are ${d.util}% full. Review bookings by day and hour, shift staff away from dead hours and target slow weekday afternoons.`);
+  if(d.noshow>8)a.push(`No-shows at ${d.noshow}%. Test a 24-hour and 2-hour reminder and a small deposit for first visits.`);
+  if(d.labor>30)a.push(`Labor at ${d.labor}% of revenue. Rebuild the schedule from booking patterns this week.`);
+  if(d.rating<4.8)a.push(`Reviews at ${d.rating}. Reply to every review within 24 hours and ask happy guests at checkout.`);
+  if(!a.length)a.push("Performing well. Document what this team does differently and share it with every studio as part of the playbook.");
+  return a.slice(0,3)}
+function detail(d,sky){if(!d){$("detail").innerHTML="";return}
+  const w=560,h=150,mn=Math.min(...d.trend)*0.95,mx=Math.max(...d.trend)*1.03,r=mx-mn,px=i=>40+i*(w-60)/7,py=v=>h-24-(v-mn)/r*(h-40);
+  const pts=d.trend.map((v,i)=>[px(i),py(v)]);const line=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");
+  const ticks=[mn,(mn+mx)/2,mx];const col=getComputedStyle(document.documentElement);const mut=col.getPropertyValue("--muted").trim(),ln=col.getPropertyValue("--line").trim();
+  $("detail").innerHTML=`<div class="trend"><div class="eyebrow">Studio drill-down</div><h3>${d.name} <span class="pill ${d.status}">${LAB[d.status]}</span></h3><div class="meta">Weekly revenue, last 8 weeks · ${d.score} of 6 goals met</div>
+  <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="8-week revenue trend for ${d.name}">
+  ${ticks.map(t=>`<line x1="40" x2="${w-20}" y1="${py(t)}" y2="${py(t)}" stroke="${ln}"/><text x="34" y="${py(t)+4}" text-anchor="end" font-size="10" fill="${mut}" font-family="DM Mono,monospace">$${(t/1000).toFixed(1)}K</text>`).join("")}
+  ${d.trend.map((v,i)=>`<text x="${px(i)}" y="${h-6}" text-anchor="middle" font-size="10" fill="${mut}" font-family="DM Mono,monospace">W${i+1}</text>`).join("")}
+  <path d="${line} L${px(7)} ${h-24} L${px(0)} ${h-24} Z" fill="${sky}" opacity=".12"/><path d="${line}" fill="none" stroke="${sky}" stroke-width="2.5"/>
+  <circle cx="${pts[7][0]}" cy="${pts[7][1]}" r="4.5" fill="${sky}"/><text x="${pts[7][0]-8}" y="${pts[7][1]-10}" text-anchor="end" font-size="11" font-weight="700" fill="${sky}" font-family="DM Mono,monospace">${fmt$(d.weekly)}</text></svg></div>
+  <div class="act"><h4>Next steps for this studio</h4><ul>${actions(d).map(x=>`<li>${x}</li>`).join("")}</ul></div>`}
+function sim(){const rb=+$("s-rebook").value,ut=+$("s-util").value,ns=+$("s-noshow").value;
+  $("o-rebook").textContent="+"+rb+" pts";$("o-util").textContent="+"+ut+" pts";$("o-noshow").textContent="−"+ns+" pts";
+  let a=0,b=0,c=0;data.forEach(d=>{const visits=CAP*d.util/100;const intros=visits*0.3;
+    a+=intros*52*(rb/100)*d.ticket*2; b+=CAP*(ut/100)*d.ticket*52; c+=visits*(ns/100)*d.ticket*52*0.5});
+  $("gain").textContent=fmt$(a+b+c);
+  $("gainsplit").innerHTML=`<div><b>${fmt$(a)}</b>from rebooking</div><div><b>${fmt$(b)}</b>from fuller chairs</div><div><b>${fmt$(c)}</b>from fewer no-shows</div>`}
+const PLAN={"Daily":[["10-minute huddle","Today's bookings, open chairs to fill, yesterday's rebooks and any guest issues."],["Open-chair push","Fill same-day gaps from the waitlist and past guests."],["Guest issues closed","Every complaint answered the same day."]],
+"Weekly":[["Scorecard review","Every studio's status, with one owner and one fix for each red."],["Schedules to demand","Next week's staffing built from booking patterns."],["Review replies","Every review answered within 24 hours."]],
+"Monthly":[["Business review","Trends, budget vs. actual and decisions the founders need to make."],["Playbook updates","What the best studios do, written down and trained everywhere."],["New-studio readiness","Hiring, training and launch checklist for the next opening."]],
+"First 90 days":[["Days 1–30","Visit studios, meet managers, connect MyTime, POS and payroll data, and launch this scorecard."],["Days 31–60","Rebooking and no-show fixes, schedules matched to demand, written studio standards."],["Days 61–90","A new-studio opening playbook, a hiring pipeline and a monthly review with the founders."]]};
+let tab="Weekly";
+function plan(){$("tabs").innerHTML=Object.keys(PLAN).map(t=>`<button type="button" role="tab" class="chip" aria-pressed="${t===tab}" aria-selected="${t===tab}">${t}</button>`).join("");
+  $("plan").innerHTML=PLAN[tab].map(([b,p])=>`<div class="step"><b>${b}</b><p>${p}</p></div>`).join("")}
+$("tabs").onclick=e=>{const b=e.target.closest("button");if(b){tab=b.textContent;plan()}};
+document.querySelector("#tbl thead").onclick=e=>{const th=e.target.closest("th");if(!th)return;const k=th.dataset.k;if(k===sortK)sortDir*=-1;else{sortK=k;sortDir=k==="name"?1:(k==="noshow"||k==="labor"?-1:1)}if(k==="score"&&sortK==="score"){} render()};
+const pick=e=>{const tr=e.target.closest("tr[data-n]");if(tr){selName=tr.dataset.n;render();$("detail").scrollIntoView({behavior:"smooth",block:"nearest"})}};
+$("tbl").tBodies[0].addEventListener("click",pick);
+$("tbl").tBodies[0].addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(e)}});
+["s-rebook","s-util","s-noshow"].forEach(id=>$(id).addEventListener("input",sim));
+sortK="score";sortDir=1;render();sim();plan();
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",render);
+new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+</script>
+
+</body></html>
