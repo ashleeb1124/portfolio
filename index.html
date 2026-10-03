@@ -321,7 +321,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <h1>One executive.<br><em>Three ways I build.</em></h1>
       <p class="sub">I build the operating system behind growth: the business, the People function and the brand. Twenty-plus years across healthcare, construction, manufacturing and technology. Pick what you need built and the site reorganizes around it.</p>
       <div class="quick">
-        <button class="btn gold" id="openQuick">Recruiter quick view · 90 seconds</button>
+        <button class="btn gold" id="openQuick">The 30-Second Brief</button>
         <a class="btn ghost" href="#built">See the work</a>
       </div>
       <div class="avail" id="avail"></div>
@@ -470,11 +470,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   </div>
 </div>
 
-<!-- recruiter quick view -->
+<!-- the 30-second brief -->
 <div class="modal" id="qm" hidden role="dialog" aria-modal="true" aria-labelledby="qmTitle">
   <div class="sheet">
     <button class="x" data-close aria-label="Close">×</button>
-    <div class="eyebrow">Recruiter quick view · 90 seconds</div>
+    <div class="eyebrow">The 30-Second Brief</div>
     <h2 id="qmTitle">Who, what, and what happened.</h2>
     <div class="qv">
       <div><h4>Who</h4><p id="qWho"></p></div>
@@ -783,7 +783,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     if(scroll&&id)sec.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
   }
 
-  /* ---------- recruiter quick view ---------- */
+  /* ---------- the 30-second brief ---------- */
   (function(){
     $('qWho').textContent='Ashlee Bryant, '+C.CREDENTIALS.replace(/ · /g,', ')+'. COO and People executive with 20+ years in healthcare, construction, manufacturing and technology. Started on the floor of a Coca-Cola bottling plant and ended up running it.';
     LANES.forEach(function(id){$('qWhat').appendChild(el('li',null,L[id].title+': '+L[id].positioning))});
