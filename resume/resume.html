@@ -3,132 +3,135 @@
 <title>Ashlee Bryant | Human Resources Manager</title>
 <link rel="stylesheet" href="fonts.css">
 <style>
-:root{--teal:#12495A;--cream:#F6F0E4;--tan:#EFE4CE;--tanb:#E6D8BC;--gold:#E3B25A;--gold2:#D9A23D;--terra:#C07A6B;--terra2:#B0645A;--ink:#2B3A40}
+:root{--teal:#12495A;--cream:#F6F0E4;--tan:#EFE4CE;--tanb:#E6D8BC;--gold:#E3B25A;--gold2:#D9A23D;--terra:#C07A6B;--terra2:#B0645A;--ink:#2B3A40;--card:#FAF6EE}
 @page{size:8.5in 11in;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#fff}
-body{font-family:'Poppins',sans-serif;color:var(--ink);font-size:8.6pt;line-height:1.38;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'Poppins',sans-serif;color:var(--ink);font-size:8.3pt;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:8.5in;height:11in;background:var(--cream);position:relative;overflow:hidden;display:flex;flex-direction:column;page-break-after:always}
 .page:last-child{page-break-after:auto}
-.bar-t{height:9px;background:var(--teal)}.bar-g{height:4px;background:var(--gold2)}
-.foot{height:27px;background:var(--gold);color:var(--teal);font:700 7pt 'Montserrat',sans-serif;letter-spacing:.2em;display:flex;align-items:center;justify-content:center;flex:none}
-b,strong{font-weight:600;color:var(--teal)}
-.serif{font-family:'Martel',serif}
-.mont{font-family:'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.bar-t{height:5px;background:var(--teal)}.bar-g{height:2px;background:var(--gold2)}
+.foot{height:27px;background:var(--gold);color:var(--teal);font:700 6.8pt 'Montserrat',sans-serif;letter-spacing:.2em;display:flex;align-items:center;justify-content:space-between;padding:0 34px;flex:none}
+b,strong{font-weight:700;color:var(--teal)}
+.d{color:var(--gold2);font-size:6.5pt;margin:0 7px;vertical-align:1px}
 /* header p1 */
-.hdr{height:132px;padding:14px 30px 0 30px;display:flex;justify-content:space-between;align-items:center;flex:none}
-.hdr h1{font:900 34pt/1 'Martel',serif;color:var(--teal);letter-spacing:.02em}
-.cred{font:600 8pt 'Montserrat';letter-spacing:.2em;color:var(--teal);margin-top:6px}
-.role{font:700 10pt 'Montserrat';letter-spacing:.24em;color:var(--terra2);margin-top:5px}
-.tag{font-style:italic;font-size:8.6pt;color:var(--ink);margin-top:4px}
-.contact{font-size:7.9pt;margin-top:6px;color:var(--teal);font-weight:500}
-.d{color:var(--terra);font-size:6pt;margin:0 6px;vertical-align:1px}
-.seal{width:112px;height:112px;border-radius:50%;background:var(--teal);border:3px solid var(--gold);box-shadow:0 0 0 3px var(--teal),0 0 0 5px var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;flex:none;margin-right:6px}
-.seal .n{font:900 25pt/1 'Martel';color:var(--gold)}
-.seal .l{font:700 6.4pt/1.4 'Montserrat';letter-spacing:.2em;color:var(--cream);margin-top:3px}
+.hdr{height:184px;padding:14px 36px 0 34px;display:flex;justify-content:space-between;flex:none}
+.hdr .l{flex:1}
+.hdr h1{font:700 35pt/1.05 'Lora',serif;color:var(--teal);letter-spacing:.015em}
+.cred{font:600 7.4pt 'Montserrat';letter-spacing:.3em;color:#4f6a73;margin-top:5px}
+.role{font:700 12pt 'Montserrat';letter-spacing:.22em;color:#1c3640;margin-top:8px}
+.tag{font:italic 400 10.5pt 'Lora';color:var(--terra2);margin-top:5px;padding-bottom:7px;border-bottom:1px solid var(--tanb);width:560px}
+.loc{font-size:7.6pt;color:#5b6a70;margin-top:7px}
+.contact{font-size:7.9pt;font-weight:600;color:#1c3640;margin-top:6px}
+.seal{width:112px;height:112px;flex:none;margin-top:30px}
+.seal img{width:112px;height:112px;display:block}
 /* stats */
-.stats{background:var(--teal);height:74px;display:flex;flex:none;border-top:2px solid var(--gold)}
-.stat{flex:1;text-align:center;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(227,178,90,.35)}
+.stats{background:var(--teal);height:71px;display:flex;flex:none;border-bottom:3px solid var(--terra);align-items:center}
+.stat{flex:1;text-align:center;border-right:1px solid rgba(227,178,90,.4);height:48px;display:flex;flex-direction:column;justify-content:center}
 .stat:last-child{border:0}
-.stat .v{font:900 21pt/1 'Martel';color:var(--gold)}
-.stat .k{font:600 5.9pt/1.35 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin-top:5px;padding:0 6px}
+.stat .v{font:600 21pt/1 'Lora';color:var(--gold)}
+.stat .k{font:600 5.7pt/1.4 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin-top:4px;padding:0 6px}
 /* layout */
 .body{flex:1;display:flex;min-height:0}
-.main{flex:1;padding:14px 22px 12px 30px;display:flex;flex-direction:column;min-width:0}
-.side{width:218px;background:var(--teal);color:var(--cream);padding:16px 18px;display:flex;flex-direction:column;flex:none}
-.sec{margin-bottom:10px}
-.sh{display:flex;align-items:center;margin-bottom:7px}
-.sh i{width:7px;height:7px;background:var(--gold2);transform:rotate(45deg);flex:none;margin-right:8px}
-.sh span{font:700 8pt 'Montserrat';letter-spacing:.2em;color:var(--terra2);text-transform:uppercase;white-space:nowrap}
+.main{flex:1;padding:13px 22px 12px 34px;display:flex;flex-direction:column;min-width:0}
+.side{width:212px;background:var(--teal);color:var(--cream);padding:16px 18px 12px 18px;display:flex;flex-direction:column;flex:none}
+.sec{margin-bottom:9px}
+.sh{display:flex;align-items:center;margin-bottom:6px}
+.sh i{width:7px;height:7px;background:var(--gold2);transform:rotate(45deg);flex:none;margin:0 10px 0 2px}
+.sh span{font:700 7.3pt 'Montserrat';letter-spacing:.3em;color:var(--terra2);text-transform:uppercase;white-space:nowrap}
 .sh:after{content:"";flex:1;height:1px;background:var(--tanb);margin-left:10px}
-.side .sh span{color:var(--gold)}.side .sh:after{background:rgba(227,178,90,.4)}
-p.prof{text-align:left}
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.tile{background:var(--tan);border:1px solid var(--tanb);border-radius:3px;padding:6px 8px 6px 40px;position:relative;font-size:8pt;line-height:1.36}
-.tile .num{position:absolute;left:8px;top:6px;font:900 17pt/1 'Martel';color:var(--teal)}
-.tile h4{font:700 6.9pt 'Montserrat';letter-spacing:.1em;text-transform:uppercase;color:var(--terra2);margin-bottom:2px}
-.job{margin-bottom:0}
+.head{font:700 12.6pt/1.3 'Lora';color:var(--teal);margin-bottom:5px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tile{background:var(--tan);border:1px solid var(--tanb);border-radius:6px;padding:6px 10px;position:relative;font-size:7.9pt;line-height:1.35}
+.tile h4{font:700 7.2pt 'Montserrat';letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1px}
+.tile.n{padding-left:46px}
+.tile.n .num{position:absolute;left:10px;top:50%;transform:translateY(-50%);font:500 15pt/1 'Lora';color:var(--terra)}
+.jcard{background:var(--card);border:1px solid var(--tanb);border-top:4px solid var(--teal);border-radius:8px 8px 6px 6px;padding:8px 14px 8px}
 .jh{display:flex;justify-content:space-between;align-items:baseline}
-.jt{font:700 9.6pt 'Martel';color:var(--teal)}
-.jd{font:600 7pt 'Montserrat';letter-spacing:.1em;color:var(--terra2);white-space:nowrap}
-.jc{font-weight:600;font-size:8.3pt;color:var(--ink)}
-.jm{font-style:italic;font-size:7.8pt;color:#5b6a70;margin-bottom:3px}
+.jt{font:700 7pt 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.jd{font:700 6.6pt 'Montserrat';letter-spacing:.14em;color:var(--terra2);white-space:nowrap}
+.jc{display:flex;align-items:baseline;margin:2px 0 3px}
+.jc .co{font:600 11.5pt 'Lora';color:#111}
+.jc .m{font:600 6.9pt 'Poppins';color:#5b6a70;margin-left:9px}
 ul.b{list-style:none}
-ul.b li{position:relative;padding-left:13px;margin-bottom:2.6px}
-ul.b li:before{content:"◆";position:absolute;left:0;top:1px;font-size:5.5pt;color:var(--terra)}
-.strip{background:var(--teal);border-radius:3px;padding:9px 12px 10px;margin-top:auto;color:var(--cream)}
-.strip .t{font:700 7.4pt 'Montserrat';letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:7px}
-.steps{display:flex;gap:6px}
-.step{flex:1;border-top:2px solid var(--gold);padding-top:5px;font-size:7.3pt;line-height:1.32}
-.step .n{font:900 12pt/1 'Martel';color:var(--gold);display:block;margin-bottom:1px}
-.step h5{font:700 6.6pt 'Montserrat';letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:2px}
-/* sidebar content */
-.side .grp{margin-bottom:12px}
-.side .lab{font:600 6.4pt 'Montserrat';letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:5px}
-.side .val{font-size:7.9pt;word-break:break-all;line-height:1.3}
-.cbox{border:1px solid var(--gold);border-radius:3px;padding:5px 8px;margin-bottom:6px}
-.cbox .c{font:900 12pt/1.1 'Martel';color:var(--gold)}
-.cbox .f{font-size:6.8pt;line-height:1.25;color:var(--cream)}
+ul.b li{position:relative;padding-left:15px;margin-bottom:2.8px}
+ul.b li:before{content:"";position:absolute;left:3px;top:6px;width:4px;height:4px;border-radius:50%;background:var(--terra)}
+.proc{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:0}
+.pc{background:var(--tan);border:1px solid var(--tanb);border-top:4px solid var(--teal);border-radius:7px 7px 5px 5px;padding:5px 8px 6px;font-size:7pt;line-height:1.3;color:#5b6a70}
+.pc .n{font:500 10.5pt/1 'Lora';color:var(--terra);display:block}
+.pc h5{font:700 6.8pt 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:1px 0 1px}
+/* sidebar */
+.side .hd{font:700 7.3pt 'Montserrat';letter-spacing:.3em;text-transform:uppercase;color:var(--gold);padding-bottom:4px;border-bottom:1px solid rgba(227,178,90,.35);margin-bottom:6px}
+.side .grp{margin-bottom:10px}
+.side .lab{font:600 7.8pt 'Poppins';color:#fff;margin-top:5px;line-height:1.3}
+.side .lab:first-of-type{margin-top:0}
+.side .val{font-size:7.5pt;line-height:1.35;color:var(--cream)}
+.cb{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.cb div{border:1px solid var(--gold);border-radius:4px;text-align:center;padding:4px 0;font:700 6.9pt 'Montserrat';letter-spacing:.12em;color:#fff}
+.sm{font-size:6.8pt;color:#d9d3c0;margin-top:5px}
 .edu{margin-bottom:7px}
-.edu .dg{font-weight:600;font-size:8pt;color:#fff;line-height:1.3}
-.edu .sc{font-size:7.5pt;color:#e9dfc8;line-height:1.3}
-.ind{list-style:none}
-.ind li{position:relative;padding-left:12px;font-size:7.8pt;line-height:1.3;margin-bottom:3.5px}
-.ind li:before{content:"◆";position:absolute;left:0;top:1px;font-size:5pt;color:var(--gold)}
+.edu .dg{font-weight:600;font-size:7.8pt;color:#fff;line-height:1.3}
+.edu .sc{font-size:7.6pt;color:var(--cream);line-height:1.35}
+.chips{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.chips span{font:700 6pt 'Montserrat';letter-spacing:.09em;text-transform:uppercase;color:#fff;background:#0e3c4b;border:1px solid #2c6676;border-radius:3px;padding:4px 7px}
 /* slim header */
-.slim{background:var(--teal);height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 30px;flex:none;border-bottom:3px solid var(--gold2)}
-.slim .nm{font:900 12pt 'Martel';color:#fff;letter-spacing:.06em}
-.slim .nm em{font:600 7pt 'Montserrat';font-style:normal;letter-spacing:.2em;color:var(--gold);margin-left:12px}
-.slim .ct{font-size:7.6pt;color:var(--cream)}
-.slim .ct .d{color:var(--gold)}
+.slim{height:50px;padding:7px 34px 0;display:flex;justify-content:space-between;align-items:flex-start;flex:none;border-bottom:3px solid var(--terra)}
+.slim .nm{font:700 17pt/1.1 'Lora';color:var(--teal);letter-spacing:.02em}
+.slim .rl{font:700 6.6pt 'Montserrat';letter-spacing:.24em;color:var(--terra2);margin-top:2px}
+.slim .ct{font-size:6.8pt;text-align:right;color:#3a4b52;line-height:1.5;margin-top:1px}
 /* page 2 */
-.p2{flex:1;padding:16px 30px 0;display:flex;flex-direction:column;min-height:0}
-.sk{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.sk .tile{padding:9px 10px 10px;font-size:7.9pt}
-.fit{width:100%;border-collapse:separate;border-spacing:0 3px;font-size:7.8pt;line-height:1.33}
-.fit th{background:var(--teal);color:var(--gold);font:700 6.8pt 'Montserrat';letter-spacing:.16em;text-transform:uppercase;text-align:left;padding:5px 9px}
-.fit td{background:var(--tan);padding:7px 10px;vertical-align:top;border-top:1px solid var(--tanb);border-bottom:1px solid var(--tanb)}
-.fit td:first-child{width:36%;font-weight:600;color:var(--teal);border-left:3px solid var(--terra);}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.card{background:var(--teal);color:var(--cream);border-radius:3px;padding:10px 11px;font-size:7.7pt;line-height:1.36}
-.card h4{font:700 7pt 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.p2{flex:1;padding:12px 34px 0;display:flex;flex-direction:column;min-height:0}
+.sk{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.sk .tile{padding:7px 10px 8px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.dcard{background:var(--tan);border:1px solid var(--tanb);border-top:4px solid var(--teal);border-radius:7px 7px 5px 5px;padding:6px 10px 8px;font-size:7.7pt;line-height:1.4}
+.dcard .n{font:500 14pt/1 'Lora';color:var(--terra)}
+.dcard h4{font:700 7.2pt 'Montserrat';letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:2px 0 3px}
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tech h4{font:700 7.2pt 'Montserrat';letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:2px}
+.tech p{font-size:7.9pt;line-height:1.4}
+.fit{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.fit .tile{border-left:4px solid var(--terra);border-radius:4px 6px 6px 4px;padding:7px 10px 8px}
+.fit .tile .w{font-size:7.3pt;color:#5b6a70;font-weight:600;margin-bottom:2px}
 .comm{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.comm .tile{padding:9px 11px}
-.lead{background:var(--teal);margin:0 -30px;padding:15px 40px;color:var(--cream);text-align:center;margin-top:auto;border-top:2px solid var(--gold)}
-.lead .l{font:700 7.4pt 'Montserrat';letter-spacing:.26em;color:var(--gold);margin-bottom:5px}
-.lead q{font:italic 400 11pt/1.45 'Martel';color:#fff;quotes:none}
+.comm .jcard{padding:6px 12px 8px;font-size:7.8pt;border-radius:7px 7px 5px 5px}
+.quote{border-left:3px solid var(--gold2);padding:2px 0 2px 10px;font:italic 400 9.5pt/1.4 'Lora';color:var(--teal);margin-top:auto;margin-bottom:12px}
 /* page 3 */
 .p3{flex:1;display:flex;min-height:0}
-.p3 .main{padding-top:13px}
-.chg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:auto}
-.chg .tile{padding:7px 8px;font-size:7.3pt;line-height:1.32}
-.chg .tile h4{color:var(--terra2)}
-.chg .big{font:900 15pt/1 'Martel';color:var(--teal);display:block;margin-bottom:2px}
-.job3{margin-bottom:7px}
-.job3 ul.b li{margin-bottom:2px}
-#p1 .main{font-size:8.4pt;line-height:1.35}
-#p1 .tile{font-size:7.8pt}
-#p3 .main{font-size:8.4pt;padding-bottom:16px}
-#p3 .side .val{font-size:8.2pt}
-#p3 .side .lab{margin-top:18px!important}
-#p3 .side .lab:first-of-type{margin-top:0!important}
-#p3 .side .ind li{font-size:8.2pt;margin-bottom:5px}
-#p2 .fit td{padding:6px 10px}
-#p2 .lead{padding:13px 40px}
+.p3 .main{padding-top:12px}
+.job3{margin-bottom:9px}
+.job3 .jcard{padding:8px 14px 8px}
+.job3 ul.b li{margin-bottom:3px;font-size:8.3pt;line-height:1.4}
+.photo{width:176px;height:236px;border:2px solid var(--gold);border-radius:4px;overflow:hidden;margin-bottom:10px;align-self:center;flex:none}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.stitle{font:600 13pt 'Lora';color:#fff;margin-bottom:2px}
+.srule{width:30px;height:2px;background:var(--terra);margin-bottom:6px}
+.side .gl{font:700 6.2pt 'Montserrat';letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:10px;margin-bottom:1px}
+.side .gv{font-size:7.8pt;line-height:1.4;color:var(--cream)}
+.sbox{margin-top:auto;border:1px solid var(--gold2);background:#0e3c4b;border-radius:4px;padding:2px 11px}
+.sbox>div{padding:7px 0;border-bottom:1px solid rgba(227,178,90,.4)}
+.sbox>div:last-child{border:0}
+.sbox .v{font:600 15pt/1.05 'Lora';color:var(--gold)}
+.sbox .k{font:600 5.6pt/1.3 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
+.depth{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.depth .tile{border-left:4px solid var(--terra);border-radius:4px 6px 6px 4px;padding:6px 9px;font-size:7.4pt;line-height:1.33}
+#p1 .sec{margin-bottom:13px}
+#p1 .tile{padding:8px 10px}
+#p1 .side .grp{margin-bottom:13px}
 </style></head><body>
 
 <!-- ============ PAGE 1 ============ -->
 <div class="page" id="p1">
   <div class="bar-t"></div><div class="bar-g"></div>
   <div class="hdr">
-    <div>
+    <div class="l">
       <h1>ASHLEE BRYANT</h1>
-      <div class="cred">EXEC MBA <span class="d">◆</span> MSHRM <span class="d">◆</span> SPHR <span class="d">◆</span> SHRM-SCP</div>
+      <div class="cred">EXEC MBA · MSHRM · SPHR · SHRM-SCP</div>
       <div class="role">HUMAN RESOURCES MANAGER</div>
-      <div class="tag">Precise HR, payroll and benefits, so restaurant owners can get back to running exceptional restaurants.</div>
-      <div class="contact">352.769.9599<span class="d">◆</span>ashlee.bryant@yahoo.com<span class="d">◆</span>Florida · Remote U.S.<span class="d">◆</span>Available immediately</div>
+      <div class="tag">Payroll that is right, people who feel looked after, every cycle.</div>
+      <div class="loc">San Antonio, FL · Remote U.S. · Available immediately</div>
+      <div class="contact">352.769.9599<span class="d">◆</span>ashlee.bryant@yahoo.com<span class="d">◆</span>linkedin.com/in/ashleebryantmba<span class="d">◆</span>ashleebryantbrand.netlify.app</div>
     </div>
-    <div class="seal"><span class="n">20+</span><span class="l">YEARS<br>LEADING</span></div>
+    <div class="seal"><img src="seal.png" alt="20+ years leading"></div>
   </div>
   <div class="stats">
     <div class="stat"><span class="v">1,000+</span><span class="k">Person multi-state<br>workforce led</span></div>
@@ -141,219 +144,216 @@ ul.b li:before{content:"◆";position:absolute;left:0;top:1px;font-size:5.5pt;co
     <div class="main">
       <div class="sec">
         <div class="sh"><i></i><span>Executive Profile</span></div>
-        <p class="prof">I'm an HR leader with 20+ years running <b>HR, payroll and benefits</b> for multi-site, high-volume workforces, and I'm ready to bring that discipline to Restaurant HR Group's clients. At SEC Global I owned payroll, labor cost and workforce planning for a <b>1,000+ person</b> multi-state workforce and cut payroll-related admin cost <b>~40%</b>. At Synergy Medical Centers I launched <b>20 locations</b>, cut turnover <b>~15%</b> and earned a Best Place to Work in Cobb County award. Employee relations, multi-state compliance, benefits and leadership development have been part of every role I've held, from a three-shift union plant to the C-suite. I'm self-driven, hold a high bar and move with urgency. I'm based in Florida, work well remotely and am eager to learn the restaurant world from the inside.</p>
+        <div class="head">I run HR, payroll and benefits so owners can run restaurants.</div>
+        <p>I am an HR leader with <b>20+ years</b> running people operations for multi-site, high-volume workforces, and I am ready to do it for Restaurant HR Group's clients. At SEC Global I owned payroll, labor cost and workforce planning for a <b>1,000+ person</b> multi-state workforce and cut payroll-related admin cost <b>~40%</b>. At Synergy Medical Centers I launched <b>20 locations</b>, cut turnover <b>~15%</b> and earned a Best Place to Work in Cobb County award. I have handled employee relations, compliance and leadership development in every role, from a three-shift union plant to the C-suite. I am self-driven, move with urgency, work well remotely from Florida, and am eager to learn the restaurant world from the inside.</p>
       </div>
       <div class="sec">
-        <div class="sh"><i></i><span>What I bring to Restaurant HR Group</span></div>
+        <div class="sh"><i></i><span>What I Bring to Restaurant HR Group</span></div>
         <div class="tiles">
-          <div class="tile"><span class="num">01</span><h4>Multi-unit payroll</h4>Owned payroll and labor cost for <b>1,000+</b> employees; led 4 payroll specialists.</div>
-          <div class="tile"><span class="num">02</span><h4>HR, payroll and benefits</h4>Benefits and 401(k) plan administrator, with filings and broker partnerships.</div>
-          <div class="tile"><span class="num">03</span><h4>Employee relations</h4>Handled labor relations in a <b>union, three-shift</b> plant, then in every role since.</div>
-          <div class="tile"><span class="num">04</span><h4>Leadership development</h4>Ran <b>9-box calibrations</b> with C-suite and VP teams; built an in-house LMS.</div>
-          <div class="tile"><span class="num">05</span><h4>Many needs, many clients</h4>Grew SEC Global from about <b>5 to ~40</b> concurrent projects, each with its own payroll.</div>
-          <div class="tile"><span class="num">06</span><h4>Culture and excellence</h4>Turnover down <b>~15%</b> with a Best Place to Work award; retention up <b>~25%</b>.</div>
+          <div class="tile n"><span class="num">01</span><h4>Multi-unit payroll</h4>Led payroll for 1,000+ employees.</div>
+          <div class="tile n"><span class="num">02</span><h4>HR, payroll + benefits</h4>Benefits and 401(k) plan administrator.</div>
+          <div class="tile n"><span class="num">03</span><h4>Employee relations</h4>Union plant, then every role since.</div>
+          <div class="tile n"><span class="num">04</span><h4>Leadership development</h4>9-box, succession, in-house LMS.</div>
+          <div class="tile n"><span class="num">05</span><h4>Many clients, many needs</h4>5 to ~40 concurrent projects.</div>
+          <div class="tile n"><span class="num">06</span><h4>Culture + excellence</h4>Turnover down ~15%, retention up ~25%.</div>
         </div>
       </div>
-      <div class="sec job">
-        <div class="sh"><i></i><span>Current Role</span></div>
-        <div class="jh"><span class="jt">Chief Operating Officer</span><span class="jd">JAN 2020 – PRESENT</span></div>
-        <div class="jc">The Wave International · Clearwater, FL</div>
-        <div class="jm">Multi-state behavioral health, 10 locations. Joined as Director of HR, promoted to COO in 4 months.</div>
-        <ul class="b">
-          <li>Run the company day to day; every manager reports to me, including <b>HR</b>, finance, operations, compliance and clinical.</li>
-          <li>Built the operating model, budgets, forecasts, <b>monthly business reviews</b> and executive KPI dashboards that helped grow revenue from about <b>$500K to $24M</b>.</li>
-          <li>Cut operating expenses <b>15%</b> through process redesign and automation; redesigned billing and payer workflows for a <b>~20%</b> revenue lift.</li>
-          <li>Built <b>The Wave University</b>, a custom in-house LMS, from scratch; designed the peer support program and hired its staff.</li>
-          <li>Wrote contracts for <b>1099 staff</b>; led payer, Joint Commission and state licensing audits; built an offshore accounting team.</li>
-                    <li>Led the company through its <b>sale</b> to a larger behavioral health group and stayed on through the transition.</li>
-        </ul>
+      <div class="sec">
+        <div class="sh"><i></i><span>Current Executive Leadership</span></div>
+        <div class="jcard">
+          <div class="jh"><span class="jt">Chief Operating Officer</span><span class="jd">JAN 2020 – PRESENT</span></div>
+          <div class="jc"><span class="co">The Wave International</span><span class="m">Clearwater, FL · Multi-state behavioral health · 10 locations</span></div>
+          <ul class="b">
+            <li>Run the company day to day; every manager reports to me, including <b>HR</b>, finance, operations and compliance, while the CEO focuses on investors and new business.</li>
+            <li>Built the operating model, budgets, forecasts, <b>monthly business reviews</b> and executive KPI dashboards that helped grow revenue from about <b>$500K to $24M</b>.</li>
+            <li>Cut operating expenses <b>15%</b> through process redesign and automation; redesigned billing and payer workflows for a <b>~20% revenue lift</b>.</li>
+            <li>Built <b>The Wave University</b>, a custom in-house LMS, from scratch; designed the peer support program and hired its staff.</li>
+            <li>Wrote contracts for <b>1099 staff</b>; led payer, Joint Commission and state licensing audits.</li>
+            <li>Built an offshore accounting team and an after-hours call center; implemented Sage, QuickBooks Enterprise and a new CRM with staff training.</li>
+            <li>Joined as Director of HR, promoted to COO in four months; led the company through its <b>sale</b> and stayed on through the transition.</li>
+          </ul>
+        </div>
       </div>
-      <div class="strip">
-        <div class="t">How I'd run each Restaurant HR Group client</div>
-        <div class="steps">
-          <div class="step"><span class="n">1</span><h5>Learn</h5>Locations, pay rules, payroll calendar, people.</div>
-          <div class="step"><span class="n">2</span><h5>Tighten</h5>Audit payroll, I-9s, policies and benefits.</div>
-          <div class="step"><span class="n">3</span><h5>Run</h5>Accurate, on-time payroll, benefits and HR.</div>
-          <div class="step"><span class="n">4</span><h5>Coach</h5>Employee relations and leader support.</div>
-          <div class="step"><span class="n">5</span><h5>Review</h5>Weekly virtual strategy session, clear next steps.</div>
+      <div class="sec" style="margin-bottom:0;margin-top:auto">
+        <div class="sh"><i></i><span>How I Run Each Client</span></div>
+        <div class="proc">
+          <div class="pc"><span class="n">01</span><h5>Learn</h5>Locations, pay rules, people</div>
+          <div class="pc"><span class="n">02</span><h5>Tighten</h5>Audit payroll, I-9s, policies</div>
+          <div class="pc"><span class="n">03</span><h5>Run</h5>Accurate, on-time cycles</div>
+          <div class="pc"><span class="n">04</span><h5>Coach</h5>Employee relations, leaders</div>
+          <div class="pc"><span class="n">05</span><h5>Review</h5>Weekly strategy session</div>
         </div>
       </div>
     </div>
     <div class="side">
       <div class="grp">
-        <div class="sh"><i></i><span>Contact</span></div>
-        <div class="lab" style="margin-top:0">Phone</div><div class="val">352.769.9599</div>
+        <div class="hd">Contact</div>
+        <div class="lab">Phone</div><div class="val">352.769.9599</div>
         <div class="lab">Email</div><div class="val">ashlee.bryant@yahoo.com</div>
         <div class="lab">LinkedIn</div><div class="val">linkedin.com/in/ashleebryantmba</div>
         <div class="lab">Portfolio</div><div class="val">ashleebryantbrand.netlify.app</div>
-        <div class="lab">Location</div><div class="val">Florida · Remote U.S.<br>Open to travel up to 75%</div>
+        <div class="lab">Location</div><div class="val">San Antonio, FL<br>Remote U.S. · Travel up to 75%</div>
       </div>
       <div class="grp">
-        <div class="sh"><i></i><span>Credentials</span></div>
-        <div class="cbox"><div class="c">SPHR</div><div class="f">Senior Professional in Human Resources</div></div>
-        <div class="cbox"><div class="c">SHRM-SCP</div><div class="f">SHRM Senior Certified Professional</div></div>
-        <div class="cbox"><div class="c">PHR</div><div class="f">Professional in Human Resources</div></div>
-        <div class="cbox"><div class="c">SHRM-CP</div><div class="f">SHRM Certified Professional</div></div>
-        <div class="val" style="margin-top:2px;word-break:normal">Predictive Index (PI) and DISC assessed</div>
+        <div class="hd">Credentials</div>
+        <div class="cb"><div>SPHR</div><div>SHRM-SCP</div><div>PHR</div><div>SHRM-CP</div></div>
+        <div class="sm">Predictive Index (PI) and DISC assessed</div>
       </div>
       <div class="grp">
-        <div class="sh"><i></i><span>Education</span></div>
-        <div class="edu"><div class="dg">Executive MBA</div><div class="sc">University of West Florida</div></div>
-        <div class="edu"><div class="dg">M.S., Human Resource Management</div><div class="sc">Keller Graduate School · GPA 3.97</div></div>
-        <div class="edu"><div class="dg">B.S., Human Resource Management</div><div class="sc">University of Phoenix</div></div>
+        <div class="hd">Education</div>
+        <div class="edu"><div class="dg">Executive MBA</div><div class="sc">University of West Florida<br>Ferry Pass, FL</div></div>
+        <div class="edu"><div class="dg">M.S., Human Resource Management</div><div class="sc">Keller Graduate School · GPA 3.97<br>Orlando, FL</div></div>
+        <div class="edu"><div class="dg">B.S., Human Resource Management</div><div class="sc">University of Phoenix<br>Los Angeles, CA</div></div>
       </div>
       <div class="grp" style="margin-bottom:0">
-        <div class="sh"><i></i><span>Industries</span></div>
-        <ul class="ind">
-          <li>Multi-site medical centers</li><li>Retail and direct-to-consumer</li><li>Manufacturing</li><li>Behavioral healthcare</li><li>Senior primary care</li><li>Utility construction and solar</li><li>IT consulting and offshore delivery</li><li>Government contracting</li>
-        </ul>
+        <div class="hd">Industries</div>
+        <div class="chips"><span>Multi-site medical centers</span><span>Behavioral healthcare</span><span>Retail + direct-to-consumer</span><span>Manufacturing</span><span>Utility construction + solar</span><span>IT consulting</span><span>Government contracting</span></div>
       </div>
     </div>
   </div>
-  <div class="foot">ASHLEE BRYANT &nbsp;|&nbsp; PROFILE &amp; FIT &nbsp;|&nbsp; PAGE 1 OF 3</div>
+  <div class="foot"><span>ASHLEE BRYANT | HUMAN RESOURCES MANAGER</span><span>PAGE 1 OF 3</span></div>
 </div>
 
 <!-- ============ PAGE 2 ============ -->
 <div class="page" id="p2">
   <div class="bar-t"></div><div class="bar-g"></div>
-  <div class="slim"><div class="nm">ASHLEE BRYANT<em>HUMAN RESOURCES MANAGER</em></div><div class="ct">352.769.9599<span class="d">◆</span>ashlee.bryant@yahoo.com</div></div>
+  <div class="slim"><div><div class="nm">ASHLEE BRYANT</div><div class="rl">HUMAN RESOURCES MANAGER | PAYROLL · PEOPLE · BENEFITS</div></div><div class="ct">352.769.9599 · ashlee.bryant@yahoo.com<br>linkedin.com/in/ashleebryantmba · ashleebryantbrand.netlify.app</div></div>
   <div class="p2">
     <div class="sec">
-      <div class="sh"><i></i><span>Skills &amp; Core Competencies</span></div>
+      <div class="sh"><i></i><span>Skills + Core Competencies</span></div>
       <div class="sk">
-        <div class="tile"><h4>Multi-unit payroll</h4>High-volume, multi-state payroll, payroll journal entries, GL reconciliation and wage garnishments.</div>
-        <div class="tile"><h4>Benefits and 401(k)</h4>Total rewards design, plan administration, benefits and 401(k) filings, broker partnerships.</div>
-        <div class="tile"><h4>Employee relations</h4>Ongoing support across every role, labor relations in a union setting, policies and handbooks.</div>
-        <div class="tile"><h4>Leadership development</h4>9-box calibrations, succession plans, HiPo programs, engagement surveys, leadership training.</div>
-        <div class="tile"><h4>Compliance and audits</h4>Multi-state compliance, I-9 audits, E-Verify, PEO and EOR partnerships, GDPR/CCPA.</div>
-        <div class="tile"><h4>Recruiting and onboarding</h4>Full-cycle hiring, onboarding, background checks and drug screening, led 5+ recruiters.</div>
-        <div class="tile"><h4>HRIS and payroll platforms</h4>Migrations including ADP to BambooHR and Paychex to Paylocity; Rippling, Workday and ADP WFN implementations.</div>
-        <div class="tile"><h4>Reporting and KPIs</h4>Real-time reporting on staffing, productivity and cost; executive dashboards, Excel, Power BI.</div>
-        <div class="tile"><h4>Client partnership</h4>Executive and board presentations, monthly business reviews and clear, candid communication.</div>
+        <div class="tile"><h4>Multi-unit payroll</h4>High-volume, multi-state · journal entries · GL reconciliation · garnishments</div>
+        <div class="tile"><h4>Benefits + 401(k)</h4>Plan administration · filings · total rewards · broker partnerships</div>
+        <div class="tile"><h4>Employee relations</h4>Union labor relations · policies · handbooks · ongoing support</div>
+        <div class="tile"><h4>Leadership development</h4>9-box calibrations · succession · HiPo programs · engagement surveys</div>
+        <div class="tile"><h4>Compliance + audits</h4>Multi-state · I-9 audits · E-Verify · PEOs and EORs · GDPR/CCPA</div>
+        <div class="tile"><h4>Recruiting + onboarding</h4>Full cycle · background checks · drug screening · 5+ recruiters led</div>
+        <div class="tile"><h4>HRIS + payroll platforms</h4>ADP to BambooHR · Paychex to Paylocity · Rippling · Workday</div>
+        <div class="tile"><h4>Reporting + KPIs</h4>Real-time staffing and cost reporting · dashboards · Excel · Power BI</div>
+        <div class="tile"><h4>Client partnership</h4>Executive and board presentations · monthly business reviews</div>
       </div>
     </div>
     <div class="sec">
-      <div class="sh"><i></i><span>What Restaurant HR Group needs owned · Where I've done it</span></div>
-      <table class="fit">
-        <tr><th>What you need owned</th><th>Where I've done it</th></tr>
-        <tr><td>Day-to-day HR, payroll and benefits for 2-3 clients</td><td>Chief People Officer for 20 medical centers and 450 employees at Synergy, with a 5-person HR team. Run HR as part of my COO role today.</td></tr>
-        <tr><td>Multi-unit, high-volume payroll</td><td>Payroll and labor cost for 1,000+ employees across states at SEC Global; led 4 payroll specialists; admin cost <b>~40% lower</b>.</td></tr>
-        <tr><td>Continuous employee relations support</td><td>Union labor relations across three shifts at Coca-Cola Bottling; employee relations in every role since.</td></tr>
-        <tr><td>Leadership development for client teams</td><td>9-box calibrations, succession plans and HiPo programs with C-suite and VP teams; <b>The Wave University</b> LMS.</td></tr>
-        <tr><td>Weekly strategy sessions that streamline processes</td><td>Monthly business reviews and executive KPI dashboards at The Wave; <b>~25%</b> faster project timelines at SEC Global.</td></tr>
-        <tr><td>Several clients with evolving needs</td><td>About 5 to ~40 concurrent projects at SEC Global; Collabera engagement supporting <b>150+ onsite consultants</b> and a 360+ offshore team.</td></tr>
-        <tr><td>Restaurant industry</td><td>Not yet. Closest: <b>20 patient-facing locations</b> launched at Synergy, retail and direct-to-consumer operations, and a three-shift plant floor.</td></tr>
-      </table>
-    </div>
-    <div class="sec">
-      <div class="sh"><i></i><span>AI &amp; Technology</span></div>
-      <div class="cards">
-        <div class="card"><h4>AI tools</h4>ChatGPT, Claude, Gemini, Copilot and Perplexity, with prompt engineering and agentic workflows.</div>
-        <div class="card"><h4>HR and payroll systems</h4>ADP and ADP WFN, Paylocity, Paychex, Rippling, BambooHR, Workday, UKG, Paycom, Gusto, E-Verify.</div>
-        <div class="card"><h4>Data and no-code</h4>Advanced Excel, SQL (intermediate), Power BI, Smartsheet, plus Base44, Netlify, HTML and CSS.</div>
+      <div class="sh"><i></i><span>My First 90 Days at Restaurant HR Group</span></div>
+      <div class="three">
+        <div class="dcard"><span class="n">01</span><h4>Learn each client</h4>Meet owners and managers, map every location, pay rule, payroll calendar and benefit plan, and learn how the team works with the Director of HR Operations.</div>
+        <div class="dcard"><span class="n">02</span><h4>Tighten the basics</h4>Audit payroll accuracy, I-9s, policies and benefits enrollment. Fix gaps first, set clear response times, and start the weekly virtual strategy sessions.</div>
+        <div class="dcard"><span class="n">03</span><h4>Coach and improve</h4>Build manager coaching and leadership development into each client's rhythm, bring clean numbers to every session, and streamline the process that slows them down.</div>
       </div>
     </div>
-    <div class="sec" style="margin-bottom:14px">
-      <div class="sh"><i></i><span>Board &amp; Community</span></div>
+    <div class="sec">
+      <div class="sh"><i></i><span>What You Need Owned + Where I Have Done It</span></div>
+      <div class="fit">
+        <div class="tile"><h4>HR, payroll + benefits</h4><div class="w">For 2-3 clients at once</div>Chief People Officer for 20 medical centers and 450 employees, with a 5-person HR team.</div>
+        <div class="tile"><h4>High-volume payroll</h4><div class="w">Multi-unit, multi-state</div>Payroll and labor cost for 1,000+ people at SEC Global; admin cost <b>~40% lower</b>.</div>
+        <div class="tile"><h4>Employee relations</h4><div class="w">Continuous support</div>Union labor relations across three shifts at Coca-Cola Bottling, then in every role since.</div>
+        <div class="tile"><h4>Leadership development</h4><div class="w">For client teams</div>9-box calibrations and succession plans with C-suite and VP teams; <b>The Wave University</b>.</div>
+        <div class="tile"><h4>Weekly strategy sessions</h4><div class="w">Streamline processes</div>Monthly business reviews and executive KPI dashboards; project timelines <b>~25% faster</b>.</div>
+        <div class="tile"><h4>Restaurant industry</h4><div class="w">Not yet. Closest fit:</div><b>20 patient-facing locations</b> launched, retail operations, and a three-shift plant floor.</div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sh"><i></i><span>AI + Technology</span></div>
+      <div class="tech">
+        <div><h4>AI tools</h4><p>ChatGPT, Claude, Gemini, Copilot and Perplexity, with prompt engineering and agentic workflows.</p></div>
+        <div><h4>HR + payroll systems</h4><p>ADP and ADP WFN, Paylocity, Paychex, Rippling, BambooHR, Workday, UKG, Paycom, Gusto, E-Verify.</p></div>
+        <div><h4>Data + no-code</h4><p>Advanced Excel, SQL (intermediate), Power BI, Smartsheet, plus Base44, Netlify, HTML and CSS.</p></div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sh"><i></i><span>0-to-1 Startup Operations</span></div>
+      <div class="jcard">
+        <div class="jh"><span class="jt">COO / Chief Compliance Officer</span><span class="jd">FEB 2026 – PRESENT · CONCURRENT</span></div>
+        <div class="jc"><span class="co">Spiro Senior</span><span class="m">Dermatech Mobile Care LLC · Senior primary care · Florida</span></div>
+        <ul class="b">
+          <li>Helped launch the company and scale it to <b>10 assisted living facility sites in under a year</b>; sourced, pitched and negotiated each partnership.</li>
+          <li>Built the business case, operating model and launch plan, with readiness gates for billing, payroll, technology and staffing.</li>
+          <li>Run <b>HR, hiring</b>, marketing and compliance as a department of one; completed CAQH, PECOS and Medicare credentialing.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sh"><i></i><span>Board + Community</span></div>
       <div class="comm">
-        <div class="tile"><h4>Board Member and Team Mom</h4><b>Wildcats Youth Football</b> (current). Operations, budget, vendors, volunteers and background checks, fundraising and sponsorships.</div>
-        <div class="tile"><h4>Volunteer Administrator</h4><b>Quest, Inc.</b> (15 years). Administration, filings and taxes for an organization serving adults with developmental disabilities.</div>
+        <div class="jcard"><div class="jh"><span class="jt">Board Member + Team Mom · Wildcats Youth Football</span></div><div style="margin-top:2px">Operations, budget, vendors, volunteers and background checks, fundraising and sponsorships. <b>Current.</b></div></div>
+        <div class="jcard"><div class="jh"><span class="jt">Volunteer Administrator · Quest, Inc.</span></div><div style="margin-top:2px">Administration, filings and taxes for an organization serving adults with developmental disabilities. <b>15 years.</b></div></div>
       </div>
     </div>
-    <div class="lead">
-      <div class="l">HOW I LEAD</div>
-      <q>I keep the process tight so the people behind every paycheck feel looked after. High standards, fast follow-through and honest conversations, every single week.</q>
-    </div>
+    <div class="quote">"Payroll that is right every time is how a team learns it can trust the people leading it."</div>
   </div>
-  <div class="foot">ASHLEE BRYANT &nbsp;|&nbsp; SKILLS, FIT &amp; TECHNOLOGY &nbsp;|&nbsp; PAGE 2 OF 3</div>
+  <div class="foot"><span>ASHLEE BRYANT | SKILLS · FIT · TECHNOLOGY</span><span>PAGE 2 OF 3</span></div>
 </div>
 
 <!-- ============ PAGE 3 ============ -->
 <div class="page" id="p3">
   <div class="bar-t"></div><div class="bar-g"></div>
-  <div class="slim"><div class="nm">ASHLEE BRYANT<em>HUMAN RESOURCES MANAGER</em></div><div class="ct">352.769.9599<span class="d">◆</span>ashlee.bryant@yahoo.com</div></div>
+  <div class="slim"><div><div class="nm">ASHLEE BRYANT</div><div class="rl">HUMAN RESOURCES MANAGER | PAYROLL · PEOPLE · BENEFITS</div></div><div class="ct">352.769.9599 · ashlee.bryant@yahoo.com<br>linkedin.com/in/ashleebryantmba · ashleebryantbrand.netlify.app</div></div>
   <div class="p3">
     <div class="main">
-      <div class="sh"><i></i><span>Professional Experience</span></div>
-      <div class="job3">
-        <div class="jh"><span class="jt">COO / Chief Compliance Officer</span><span class="jd">FEB 2026 – PRESENT</span></div>
-        <div class="jc">Spiro Senior (Dermatech Mobile Care LLC) · Florida · concurrent role</div>
+      <div class="sh"><i></i><span>Leadership History</span></div>
+      <div class="job3"><div class="jcard">
+        <div class="jh"><span class="jt">Vice President, HR + Operations</span><span class="jd">SEP 2013 – AUG 2019</span></div>
+        <div class="jc"><span class="co">SEC Global</span><span class="m">Tampa, FL · Multi-state utility construction + solar</span></div>
         <ul class="b">
-          <li>Helped launch a senior primary care company from scratch to <b>10 assisted living facility sites in under a year</b>; sourced, pitched and negotiated each partnership.</li>
-          <li>Built the business case, financial and operating models and launch plan, with readiness gates for billing, payroll, technology and staffing; implemented the EMR and billing workflows; completed CAQH, PECOS and Medicare credentialing.</li>
-          <li>Serve as Chief Compliance Officer and run <b>HR, hiring</b>, marketing and new-site sourcing as a department of one.</li>
-        </ul>
-      </div>
-      <div class="job3">
-        <div class="jh"><span class="jt">Vice President, HR &amp; Operations</span><span class="jd">SEP 2013 – AUG 2019</span></div>
-        <div class="jc">SEC Global · Tampa, FL · multi-state utility construction and solar project delivery</div>
-        <ul class="b">
-          <li>Owned workforce planning, labor cost, vendors and cost controls for a <b>1,000+ person</b> multi-state craft workforce of electricians, operators, laborers and installers.</li>
-          <li>Built the operating infrastructure that helped grow from about <b>5 contracts to ~40 concurrent utility projects</b> across the Southeast, taking each award from handoff to go-live.</li>
+          <li>Owned workforce planning, <b>payroll-related labor cost</b>, vendors and cost controls for a <b>1,000+ person</b> multi-state craft workforce.</li>
+          <li>Built the operating infrastructure that helped grow from about <b>5 contracts to ~40 concurrent utility projects</b>, from handoff to go-live.</li>
           <li>Standardized workflows across markets, cutting project timelines <b>~25%</b> and payroll-related admin cost <b>~40%</b>.</li>
-          <li>Led <b>4 payroll specialists, 3 HR generalists and 5+ recruiters</b>; built real-time reporting on capacity, productivity, staffing and cost.</li>
+          <li>Led <b>4 payroll specialists, 3 HR generalists and 5+ recruiters</b>; built real-time reporting on capacity, staffing and cost.</li>
           <li>Co-led the NetSuite to Microsoft Dynamics migration; ran the H-1B and visa program with counsel.</li>
-        </ul>
-      </div>
-      <div class="job3">
+        </ul></div></div>
+      <div class="job3"><div class="jcard">
         <div class="jh"><span class="jt">Chief People Officer / Director of Retail Operations</span><span class="jd">AUG 2010 – AUG 2013</span></div>
-        <div class="jc">Synergy Medical Centers · Acworth, GA · 20 medical centers, 450 employees</div>
+        <div class="jc"><span class="co">Synergy Medical Centers</span><span class="m">Acworth, GA · 20 locations · 450 employees</span></div>
         <ul class="b">
           <li>Launched all <b>20 locations</b>, partnering with leadership on growth plans, budgets and operating standards.</li>
-          <li>Cut turnover <b>~15%</b> and earned a <b>Best Place to Work in Cobb County</b> award.</li>
-          <li>Led a 5-person HR team (2 generalists, 1 benefits coordinator, 2 recruiters); handled payroll journal entries and GL reconciliation.</li>
-          <li>Owned retail and direct-to-consumer operations: purchasing, inventory, vendors and customer support.</li>
-        </ul>
-      </div>
-      <div class="job3">
+          <li>Cut turnover <b>~15%</b> and earned a <b>Best Place to Work in Cobb County</b> award; led a 5-person HR team.</li>
+          <li>Handled payroll journal entries and GL reconciliation; owned retail and direct-to-consumer purchasing, inventory and vendors.</li>
+        </ul></div></div>
+      <div class="job3"><div class="jcard">
         <div class="jh"><span class="jt">Director, Human Resources / Consultant</span><span class="jd">FEB 2011 – JUL 2013</span></div>
-        <div class="jc">Collabera Solutions · Torrance, CA · IT consulting for Southern California Edison · concurrent</div>
+        <div class="jc"><span class="co">Collabera Solutions</span><span class="m">Torrance, CA · Southern California Edison engagement</span></div>
         <ul class="b">
-          <li>Supported <b>150+ onsite consultants</b> and a 360+ person offshore delivery team in India.</li>
-          <li>Cut compensation-related costs <b>~45%</b> through benchmarking; led 5 HR generalists, 1 HR manager and 8 offshore recruiters.</li>
-          <li>Managed PERM, I-140/I-485 tracking and OPT/STEM OPT/CPT compliance.</li>
-        </ul>
-      </div>
-      <div class="job3">
+          <li>Supported <b>150+ onsite consultants</b> and a 360+ person offshore team; led 5 HR generalists, 1 HR manager and 8 offshore recruiters.</li>
+          <li>Cut compensation-related costs <b>~45%</b> through benchmarking; managed PERM, I-140/I-485 and OPT/STEM OPT/CPT compliance.</li>
+        </ul></div></div>
+      <div class="job3"><div class="jcard">
         <div class="jh"><span class="jt">Director of Human Resources</span><span class="jd">AUG 2008 – MAR 2011</span></div>
-        <div class="jc">Mission Critical Technologies, Inc. · El Segundo, CA · government and commercial technology contracting</div>
-        <ul class="b">
-          <li>Improved retention <b>~25%</b>; staffed and onboarded delivery teams for NASA, Disney, Sony, FOX and Warner Bros.</li>
-        </ul>
-      </div>
-      <div class="job3" style="margin-bottom:10px">
-        <div class="jh"><span class="jt">HR Assistant to HR Manager to HR Director to Plant Manager</span><span class="jd">2001 – 2008</span></div>
-        <div class="jc">Coca-Cola Bottling Company · Los Angeles, CA · manufacturing, 150 employees, three shifts</div>
-        <ul class="b">
-          <li><b>Promoted three times in seven years.</b> As Plant Manager, ran production, scheduling, quality, labor and operating cost.</li>
-          <li>Handled labor relations in a <b>union environment</b>.</li>
-        </ul>
-      </div>
-      <div class="sh" style="margin-top:auto"><i></i><span>Change I Have Led</span></div>
-      <div class="chg">
-        <div class="tile"><span class="big">30</span><h4>Locations</h4>20 medical centers at Synergy, 10 sites at Spiro Senior.</div>
-        <div class="tile"><span class="big">HRIS</span><h4>HRIS moves</h4>ADP to BambooHR and Paychex to Paylocity.</div>
-        <div class="tile"><span class="big">ERP</span><h4>ERP migration</h4>Co-led NetSuite to Microsoft Dynamics.</div>
-        <div class="tile"><span class="big">Sale</span><h4>Company sale</h4>Led The Wave through its sale and the transition.</div>
+        <div class="jc"><span class="co">Mission Critical Technologies</span><span class="m">El Segundo, CA · Technology contracting</span></div>
+        <ul class="b"><li>Staffed and onboarded delivery teams for NASA, Disney, Sony, FOX and Warner Bros.; improved retention <b>~25%</b>.</li></ul></div></div>
+      <div class="job3"><div class="jcard">
+        <div class="jh"><span class="jt">HR Assistant → HR Manager → HR Director → Plant Manager</span><span class="jd">2001 – 2008</span></div>
+        <div class="jc"><span class="co">Coca-Cola Bottling Company</span><span class="m">Los Angeles, CA · Manufacturing · 150 employees</span></div>
+        <ul class="b"><li><b>Promoted three times in seven years.</b> As Plant Manager, ran production, scheduling, quality, labor and operating cost across three shifts.</li><li>Handled labor relations in a <b>union environment</b>.</li></ul></div></div>
+      <div class="sec" style="margin-bottom:0;margin-top:auto">
+        <div class="sh"><i></i><span>Operating Depth + Change I Have Led</span></div>
+        <div class="depth">
+          <div class="tile"><h4>Full-cycle HR</h4>Recruiting, onboarding, screening, I-9 audits and E-Verify.</div>
+          <div class="tile"><h4>Total rewards</h4>Equity compensation cycles, W-2 review, 401(k) filings.</div>
+          <div class="tile"><h4>30 locations opened</h4>20 at Synergy and 10 at Spiro Senior.</div>
+          <div class="tile"><h4>Company sale</h4>Led The Wave through its sale and the transition.</div>
+          <div class="tile"><h4>Talent + succession</h4>Ratings tied to merit, bonus, promotion and LTIP.</div>
+          <div class="tile"><h4>Investor + board work</h4>Investor decks, executive and board presentations.</div>
+        </div>
       </div>
     </div>
     <div class="side">
-      <div class="sh"><i></i><span>Systems &amp; Software</span></div>
-      <div class="lab" style="margin-top:0">HRIS and payroll</div><div class="val" style="word-break:normal">ADP and ADP Workforce Now, Workday, UKG/UltiPro, Kronos, Paycom, Paychex, Paylocity, Rippling, BambooHR, Gusto, LawLogix, Envoy Global, E-Verify</div>
-      <div class="lab" style="margin-top:12px">ERP and finance</div><div class="val" style="word-break:normal">Microsoft Dynamics, NetSuite, Sage, QuickBooks Enterprise, AppFolio</div>
-      <div class="lab" style="margin-top:12px">Data and BI</div><div class="val" style="word-break:normal">Advanced Excel, SQL (intermediate), Power BI, Smartsheet</div>
-      <div class="lab" style="margin-top:12px">Collaboration</div><div class="val" style="word-break:normal">Microsoft 365, Google Workspace, Slack, Asana, Monday.com</div>
-      <div class="lab" style="margin-top:12px">Learning and design</div><div class="val" style="word-break:normal">Relias, LearnUpon, Figma, Canva, Adobe Acrobat</div>
-      <div class="lab" style="margin-top:12px">AI</div><div class="val" style="word-break:normal">ChatGPT, Claude, Gemini, Copilot, Perplexity; prompt engineering and agentic workflows</div>
-      <div class="lab" style="margin-top:12px">Healthcare</div><div class="val" style="word-break:normal">Alleva EHR/EMR, CRM, RCM/Billing and Insights; PointClickCare; CAQH; PECOS</div>
-      <div class="lab" style="margin-top:12px">CRM and marketing</div><div class="val" style="word-break:normal">Salesforce, Zoho, Meta Business Manager and Ads</div>
-      <div class="lab" style="margin-top:12px">No-code</div><div class="val" style="word-break:normal">Base44, Netlify, HTML, CSS</div>
-      <div class="sh" style="margin-top:20px"><i></i><span>Also Strong In</span></div>
-      <ul class="ind">
-        <li>Full-cycle HR, background checks and drug screening</li><li>Benefits and 401(k) administration, W-2 review, broker partnerships</li><li>Equity compensation cycles and wage garnishments</li><li>I-9 audits, E-Verify, PEOs and EORs</li><li>Policies, handbooks and multi-state compliance</li><li>Talent ratings tied to merit, bonus and promotion</li><li>Investor decks and board presentations</li>
-      </ul>
+      <div class="photo"><img src="photo.jpg" alt="Ashlee Bryant"></div>
+      <div class="stitle">Systems + Software</div><div class="srule"></div>
+      <div class="gl" style="margin-top:2px">HRIS + Payroll</div><div class="gv">ADP Workforce Now · Workday · UKG/UltiPro · Kronos · Paycom · Paychex · Paylocity · Rippling · BambooHR · Gusto · LawLogix · Envoy Global · E-Verify</div>
+      <div class="gl">ERP + Finance</div><div class="gv">Microsoft Dynamics · NetSuite · Sage · QuickBooks Enterprise · AppFolio</div>
+      <div class="gl">Data + Analytics</div><div class="gv">Advanced Excel · SQL · Power BI · Smartsheet</div>
+      <div class="gl">AI + Automation</div><div class="gv">ChatGPT · Claude · Gemini · Copilot · Perplexity · agentic workflows</div>
+      <div class="gl">Healthcare</div><div class="gv">Alleva EHR/EMR · PointClickCare · CAQH · PECOS</div>
+      <div class="gl">CRM + Marketing</div><div class="gv">Salesforce · Zoho · Meta Business Manager</div>
+      <div class="gl">Collaboration</div><div class="gv">Microsoft 365 · Google Workspace · Slack · Asana · Monday.com</div>
+      <div class="gl">Design + No-code</div><div class="gv">Figma · Canva · Base44 · Netlify · Relias · LearnUpon</div>
+      <div class="sbox">
+        <div><div class="v">1,000+</div><div class="k">Workforce supported at SEC Global</div></div>
+        <div><div class="v">~40%</div><div class="k">Lower payroll-related admin cost</div></div>
+        <div><div class="v">30</div><div class="k">Sites launched across two companies</div></div>
+      </div>
     </div>
   </div>
-  <div class="foot">ASHLEE BRYANT &nbsp;|&nbsp; EXPERIENCE &amp; SYSTEMS &nbsp;|&nbsp; PAGE 3 OF 3</div>
+  <div class="foot"><span>ASHLEE BRYANT | LEADERSHIP HISTORY · SYSTEMS</span><span>PAGE 3 OF 3</span></div>
 </div>
 </body></html>
