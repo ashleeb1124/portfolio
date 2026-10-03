@@ -5,8 +5,8 @@
    SITE.SYSTEMS    10 categories. lanes = which career lenses it dims for.
    SITE.COMPLIANCE regulatory / accreditation / licensing / business compliance.
                    Any item with  confirmed: false  stays hidden on the site.
-                   Flip it to true (or delete the flag) once Ashlee confirms she
-                   handled that agency directly.
+                   (AHCA and DCF were confirmed by Ashlee: she handled the licensing
+                   for both facilities.)
    Automation platforms: Power Automate, Zapier and Base44 (all confirmed as used).
    ========================================================== */
 window.SITE = window.SITE || {};
@@ -114,8 +114,8 @@ SITE.COMPLIANCE = [
     detail: [
       { name: 'The Joint Commission', desc: 'Accreditation readiness, survey preparation, documentation, corrective-action support, ongoing compliance and audit response.' },
       { name: 'State Healthcare / Behavioral Health Licensing', desc: 'Facility licensing, license renewals, new-site readiness, regulatory documentation, inspection preparation, corrective actions and multi-state licensing coordination.' },
-      { name: 'Florida Agency for Health Care Administration (AHCA)', desc: 'Healthcare facility / provider regulatory requirements, licensing coordination, background-screening requirements, compliance documentation and operational readiness.', confirmed: false },
-      { name: 'Florida Department of Children and Families (DCF)', desc: 'Behavioral health / substance-use treatment licensing, facility compliance, documentation, inspections, renewals and corrective-action processes.', confirmed: false },
+      { name: 'Florida Agency for Health Care Administration (AHCA)', desc: 'Healthcare facility / provider regulatory requirements, licensing coordination, background-screening requirements, compliance documentation and operational readiness.' },
+      { name: 'Florida Department of Children and Families (DCF)', desc: 'Behavioral health / substance-use treatment licensing, facility compliance, documentation, inspections, renewals and corrective-action processes.' },
       { name: 'Other State Regulatory Agencies', desc: 'Coordination with state health departments, behavioral-health authorities, licensing boards and other state agencies governing healthcare facilities and service delivery across multiple states.' }
     ]
   },
