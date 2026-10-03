@@ -1,5 +1,5 @@
 /* ==========================================================
-   CAREER STORY + TOOLS
+   CAREER STORY + CREDENTIALS (systems live in data/systems.js)
    `id` values are referenced by SITE.LENSES[...].proof[].story.
    lanes = which career lenses the role is relevant to.
    ========================================================== */
@@ -92,16 +92,6 @@ SITE.CAREER = [
   }
 ];
 
-/* Systems + tools, grouped. Add a name to any list; no HTML to touch. */
-SITE.TOOLS = [
-  { group: 'ERP + Finance', lanes: ['ops'], items: ['NetSuite', 'Microsoft Dynamics', 'Sage', 'QuickBooks Enterprise', 'Advanced Excel', 'SQL', 'Power BI'] },
-  { group: 'People + Payroll', lanes: ['people'], items: ['BambooHR', 'Gusto', 'ADP', 'Paycom', 'Paychex', 'Salesforce', 'Zoho'] },
-  { group: 'Healthcare', lanes: ['ops', 'people'], items: ['Alleva EHR', 'PointClickCare', 'CAQH', 'PECOS', 'Medicare', 'HIPAA', 'CMS'] },
-  { group: 'AI-enabled operations', lanes: ['ops', 'people', 'brand'], items: ['Claude', 'ChatGPT', 'Microsoft Copilot', 'Gemini', 'Perplexity', 'Custom agents'], note: 'Always with human judgment and review.' },
-  { group: 'Automation + build', lanes: ['ops', 'brand'], items: ['Power Automate', 'Zapier', 'Base44', 'Netlify', 'Smartsheet', 'Custom scripts'] },
-  { group: 'Brand + growth', lanes: ['brand'], items: ['Brand strategy', 'Creative direction', 'Canva', 'Figma', 'Adobe Acrobat', 'Meta & Google Ads', 'SEO'] }
-];
-
 SITE.CREDENTIALS = {
   education: [
     ['Executive MBA', 'University of West Florida'],
@@ -109,8 +99,9 @@ SITE.CREDENTIALS = {
     ['B.S., Human Resource Management', 'University of Phoenix']
   ],
   certifications: [
-    ['SPHR', 'Senior Professional in Human Resources'],
-    ['SHRM-SCP', 'SHRM Senior Certified Professional'],
-    ['PHR · SHRM-CP', 'Professional certifications']
+    { name: 'SPHR', title: 'Senior Professional in Human Resources', since: 'January 2018', renewed: 'January 2024', expires: 'January 2027', number: '482917365SPHR' },
+    { name: 'SHRM-SCP', title: 'SHRM Senior Certified Professional', since: 'January 2016', renewed: 'January 2025', expires: 'January 2028' },
+    { name: 'PHR', title: 'Professional in Human Resources', since: 'August 2013', renewed: 'August 2025', expires: 'August 2028', number: '705238914PHR' },
+    { name: 'SHRM-CP', title: 'SHRM Certified Professional', since: 'December 2012', renewed: 'December 2024', expires: 'December 2027' }
   ]
 };
