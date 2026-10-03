@@ -1,0 +1,26 @@
+HOW TO PUBLISH YOUR SITE ON NETLIFY
+
+1. Unzip this file. You'll get a folder called "ashlee-bryant-site".
+   Keep everything inside it together: index.html, ashlee-bryant.jpg,
+   the 3 CV PDFs and the "work" folder.
+
+2. Go to app.netlify.com and log in.
+
+3. Click your site: ashleebryantbrand
+
+4. Open the "Deploys" tab.
+
+5. Drag the whole "ashlee-bryant-site" folder (the folder, not the zip)
+   onto the box that says "Drag and drop your site output folder here".
+
+6. Wait about 30 seconds, then visit https://ashleebryantbrand.netlify.app
+   and refresh. Test the "Download my CV" menu and click a work sample.
+
+TO SWAP OR ADD A WORK SAMPLE LATER
+- Put the new image in the "work" folder.
+- Send it to Claude and ask to add it to the gallery, or copy one of the
+  <figure class="g"> blocks in index.html and change the file names and text.
+
+TO UPDATE A CV
+- Replace the PDF in the folder with the new one, using the exact same
+  file name, then drag the folder into Netlify again.
