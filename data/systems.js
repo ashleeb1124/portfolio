@@ -7,8 +7,7 @@
                    Any item with  confirmed: false  stays hidden on the site.
                    Flip it to true (or delete the flag) once Ashlee confirms she
                    handled that agency directly.
-   Automation: Base44 is listed as the platform. Zapier / Power Automate are NOT
-   listed because they have not been confirmed as tools actually used.
+   Automation platforms: Power Automate, Zapier and Base44 (all confirmed as used).
    ========================================================== */
 window.SITE = window.SITE || {};
 
@@ -61,7 +60,7 @@ SITE.SYSTEMS = [
     groups: [
       { label: 'AI tools', items: ['ChatGPT', 'Claude', 'Gemini', 'Microsoft Copilot', 'Perplexity', 'Alleva Echo', 'Alleva TravisAI'] },
       { label: 'AI capabilities', items: ['Prompt engineering', 'Agentic workflows', 'AI-assisted research', 'AI-assisted analysis', 'AI-assisted documentation', 'AI-assisted policy development', 'AI-assisted workflow design', 'AI-assisted business-case development', 'AI-assisted operating reviews', 'AI-assisted HR workflows', 'AI-assisted executive synthesis'] },
-      { label: 'Automation platform', items: ['Base44'] },
+      { label: 'Automation platforms', items: ['Power Automate', 'Zapier', 'Base44'] },
       { label: 'Automation capabilities', items: ['AI agent / agentic workflows', 'HR workflow automation', 'Onboarding automation', 'Documentation automation', 'Reporting automation', 'Task routing', 'Approval workflows', 'Notifications', 'Recurring operational workflows', 'Data / process standardization', 'Self-service workflow design'] }
     ],
     note: 'Always with human judgment and review.'
