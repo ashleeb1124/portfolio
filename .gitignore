@@ -1,3 +1,5 @@
 
 # Raw source folder: lives on the samples-upload branch; scripts/build-samples.sh turns it into web-sized files in assets/
 Work and Design Samples/
+netlify-site/
+ashlee-bryant-site.zip
