@@ -69,16 +69,16 @@ em{font-style:italic;color:var(--terra)}
 
 /* hero */
 .hero{padding:132px 0 72px;background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory2) 100%)}
-.hero-id{display:flex;align-items:center;gap:40px}
+.hero-id{display:flex;align-items:center;gap:40px;flex-wrap:nowrap}
 .hero-id .idtext{min-width:0}
 .hero-copy{margin-top:30px;max-width:760px}
 .hero .name{font-family:var(--script);font-size:clamp(54px,8.5vw,104px);line-height:1;color:var(--teal);margin:12px 0 4px;font-weight:400}
 .hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.01em;margin:14px 0 20px}
 .hero .sub{font-size:19px;color:var(--muted);max-width:600px}
 .hero .quick{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
-.portrait{position:relative;flex:none;width:210px}
-.portrait .ring{border:2px solid var(--gold);border-radius:50%;padding:10px}
-.portrait img{border-radius:50%;aspect-ratio:1;object-fit:cover;width:100%;height:auto}
+.portrait{position:relative;flex:none;width:300px}
+.portrait .ring{border:2px solid var(--gold);border-radius:22px;padding:8px}
+.portrait img{border-radius:15px;aspect-ratio:1;object-fit:cover;width:100%;height:auto}
 .hero .creds{margin-top:10px;font-family:var(--label);font-size:12px;letter-spacing:.2em;color:var(--teal);font-weight:600}
 .avail{display:flex;gap:8px 18px;flex-wrap:wrap;margin-top:22px;font-family:var(--label);font-size:13px;letter-spacing:.08em;color:var(--muted)}
 .avail span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:8px}
@@ -268,8 +268,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   section{padding:64px 0}
   .hero{padding-top:104px}
   .lens .grid,.two{grid-template-columns:1fr;gap:34px}
-  .hero-id{flex-direction:column;align-items:flex-start;gap:22px}
-  .portrait{width:170px}
+  .hero-id{gap:18px}
+  .portrait{width:min(34vw,220px)}
+  .hero .name-logo{width:100%}
   .paths,.qv{grid-template-columns:1fr}
   .menu-btn{display:block}
   .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--ivory);padding:10px 24px 20px;box-shadow:0 12px 22px rgba(0,0,0,.1)}
