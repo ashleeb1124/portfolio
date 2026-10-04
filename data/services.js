@@ -18,10 +18,11 @@ SITE.SERVICES = [
     alt: 'Snow Story Studios services flyer: brand strategy, identity, collateral, operations and people services for growing businesses.'
   },
   {
-    id: 'consulting', title: 'Business Consulting',
-    blurb: 'Operations, HR, strategy and executive support, selectively.',
+    id: 'consulting', title: 'Business Operations & HR Consulting',
+    blurb: 'Operations, HR, systems, process and documentation, selectively.',
     doc: 'Executive Portfolio One-Pager',
-    summary: 'Business consulting across operations, HR, strategy and executive support, from first assessment to a running system.',
+    summary: 'Consulting across operations, HR, systems, process improvement, documentation, business infrastructure and organizational execution, from first assessment to a running system.',
+    capabilities: ['Operations', 'HR Infrastructure', 'Process Improvement', 'Systems', 'Documentation', 'Growth Infrastructure'],
     offerings: ['Operational assessments, process improvement, workflows, SOPs, dashboards, automation, systems, accountability and scaling', 'Strategic planning, executive support, organizational design, financial / operational analysis and decision support', '0-to-1 business builds, launch planning, operating models, market positioning, implementation and go-to-market support', 'Workforce strategy, organizational structure, HR infrastructure, employee processes and people systems'],
     image: 'assets/work/executive-portfolio.jpg',
     alt: 'Executive portfolio one-pager: operating foundation, 30/60/90-day plan and executive range.'

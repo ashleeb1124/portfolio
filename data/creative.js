@@ -11,7 +11,7 @@ SITE.CREATIVE_GROUPS = [
   { id: 'Brand Identity', label: 'Brand Identity + Systems' },
   { id: 'Presentations', label: 'Presentations + Decks' },
   { id: 'Collateral', label: 'Collateral + Print' },
-  { id: 'Document Design', label: 'Resume + Document Design' },
+  { id: 'Document Design', label: 'Resume + Document Design' }
 ];
 
 SITE.CREATIVE = [
@@ -86,62 +86,6 @@ SITE.CREATIVE = [
     featured: false, tags: ['presentation'], year: '', format: "Brand strategy \u00b7 Image", status: 'live'
   },
   {
-    group: 'Presentations',
-    id: 'everbloom-care-continuum', title: 'Investor Deck: The Care Model', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-care-continuum.jpg',
-    short_description: 'One continuum across residential, PHP, IOP and outpatient care for a new women’s behavioral health program.',
-    problem: 'A new behavioral health program had to explain four levels of care to investors in one clear picture.',
-    what_i_built: 'A care-continuum slide that connects residential, PHP, IOP and outpatient care into one story, inside a full investor presentation system.',
-    my_role: 'Business storytelling, deck architecture and visual design.',
-    tools_used: ['Presentation design', 'Brand system', 'Business storytelling'],
-    outcome: 'A clear, investor-ready explanation of the care model.',
-    file_url: 'assets/work/everbloom-care-continuum.jpg', preview_url: 'assets/work/everbloom-care-continuum.jpg',
-    featured: true, tags: ['presentation', 'healthcare'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
-    group: 'Presentations',
-    id: 'everbloom-disciplines', title: 'Investor Deck: Operating Disciplines', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-disciplines.jpg',
-    short_description: 'Governance, utilization, revenue cycle, outcomes and cost control built into the model from day one.',
-    problem: 'Investors back operators who can show control, not just a good idea.',
-    what_i_built: 'A slide that lays out governance, utilization, revenue cycle, outcomes and cost control as disciplines designed in from day one.',
-    my_role: 'Operating-model content and presentation design.',
-    tools_used: ['Presentation design', 'Operating model design'],
-    outcome: 'The operating model, visible at a glance.',
-    file_url: 'assets/work/everbloom-disciplines.jpg', preview_url: 'assets/work/everbloom-disciplines.jpg',
-    featured: false, tags: ['presentation', 'healthcare', 'systems'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
-    group: 'Presentations',
-    id: 'everbloom-accreditation', title: 'Investor Deck: Accreditation Plan', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-accreditation.jpg',
-    short_description: 'A 14-month path to Joint Commission or CARF accreditation, with budget and payer checkpoints.',
-    problem: 'Accreditation is a long road with money and payer milestones attached.',
-    what_i_built: 'A 14-month accreditation roadmap with budget and payer checkpoints, designed to be read in one pass.',
-    my_role: 'Planning content and presentation design.',
-    tools_used: ['Presentation design', 'Project planning'],
-    outcome: 'A timeline an investor can follow and hold the team to.',
-    file_url: 'assets/work/everbloom-accreditation.jpg', preview_url: 'assets/work/everbloom-accreditation.jpg',
-    featured: false, tags: ['presentation', 'healthcare', 'process'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
-    group: 'Presentations',
-    id: 'everbloom-governance', title: 'Investor Deck: Outcomes + Governance', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-governance.jpg',
-    short_description: 'Clinical outcomes, governance cadence and operating targets investors can track.',
-    problem: 'Investors want targets they can track after the check clears.',
-    what_i_built: 'A slide pairing clinical outcomes with a governance cadence and operating targets.',
-    my_role: 'Governance content and presentation design.',
-    tools_used: ['Presentation design', 'Operating cadence'],
-    outcome: 'Targets and cadence stated up front.',
-    file_url: 'assets/work/everbloom-governance.jpg', preview_url: 'assets/work/everbloom-governance.jpg',
-    featured: false, tags: ['presentation', 'healthcare'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
     group: 'Collateral',
     id: 'harbourlight-brochure', title: "Harbourlight: Healthcare Brochure", category: 'Brand + Design',
     career_lane: ['brand', 'ops'], company_or_project: "Illustrative sample \u00b7 healthcare collateral",
@@ -154,20 +98,6 @@ SITE.CREATIVE = [
     outcome: "Collateral that makes the referral decision easier.",
     file_url: 'assets/work/harbourlight-brochure.jpg', preview_url: 'assets/work/harbourlight-brochure.jpg',
     featured: false, tags: ['presentation', 'healthcare'], year: '', format: "Brochure \u00b7 Image", status: 'live'
-  },
-  {
-    group: 'Collateral',
-    id: 'handbook-before-after', title: "Employee Handbook Redesign: Before + After", category: 'People + HR',
-    career_lane: ['people', 'brand'], company_or_project: "Illustrative sample \u00b7 Rivermark",
-    thumbnail: 'assets/work/thumb-handbook-before-after.jpg',
-    short_description: "A PTO policy rewritten and redesigned: from a dense page of text to something employees will read.",
-    problem: "Most handbooks are written for lawyers, so employees skip them.",
-    what_i_built: "A side-by-side redesign of the same policy: plain-language rewrite, clear accrual table, icons and examples, in a consistent branded layout.",
-    my_role: "Policy writer and designer.",
-    tools_used: ["Policy writing", "Canva", "Brand system"],
-    outcome: "The same policy, clearer to read and easier to follow.",
-    file_url: 'assets/work/handbook-before-after.jpg', preview_url: 'assets/work/handbook-before-after.jpg',
-    featured: false, tags: ['writing', 'presentation'], year: '', format: "Handbook design \u00b7 Image", status: 'live'
   },
   {
     group: 'Document Design',

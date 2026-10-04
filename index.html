@@ -153,6 +153,12 @@ em{font-style:italic;color:var(--terra)}
 .kg .kb{margin:4px 0 0 17px;color:var(--muted);font-size:15px}
 .kg .tiles{margin-top:16px}
 .tile.dim{opacity:.45}
+.pbar{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px;background:var(--card);border-top:1px solid var(--line)}
+.pnav{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--teal);background:transparent;color:var(--teal);font-size:24px;line-height:1}
+.pnav:hover{background:var(--teal);color:var(--ivory)}
+.pcnt{font-family:var(--label);font-size:13px;letter-spacing:.14em;color:var(--muted);min-width:60px;text-align:center}
+.pcap{padding:0 16px 14px;text-align:center;font-size:14px;color:var(--muted);background:var(--card)}
+.sw .sub-h{font-family:var(--serif);font-size:24px;color:var(--teal);margin:26px 0 0}
 .xref{grid-column:1/-1;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:26px}
 .xref h3{font-size:26px;margin-bottom:6px}
 .xref p{color:var(--muted);max-width:640px;margin-bottom:16px}
@@ -337,10 +343,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <li><a href="#story">Career</a></li>
       <li><a href="#systems">Systems</a></li>
       <li><a href="#compliance">Compliance</a></li>
-      <li class="has-sub"><a href="#services" id="svcNav">Services</a>
+      <li class="has-sub"><a href="#services" id="svcNav">My Services</a>
         <div class="sub" role="group" aria-label="Services">
           <a href="#services" data-svc="branding">Branding &amp; Design</a>
-          <a href="#services" data-svc="consulting">Business Consulting</a>
+          <a href="#services" data-svc="consulting">Business Operations &amp; HR Consulting</a>
         </div>
       </li>
       <li><a href="#resumes">My Resumes</a></li>
@@ -541,6 +547,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <script src="data/systems.js"></script>
 <script src="data/services.js"></script>
 <script src="data/creative.js"></script>
+<script src="data/consulting.js"></script>
 <script>
 (function(){
   'use strict';
@@ -652,6 +659,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     var f=el('a','btn ghost','View full size');f.href=v.image;f.target='_blank';f.rel='noopener';acts.appendChild(f);r.appendChild(acts);
     w.appendChild(left);w.appendChild(r);panel.appendChild(w);
     if(v.id==='branding')renderCreative(panel);
+    if(v.id==='consulting')renderConsulting(panel,v);
+  }
+  function renderConsulting(panel,v){
+    var build=el('div','sw');build.appendChild(el('div','eyebrow','What I help organizations build'));
+    build.appendChild(el('h3',null,'What I Help Organizations Build'));
+    var cl=el('div','chipline');(v.capabilities||[]).forEach(function(c){cl.appendChild(el('span',null,c))});build.appendChild(cl);
+    panel.appendChild(build);
+    var sw=el('div','sw');sw.appendChild(el('div','eyebrow','Consulting portfolio'));sw.appendChild(el('h3',null,'Selected Consulting Work'));
+    S.CONSULTING_GROUPS.forEach(function(g){
+      var items=S.CONSULTING.filter(function(p){return p.group===g.label&&p.status!=='coming'});
+      if(!items.length)return;
+      var kg=el('div','kg');kg.appendChild(el('h3',null,g.label));kg.appendChild(el('p','kb',g.blurb));
+      var tiles=el('div','tiles');items.forEach(function(p){tiles.appendChild(makeTile(p))});kg.appendChild(tiles);sw.appendChild(kg);
+    });
+    panel.appendChild(sw);
   }
   function renderCreative(panel){
     var sw=el('div','sw');sw.id='selectedWork';
@@ -705,7 +727,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     if(p.thumbnail){var im=el('img');im.src=p.thumbnail;im.alt='';im.loading='lazy';if(p.fit)im.style.objectPosition=p.fit;th.appendChild(im)}else th.textContent='Coming soon';
     if(start&&start.indexOf(p.id)>-1)th.appendChild(el('span','flag','Start here'));
     var bd=el('div','bd');
-    bd.appendChild(el('div','meta',p.company_or_project));bd.appendChild(el('h3',null,p.title));
+    bd.appendChild(el('div','meta',p.focus||p.company_or_project));bd.appendChild(el('h3',null,p.title));
     bd.appendChild(el('p',null,p.short_description));bd.appendChild(el('span','fmt',p.format));
     t.appendChild(th);t.appendChild(bd);
     t.addEventListener('click',function(){openWork(p)});
@@ -741,7 +763,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     if(p.status==='coming'||!p.preview_url){pv.appendChild(el('div','soon','Case study coming soon'))}
     else{
       var w=el('div','pv');
-      if(/\.pdf(\?|$)/i.test(p.preview_url)){var f=el('iframe');f.src=p.preview_url;f.title=p.title;w.appendChild(f)}
+      if(p.pages&&p.pages.length){
+        var pg=0,im0=el('img'),cap=el('div','pcap'),cnt=el('span','pcnt'),bar=el('div','pbar');
+        function showPage(i){pg=(i+p.pages.length)%p.pages.length;im0.src=p.pages[pg].src;im0.alt=p.title+', page '+(pg+1);cap.textContent=p.pages[pg].caption||'';cnt.textContent=(pg+1)+' / '+p.pages.length}
+        var pv0=el('button','pnav','‹');pv0.type='button';pv0.setAttribute('aria-label','Previous page');pv0.addEventListener('click',function(){showPage(pg-1)});
+        var nx0=el('button','pnav','›');nx0.type='button';nx0.setAttribute('aria-label','Next page');nx0.addEventListener('click',function(){showPage(pg+1)});
+        bar.appendChild(pv0);bar.appendChild(cnt);bar.appendChild(nx0);
+        w.appendChild(im0);w.appendChild(bar);w.appendChild(cap);showPage(0);
+      }
+      else if(/\.pdf(\?|$)/i.test(p.preview_url)){var f=el('iframe');f.src=p.preview_url;f.title=p.title;w.appendChild(f)}
       else{var im=el('img');im.src=p.preview_url;im.alt=p.title+' preview';w.appendChild(im)}
       pv.appendChild(w);
     }
