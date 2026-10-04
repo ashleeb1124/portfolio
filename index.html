@@ -661,7 +661,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     var m,src=u;
     if((m=u.match(/youtu\.be\/([\w-]+)|youtube\.com\/watch\?v=([\w-]+)/)))src='https://www.youtube.com/embed/'+(m[1]||m[2]);
     else if((m=u.match(/vimeo\.com\/(\d+)/)))src='https://player.vimeo.com/video/'+m[1];
-    if(/\.(mp4|webm)(\?|$)/i.test(u)){var vd=el('video');vd.controls=true;vd.preload='metadata';vd.src=u;if(C.VIDEO_POSTER)vd.poster=C.VIDEO_POSTER;v.appendChild(vd)}
+    if(/\.(mp4|webm)(\?|$)/i.test(u)){var vd=el('video');vd.controls=true;vd.playsInline=true;vd.preload='metadata';vd.setAttribute('aria-label','Introduction video');vd.src=u;if(C.VIDEO_POSTER)vd.poster=C.VIDEO_POSTER;v.appendChild(vd)}
     else{var f=el('iframe');f.src=src;f.title='Introduction video';f.allow='fullscreen; picture-in-picture';f.loading='lazy';v.appendChild(f)}
   })();
 

@@ -21,7 +21,7 @@ SITE.CONFIG = {
   /* VIDEO_URL — paste a YouTube, Vimeo or .mp4 link (or any embeddable URL).
      While empty, the branded "coming soon" thumbnail shows.
      VIDEO_POSTER — optional image shown as the thumbnail once a video exists. */
-  VIDEO_URL: '',
+  VIDEO_URL: 'assets/video/intro.mp4',
   VIDEO_POSTER: 'assets/images/video-poster.jpg',
 
   /* Snow Story Studios — tagline + descriptor shown in the studio section. */
