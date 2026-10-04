@@ -22,7 +22,7 @@ SITE.CONFIG = {
      While empty, the branded "coming soon" thumbnail shows.
      VIDEO_POSTER — optional image shown as the thumbnail once a video exists. */
   VIDEO_URL: '',
-  VIDEO_POSTER: '',
+  VIDEO_POSTER: 'assets/images/video-poster.jpg',
 
   /* Snow Story Studios — tagline + descriptor shown in the studio section. */
   SSS_TAGLINE: 'Your story, designed to be remembered.',
