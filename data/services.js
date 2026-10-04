@@ -1,5 +1,6 @@
 /* ==========================================================
-   SERVICES: what Ashlee offers (separate from the Work samples).
+   SERVICES: what Ashlee offers (separate from the leadership Work samples).
+   Branding & Design also shows the creative portfolio from data/creative.js.
    Each service shows one featured document. To change a document, swap
    `image` (and `thumb`). To add a service, copy an object below.
    ========================================================== */
@@ -8,9 +9,10 @@ window.SITE = window.SITE || {};
 SITE.SERVICES = [
   {
     id: 'branding', title: 'Branding & Design',
-    blurb: 'Brand, design and creative direction through Snow Story Studios.',
+    blurb: 'Creative services and a selected-work portfolio, through Snow Story Studios.',
     doc: 'Snow Story Studios Flyer',
     summary: 'Branding, design, creative direction and the materials that carry a brand into the world.',
+    capabilities: ['Brand Strategy', 'Identity', 'Presentations', 'Collateral', 'Digital', 'Creative Direction'],
     offerings: ['Brand strategy', 'Visual identity', 'Creative direction', 'Marketing collateral', 'Presentations', 'Digital assets', 'Brand systems', 'Logo and product design / packaging', 'Event design and branding'],
     image: 'assets/work/consulting-services.jpg',
     alt: 'Snow Story Studios services flyer: brand strategy, identity, collateral, operations and people services for growing businesses.'

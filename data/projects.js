@@ -4,7 +4,7 @@
    No HTML to touch.
 
    Fields
-     id, title, category, career_lane ('ops' | 'people' | 'transform' | 'brand', one or many),
+     id, title, category, career_lane ('ops' | 'people' | 'transform', one or many). Creative work lives in data/creative.js,
      company_or_project, thumbnail, short_description, problem, what_i_built,
      my_role, tools_used[], outcome, file_url (download/open), preview_url
      (image, PDF or embeddable URL), featured, tags[], year, format,
@@ -20,14 +20,11 @@ window.SITE = window.SITE || {};
 
 SITE.FILTERS = [
   { id: 'all', label: 'All' },
-  { id: 'sss', label: 'Snow Story Studios', co: 'Snow Story Studios' },
   { id: 'ops', label: 'Business Operations', lane: 'ops' },
   { id: 'people', label: 'People + HR', lane: 'people' },
   { id: 'transform', label: 'Systems + Transformation', lane: 'transform' },
-  { id: 'brand', label: 'Brand + Design', lane: 'brand' },
   { id: 'dashboard', label: 'Dashboards + Data', tag: 'dashboard' },
   { id: 'writing', label: 'Writing', tag: 'writing' },
-  { id: 'presentation', label: 'Presentations', tag: 'presentation' },
   { id: 'systems', label: 'Systems + Process', tag: 'systems' },
   { id: 'healthcare', label: 'Healthcare', tag: 'healthcare' },
   { id: 'energy', label: 'Energy + Infrastructure', tag: 'energy' },
@@ -74,58 +71,6 @@ SITE.PROJECTS = [
     outcome: 'Growth from ~5 Florida contracts to ~40 concurrent Southeast projects, with timelines about 25% faster.',
     file_url: 'assets/work/sec-duke-bartow-workflow.jpg', preview_url: 'assets/work/sec-duke-bartow-workflow.jpg',
     featured: true, tags: ['energy', 'systems', 'process', 'dashboard'], year: '', format: 'Process map · Image', status: 'live'
-  },
-  {
-    id: 'everbloom-care-continuum', title: 'Investor Deck: The Care Model', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-care-continuum.jpg',
-    short_description: 'One continuum across residential, PHP, IOP and outpatient care for a new women’s behavioral health program.',
-    problem: 'A new behavioral health program had to explain four levels of care to investors in one clear picture.',
-    what_i_built: 'A care-continuum slide that connects residential, PHP, IOP and outpatient care into one story, inside a full investor presentation system.',
-    my_role: 'Business storytelling, deck architecture and visual design.',
-    tools_used: ['Presentation design', 'Brand system', 'Business storytelling'],
-    outcome: 'A clear, investor-ready explanation of the care model.',
-    file_url: 'assets/work/everbloom-care-continuum.jpg', preview_url: 'assets/work/everbloom-care-continuum.jpg',
-    featured: true, tags: ['presentation', 'healthcare'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
-    id: 'everbloom-disciplines', title: 'Investor Deck: Operating Disciplines', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-disciplines.jpg',
-    short_description: 'Governance, utilization, revenue cycle, outcomes and cost control built into the model from day one.',
-    problem: 'Investors back operators who can show control, not just a good idea.',
-    what_i_built: 'A slide that lays out governance, utilization, revenue cycle, outcomes and cost control as disciplines designed in from day one.',
-    my_role: 'Operating-model content and presentation design.',
-    tools_used: ['Presentation design', 'Operating model design'],
-    outcome: 'The operating model, visible at a glance.',
-    file_url: 'assets/work/everbloom-disciplines.jpg', preview_url: 'assets/work/everbloom-disciplines.jpg',
-    featured: false, tags: ['presentation', 'healthcare', 'systems'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
-    id: 'everbloom-accreditation', title: 'Investor Deck: Accreditation Plan', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-accreditation.jpg',
-    short_description: 'A 14-month path to Joint Commission or CARF accreditation, with budget and payer checkpoints.',
-    problem: 'Accreditation is a long road with money and payer milestones attached.',
-    what_i_built: 'A 14-month accreditation roadmap with budget and payer checkpoints, designed to be read in one pass.',
-    my_role: 'Planning content and presentation design.',
-    tools_used: ['Presentation design', 'Project planning'],
-    outcome: 'A timeline an investor can follow and hold the team to.',
-    file_url: 'assets/work/everbloom-accreditation.jpg', preview_url: 'assets/work/everbloom-accreditation.jpg',
-    featured: false, tags: ['presentation', 'healthcare', 'process'], year: '', format: 'Investor deck · Slide', status: 'live'
-  },
-  {
-    id: 'everbloom-governance', title: 'Investor Deck: Outcomes + Governance', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'EverBloom · Snow Story Studios',
-    thumbnail: 'assets/work/thumb-everbloom-governance.jpg',
-    short_description: 'Clinical outcomes, governance cadence and operating targets investors can track.',
-    problem: 'Investors want targets they can track after the check clears.',
-    what_i_built: 'A slide pairing clinical outcomes with a governance cadence and operating targets.',
-    my_role: 'Governance content and presentation design.',
-    tools_used: ['Presentation design', 'Operating cadence'],
-    outcome: 'Targets and cadence stated up front.',
-    file_url: 'assets/work/everbloom-governance.jpg', preview_url: 'assets/work/everbloom-governance.jpg',
-    featured: false, tags: ['presentation', 'healthcare'], year: '', format: 'Investor deck · Slide', status: 'live'
   },
 
 
@@ -196,7 +141,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'ca-hr-policy-toolkit', title: "California HR Operations + Employee Handbook Toolkit", category: 'People + HR',
-    career_lane: ['people', 'brand'], company_or_project: "Illustrative sample \u00b7 California employers",
+    career_lane: ['people'], company_or_project: "Illustrative sample \u00b7 California employers",
     thumbnail: 'assets/work/thumb-ca-hr-policy-toolkit.jpg',
     short_description: "An HR roadmap paired with a California-focused employee handbook and policy toolkit.",
     problem: "Employers need compliant, readable policies, not a binder nobody opens.",
@@ -221,21 +166,8 @@ SITE.PROJECTS = [
     featured: false, tags: ['systems', 'process'], year: '', format: "Playbook \u00b7 Image", status: 'live'
   },
   {
-    id: 'handbook-before-after', title: "Employee Handbook Redesign: Before + After", category: 'People + HR',
-    career_lane: ['people', 'brand'], company_or_project: "Illustrative sample \u00b7 Rivermark",
-    thumbnail: 'assets/work/thumb-handbook-before-after.jpg',
-    short_description: "A PTO policy rewritten and redesigned: from a dense page of text to something employees will read.",
-    problem: "Most handbooks are written for lawyers, so employees skip them.",
-    what_i_built: "A side-by-side redesign of the same policy: plain-language rewrite, clear accrual table, icons and examples, in a consistent branded layout.",
-    my_role: "Policy writer and designer.",
-    tools_used: ["Policy writing", "Canva", "Brand system"],
-    outcome: "The same policy, clearer to read and easier to follow.",
-    file_url: 'assets/work/handbook-before-after.jpg', preview_url: 'assets/work/handbook-before-after.jpg',
-    featured: false, tags: ['writing', 'presentation'], year: '', format: "Handbook design \u00b7 Image", status: 'live'
-  },
-  {
     id: 'onboarding-kit', title: "New-Hire Onboarding Kit", category: 'People + HR',
-    career_lane: ['people', 'brand'], company_or_project: "Illustrative sample \u00b7 Northline Works",
+    career_lane: ['people'], company_or_project: "Illustrative sample \u00b7 Northline Works",
     thumbnail: 'assets/work/thumb-onboarding-kit.jpg',
     short_description: "A welcome guide, first-week checklist and 30/60/90 plan for a smooth employee start.",
     problem: "New hires learn the company from whoever sits next to them.",
@@ -246,137 +178,7 @@ SITE.PROJECTS = [
     file_url: 'assets/work/onboarding-kit.jpg', preview_url: 'assets/work/onboarding-kit.jpg',
     featured: false, tags: ['writing', 'process'], year: '', format: "Onboarding kit \u00b7 Image", status: 'live'
   },
-  {
-    id: 'everwell-brand-launch', title: "Everwell: Brand Launch Portfolio", category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: "Illustrative sample \u00b7 Snow Story Studios",
-    thumbnail: 'assets/work/thumb-everwell-brand-launch.jpg',
-    short_description: "A complete brand launch for a wellness company: identity, collateral, social, guidelines and launch materials.",
-    problem: "A new business has to look credible and consistent from the first day.",
-    what_i_built: "Brand strategy, logo and color system, business collateral, digital and social assets, brand guidelines and a launch presentation.",
-    my_role: "Brand strategy and creative direction.",
-    tools_used: ["Brand strategy", "Visual identity", "Canva"],
-    outcome: "A concept brand system, from idea to market-ready materials.",
-    file_url: 'assets/work/everwell-brand-launch.jpg', preview_url: 'assets/work/everwell-brand-launch.jpg',
-    featured: false, tags: ['presentation'], year: '', format: "Brand portfolio \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'tidewell-hospitality-brand', title: "Tidewell: Boutique Hotel Brand System", category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: "Illustrative sample \u00b7 Snow Story Studios",
-    thumbnail: 'assets/work/thumb-tidewell-hospitality-brand.jpg',
-    short_description: "Identity, signage, key cards, web and collateral for a coastal boutique hotel.",
-    problem: "A hospitality brand has to feel the same on a website, a key card and a lobby wall.",
-    what_i_built: "Logo and wordmark, palette and type, welcome collateral, wayfinding signage, mobile web and merchandise.",
-    my_role: "Brand and creative direction.",
-    tools_used: ["Visual identity", "Signage", "Canva"],
-    outcome: "A concept identity that carries across digital and physical touchpoints.",
-    file_url: 'assets/work/tidewell-hospitality-brand.jpg', preview_url: 'assets/work/tidewell-hospitality-brand.jpg',
-    featured: false, tags: ['presentation'], year: '', format: "Brand system \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'harbourlight-brochure', title: "Harbourlight: Healthcare Brochure", category: 'Brand + Design',
-    career_lane: ['brand', 'ops'], company_or_project: "Illustrative sample \u00b7 healthcare collateral",
-    thumbnail: 'assets/work/thumb-harbourlight-brochure.jpg',
-    short_description: "A tri-fold referral brochure for a psychological assessment practice.",
-    problem: "Referring providers need to understand services, process and how to refer in one glance.",
-    what_i_built: "A print and digital tri-fold with services, assessment packages, patient journey and referral information, in a calm, clinical-but-warm brand.",
-    my_role: "Brand and layout design.",
-    tools_used: ["Healthcare collateral", "Print design", "Canva"],
-    outcome: "Collateral that makes the referral decision easier.",
-    file_url: 'assets/work/harbourlight-brochure.jpg', preview_url: 'assets/work/harbourlight-brochure.jpg',
-    featured: false, tags: ['presentation', 'healthcare'], year: '', format: "Brochure \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'daily-bean-brand', title: "Daily Bean: Coffee Brand + Packaging", category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: "Illustrative sample \u00b7 Snow Story Studios",
-    thumbnail: 'assets/work/thumb-daily-bean-brand.jpg',
-    short_description: "Identity, packaging, cups, menu, loyalty card and social for a coffee company.",
-    problem: "A food-and-beverage brand lives on packaging and in the customer\u2019s hand.",
-    what_i_built: "Logo system, palette and type, bags and cups, menu, loyalty card, social templates and a mobile experience.",
-    my_role: "Brand strategy and design.",
-    tools_used: ["Packaging design", "Visual identity", "Canva"],
-    outcome: "A concept brand with a consistent look from bag to phone screen.",
-    file_url: 'assets/work/daily-bean-brand.jpg', preview_url: 'assets/work/daily-bean-brand.jpg',
-    featured: false, tags: ['presentation'], year: '', format: "Brand + packaging \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'harvest-and-hue-brand', title: "Harvest & Hue: Food Brand + Packaging", category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: "Illustrative sample \u00b7 Snow Story Studios",
-    thumbnail: 'assets/work/thumb-harvest-and-hue-brand.jpg',
-    short_description: "Logo, packaging, photography direction and social for a better-for-you food brand.",
-    problem: "A new food brand has to stand out on a shelf and a feed.",
-    what_i_built: "Logo and palette, jar and pouch packaging, labels, mobile and social layouts and photography direction.",
-    my_role: "Brand strategy and design.",
-    tools_used: ["Packaging design", "Visual identity", "Canva"],
-    outcome: "A concept brand built for shelf and screen.",
-    file_url: 'assets/work/harvest-and-hue-brand.jpg', preview_url: 'assets/work/harvest-and-hue-brand.jpg',
-    featured: false, tags: ['presentation'], year: '', format: "Brand + packaging \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'northline-logistics-brand', title: "Northline Logistics: Brand Strategy + Identity", category: 'Brand + Design',
-    career_lane: ['brand', 'ops'], company_or_project: "Illustrative sample \u00b7 Snow Story Studios",
-    thumbnail: 'assets/work/thumb-northline-logistics-brand.jpg',
-    short_description: "Strategy snapshot, audience and messaging, brand applications and a visual identity system for a freight company.",
-    problem: "A logistics company has to sound dependable and look modern in a crowded category.",
-    what_i_built: "A brand strategy snapshot, audience and messaging, identity system and applications across fleet, digital and collateral.",
-    my_role: "Brand strategy and design.",
-    tools_used: ["Brand strategy", "Visual identity", "Canva"],
-    outcome: "A concept identity with a clear message and a consistent system.",
-    file_url: 'assets/work/northline-logistics-brand.jpg', preview_url: 'assets/work/northline-logistics-brand.jpg',
-    featured: false, tags: ['presentation'], year: '', format: "Brand strategy \u00b7 Image", status: 'live'
-  },
 
-  {
-    id: 'resume-coo-sample', title: "Executive Resume Design: COO", category: 'Brand + Design',
-    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
-    thumbnail: 'assets/work/thumb-resume-coo-sample.jpg',
-    short_description: "A two-column executive resume with a profile, key skills, experience and a bold photo-and-landscape header.",
-    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
-    what_i_built: "An executive resume layout: positioning summary, skills sidebar, role-by-role results and credentials, in a palette that matches a personal brand.",
-    my_role: 'Resume writing and design.',
-    tools_used: ['Canva', 'Resume writing', 'Brand system'],
-    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
-    file_url: 'assets/work/resume-coo-sample.jpg', preview_url: 'assets/work/resume-coo-sample.jpg',
-    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'resume-hr-director-sample', title: "Resume Design: HR Director (Manufacturing)", category: 'Brand + Design',
-    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
-    thumbnail: 'assets/work/thumb-resume-hr-director-sample.jpg',
-    short_description: "An HR leadership resume with a headline tagline, quantified achievements and certifications.",
-    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
-    what_i_built: "A landscape resume with a branded header, experience with measurable results, a key-achievements panel and credentials.",
-    my_role: 'Resume writing and design.',
-    tools_used: ['Canva', 'Resume writing', 'Brand system'],
-    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
-    file_url: 'assets/work/resume-hr-director-sample.jpg', preview_url: 'assets/work/resume-hr-director-sample.jpg',
-    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'resume-systems-engineer-sample', title: "Resume Design: Systems Engineer", category: 'Brand + Design',
-    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
-    thumbnail: 'assets/work/thumb-resume-systems-engineer-sample.jpg',
-    short_description: "A technical resume with a dark theme, skills visualization and tools list.",
-    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
-    what_i_built: "A resume that shows experience, skills and tooling at a glance, with a distinct visual identity for a technical candidate.",
-    my_role: 'Resume writing and design.',
-    tools_used: ['Canva', 'Resume writing', 'Brand system'],
-    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
-    file_url: 'assets/work/resume-systems-engineer-sample.jpg', preview_url: 'assets/work/resume-systems-engineer-sample.jpg',
-    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 Image", status: 'live'
-  },
-  {
-    id: 'resume-entry-level-sample', title: "Resume Design: Entry-Level Apprentice", category: 'Brand + Design',
-    career_lane: ['brand', 'people'], company_or_project: 'Illustrative sample · fictional candidate',
-    thumbnail: 'assets/work/thumb-resume-entry-level-sample.jpg',
-    short_description: "A one-page apprentice resume that leads with momentum, skills and quick-scan achievements.",
-    problem: 'Most resumes bury the story. A hiring manager gives them seconds.',
-    what_i_built: "A one-page resume for an early-career candidate: profile, core strengths, relevant experience and selected achievements.",
-    my_role: 'Resume writing and design.',
-    tools_used: ['Canva', 'Resume writing', 'Brand system'],
-    outcome: 'A resume that reads quickly and makes the strongest points first. The candidate is fictional.',
-    file_url: 'assets/work/resume-entry-level-sample.pdf', preview_url: 'assets/work/resume-entry-level-sample.pdf',
-    featured: false, tags: ['presentation', 'writing'], year: '', format: "Resume \u00b7 PDF", status: 'live'
-  },
 
   /* ---------- COMING SOON (placeholders: edit in place when the sample is ready) ---------- */
   {
@@ -426,17 +228,8 @@ SITE.PROJECTS = [
     outcome: '', file_url: '', preview_url: '', featured: false, tags: ['ai', 'systems', 'process'], year: '', format: 'Workflow', status: 'coming'
   },
   {
-    id: 'brand-identity-systems', title: 'Brand Identity Systems', category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: 'Snow Story Studios',
-    thumbnail: '', short_description: 'Logos, palettes, type and guidelines, built to be used by people who aren’t designers.',
-    problem: 'A brand without a system gets rebuilt every time someone makes a flyer.',
-    what_i_built: 'Identity systems: logo, palette, type, layout rules and starter templates.',
-    my_role: 'Strategy and design.', tools_used: ['Figma', 'Canva', 'Adobe Acrobat'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['presentation'], year: '', format: 'PDF · Brand guide', status: 'coming'
-  },
-  {
     id: 'executive-brief-samples', title: 'Executive Briefs + Business Cases', category: 'Writing',
-    career_lane: ['ops', 'brand'], company_or_project: 'Writing + thinking',
+    career_lane: ['ops'], company_or_project: 'Writing + thinking',
     thumbnail: '', short_description: 'Decisions on one page, with the numbers underneath.',
     problem: 'Executives decide quickly. The case has to be short and survive scrutiny.',
     what_i_built: 'Briefs and business cases: recommendation first, evidence behind it, risks named.',

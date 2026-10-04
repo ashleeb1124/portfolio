@@ -37,6 +37,12 @@ SAMPLES=(
   "daily-bean-brand|Branding Work/daily bean 1st.png"
   "harvest-and-hue-brand|Branding Work/Harvest and Hue 1.png"
   "northline-logistics-brand|Branding Work/Logistics_Sample.png"
+  "lumen-and-co-brand|Branding Work/lumen 1.png"
+  "brightpath-dental-brand|Branding Work/Bright Dental_Sample.png"
+  "round-number-brand|Branding Work/Finance Brand Sample.png"
+  "stackwise-brand-system|PDF:Branding Work/Stackwise Sample.pdf"
+  "meridian-statistics-logo|Meridian Stat Group.png"
+  "halstead-vane-training-deck|Halstead_Vane_Training_Deck_Template_montage.png"
 )
 
 for line in "${SAMPLES[@]}"; do

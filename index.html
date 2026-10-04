@@ -139,15 +139,17 @@ em{font-style:italic;color:var(--terra)}
 .svc .cap{margin-top:8px;font-family:var(--label);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:600}
 .svc ul{margin:14px 0 0 18px;font-size:15px}
 .svc li{margin:5px 0}
+.stag{font-family:var(--script);font-size:clamp(32px,4.4vw,48px);line-height:1.1;color:var(--teal);margin:2px 0 6px}
+.sdesc{color:var(--muted);max-width:720px}
+.chipline{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chipline span{border:1px solid var(--teal);border-radius:99px;padding:4px 14px;font-family:var(--label);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.sw{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.sw h3{font-size:30px}
+.sw .filters{margin-top:12px}
+.xref{grid-column:1/-1;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:26px}
+.xref h3{font-size:26px;margin-bottom:6px}
+.xref p{color:var(--muted);max-width:640px;margin-bottom:16px}
 .svc .acts{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-/* studio */
-.sss{background:var(--teal-d);color:var(--ivory)}
-.sss h2{color:var(--ivory)}
-.sss .tag{font-family:var(--script);font-size:clamp(36px,5vw,58px);color:var(--gold);line-height:1.1;margin:6px 0 10px}
-.sss .lede{color:var(--mist)}
-.sss .acts{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
-.sss .svc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.sss .svc span{border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:4px 14px;font-size:13px}
 /* results */
 .results{padding:64px 0;background:var(--ivory2)}
 .mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:28px}
@@ -418,20 +420,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <div class="video" id="video" aria-label="Introduction video"></div>
   </div>
 </section>
-
-<section class="sss" id="studio">
-  <div class="wrap">
-    <div class="eyebrow gold">Snow Story Studios</div>
-    <div class="tag" id="sssTag"></div>
-    <p class="lede" id="sssDesc"></p>
-    <div class="svc" id="sssSvc"></div>
-    <div class="acts">
-      <button class="btn gold" id="sssWork" type="button">See studio work</button>
-      <a class="btn ghost" href="#contact" data-book>Start a brand project</a>
-    </div>
-  </div>
-</section>
-
 <section id="services">
   <div class="wrap">
     <div class="eyebrow">Services</div>
@@ -539,6 +527,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <script src="data/career.js"></script>
 <script src="data/systems.js"></script>
 <script src="data/services.js"></script>
+<script src="data/creative.js"></script>
 <script>
 (function(){
   'use strict';
@@ -625,7 +614,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   $('reset').addEventListener('click',function(){setLens(null,true)});
 
   /* ---------- services ---------- */
-  var svcSel=S.SERVICES[0].id;
+  var svcSel=S.SERVICES[0].id,svcGroup='all';
   function renderServices(){
     var grid=$('svcCats'),panel=$('svcPanel');clear(grid);
     S.SERVICES.forEach(function(v){
@@ -635,22 +624,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     });
     var v=S.SERVICES.filter(function(x){return x.id===svcSel})[0]||S.SERVICES[0];
     clear(panel);
+    if(v.id==='branding'){
+      panel.appendChild(el('div','eyebrow','Snow Story Studios'));
+      panel.appendChild(el('div','stag',C.SSS_TAGLINE));
+      panel.appendChild(el('p','sdesc',C.SSS_DESCRIPTOR));
+      var cl=el('div','chipline');(v.capabilities||[]).forEach(function(c){cl.appendChild(el('span',null,c))});panel.appendChild(cl);
+    }
     var w=el('div','svc'),left=el('div'),a=el('a','doc');a.href=v.image;a.target='_blank';a.rel='noopener';
+    w.style.marginTop='24px';
     var im=el('img');im.src=v.image;im.alt=v.alt;im.loading='lazy';a.appendChild(im);left.appendChild(a);left.appendChild(el('div','cap',v.doc));
     var r=el('div');r.appendChild(el('h3',null,v.title));r.appendChild(el('p','bl',v.summary));
     var ul=el('ul');v.offerings.forEach(function(o){ul.appendChild(el('li',null,o))});r.appendChild(ul);
     var acts=el('div','acts'),t=el('a','btn','Discuss a project');t.href=bookHref();if(C.BOOKING_URL){t.target='_blank';t.rel='noopener'}acts.appendChild(t);
     var f=el('a','btn ghost','View full size');f.href=v.image;f.target='_blank';f.rel='noopener';acts.appendChild(f);r.appendChild(acts);
     w.appendChild(left);w.appendChild(r);panel.appendChild(w);
+    if(v.id==='branding')renderCreative(panel);
+  }
+  function renderCreative(panel){
+    var sw=el('div','sw');sw.id='selectedWork';
+    sw.appendChild(el('div','eyebrow','Branding & Design portfolio'));sw.appendChild(el('h3',null,'Selected Work'));
+    var fl=el('div','filters');fl.setAttribute('role','group');fl.setAttribute('aria-label','Filter selected work');
+    S.CREATIVE_GROUPS.forEach(function(g){
+      var b=el('button','chip',g.label);b.type='button';b.setAttribute('aria-pressed',String(svcGroup===g.id));
+      b.addEventListener('click',function(){svcGroup=g.id;renderServices()});fl.appendChild(b);
+    });
+    sw.appendChild(fl);
+    var tiles=el('div','tiles');
+    S.CREATIVE.filter(function(p){return p.status!=='coming'&&(svcGroup==='all'||p.group===svcGroup)}).forEach(function(p){tiles.appendChild(makeTile(p))});
+    sw.appendChild(tiles);panel.appendChild(sw);
   }
   function selectService(id){svcSel=id;renderServices()}
   fold(document.querySelectorAll('[data-svc]'),function(a){a.addEventListener('click',function(){selectService(a.dataset.svc)})});
+  $('lensWork').addEventListener('click',function(){if(this.dataset.svc)selectService(this.dataset.svc)});
   renderServices();
-
-  /* ---------- studio ---------- */
-  $('sssTag').textContent=C.SSS_TAGLINE;$('sssDesc').textContent=C.SSS_DESCRIPTOR;
-  ['Brand strategy','Visual identity','Logo + packaging','Investor decks','Marketing collateral','Event design','Websites'].forEach(function(t){$('sssSvc').appendChild(el('span',null,t))});
-  $('sssWork').addEventListener('click',function(){filter='sss';renderFilters();renderTiles();$('built').scrollIntoView({behavior:reduce?'auto':'smooth'})});
 
   /* ---------- results ---------- */
   var metricNodes=[];
@@ -693,8 +699,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       b.addEventListener('click',function(){filter=f.id;renderFilters();renderTiles()});box.appendChild(b);
     });
   }
+  function makeTile(p,start){
+    var t=el('button','tile');t.type='button';
+    var th=el('div','th'+(p.thumbnail?'':' ph'));
+    if(p.thumbnail){var im=el('img');im.src=p.thumbnail;im.alt='';im.loading='lazy';if(p.fit)im.style.objectPosition=p.fit;th.appendChild(im)}else th.textContent='Coming soon';
+    if(start&&start.indexOf(p.id)>-1)th.appendChild(el('span','flag','Start here'));
+    var bd=el('div','bd');
+    bd.appendChild(el('div','meta',p.company_or_project));bd.appendChild(el('h3',null,p.title));
+    bd.appendChild(el('p',null,p.short_description));bd.appendChild(el('span','fmt',p.format));
+    t.appendChild(th);t.appendChild(bd);
+    t.addEventListener('click',function(){openWork(p)});
+    return t;
+  }
   function renderTiles(){
     var box=$('tiles');clear(box);
+    if(lens==='brand'){
+      /* creative work lives under Services > Branding & Design */
+      $('noTiles').hidden=true;
+      var x=el('div','xref');x.appendChild(el('h3',null,'The creative work has its own home.'));
+      x.appendChild(el('p',null,'Brand, design and creative direction live in Services → Branding & Design: identity systems, decks, collateral and more.'));
+      var go=el('a','btn','See the Branding & Design portfolio');go.href='#services';go.addEventListener('click',function(){selectService('branding')});
+      x.appendChild(go);box.appendChild(x);return;
+    }
     var start=lens?L[lens].startHere:[];
     var list=S.PROJECTS.filter(function(p){return filterMatch(p,filter)}).map(function(p,i){return {p:p,i:i}});
     list.sort(function(a,b){
@@ -702,17 +728,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       return w(a)-w(b)||a.i-b.i;
     });
     $('noTiles').hidden=list.length>0;
-    list.forEach(function(x){
-      var p=x.p,t=el('button','tile');t.type='button';
-      var th=el('div','th'+(p.thumbnail?'':' ph'));
-      if(p.thumbnail){var im=el('img');im.src=p.thumbnail;im.alt='';im.loading='lazy';th.appendChild(im)}else th.textContent='Coming soon';
-      if(start.indexOf(p.id)>-1)th.appendChild(el('span','flag','Start here'));
-      var bd=el('div','bd');
-      bd.appendChild(el('div','meta',p.company_or_project));bd.appendChild(el('h3',null,p.title));
-      bd.appendChild(el('p',null,p.short_description));bd.appendChild(el('span','fmt',p.format));
-      t.appendChild(th);t.appendChild(bd);
-      t.addEventListener('click',function(){openWork(p)});box.appendChild(t);
-    });
+    list.forEach(function(x){box.appendChild(makeTile(x.p,start))});
   }
   function fact(dl,k,v){if(!v)return;dl.appendChild(el('dt',null,k));dl.appendChild(el('dd',null,v))}
   function openWork(p){
@@ -836,7 +852,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       $('contactTitle').appendChild(document.createTextNode(l.ctaTalk.replace(/ Let’s talk\.$/,'')+' '));
       $('contactTitle').appendChild(el('em',null,'Let’s talk.'));
       $('storyLede').textContent='Showing the '+l.short.toLowerCase()+' roles first; the rest are dimmed, not hidden.';
-      filter=id;
+      filter=id==='brand'?'all':id;
+      var lw=$('lensWork');if(id==='brand'){lw.href='#services';lw.dataset.svc='branding'}else{lw.href='#built';delete lw.dataset.svc}
     }else{
       filter='all';
       $('contactTitle').textContent='The right next move is probably ';
