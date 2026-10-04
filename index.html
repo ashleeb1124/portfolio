@@ -177,6 +177,13 @@ em{font-style:italic;color:var(--terra)}
 .pcnt{font-family:var(--label);font-size:13px;letter-spacing:.14em;color:var(--muted);min-width:60px;text-align:center}
 .pcap{padding:0 16px 14px;text-align:center;font-size:14px;color:var(--muted);background:var(--card)}
 .sw .sub-h{font-family:var(--serif);font-size:24px;color:var(--teal);margin:26px 0 0}
+.actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:18px}
+.alink{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);text-decoration:none;font-family:var(--label);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1.2;text-align:center;color:var(--teal-d);transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s}
+.alink svg{flex:none;width:19px;height:19px;fill:none;stroke:var(--terra);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.alink:hover{background:var(--teal);border-color:var(--teal);color:var(--ivory);transform:translateY(-2px);box-shadow:0 8px 18px rgba(18,73,90,.16)}
+.alink:hover svg{stroke:var(--gold)}
+@media (max-width:1040px){.actions{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:620px){.actions{grid-template-columns:1fr}.alink{justify-content:flex-start;padding-left:20px;min-height:54px}}
 .xref{grid-column:1/-1;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:26px}
 .xref h3{font-size:26px;margin-bottom:6px}
 .xref p{color:var(--muted);max-width:640px;margin-bottom:16px}
@@ -445,6 +452,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <div class="eyebrow">In my own words</div>
     <h2>A short <em>introduction.</em></h2>
     <div class="video" id="video" aria-label="Introduction video"></div>
+    <div class="actions" id="introActions" role="group" aria-label="Ways to connect"></div>
   </div>
 </section>
 
@@ -649,6 +657,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   }
   fold(document.querySelectorAll('[data-book]'),wireBook);
   if(isCal())loadCal(function(){});
+
+  /* ---------- action links under the video ---------- */
+  (function(){
+    var box=$('introActions'),digits=C.PHONE.replace(/\D/g,''),intl='+1'+digits;
+    var ICON={
+      cal:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
+      mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+      text:'<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+      li:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13.2a3 3 0 0 1 6 0V17"/>',
+      wa:'<path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2.2-1-1 .9c-1-.4-2-1.4-2.4-2.4l.9-1-1-2.2z"/>'
+    };
+    var items=[
+      {t:'Schedule a Chat',i:'cal',h:bookHref(),cal:true,ext:!!C.BOOKING_URL},
+      {t:'Start a Conversation',i:'mail',h:'mailto:'+C.EMAIL},
+      {t:'Send a Text',i:'text',h:'sms:'+intl},
+      {t:'Find Me on LinkedIn',i:'li',h:C.LINKEDIN_URL,ext:true},
+      {t:'Message Me on WhatsApp',i:'wa',h:'https://wa.me/'+intl.replace('+',''),ext:true}
+    ];
+    items.forEach(function(x){
+      var a=el('a','alink');a.href=x.h;
+      if(x.ext){a.target='_blank';a.rel='noopener'}
+      var ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.innerHTML=ICON[x.i];
+      a.appendChild(svg);a.appendChild(el('span',null,x.t));
+      if(x.cal)wireBook(a);
+      box.appendChild(a);
+    });
+  })();
 
   /* ---------- video ---------- */
   (function(){
