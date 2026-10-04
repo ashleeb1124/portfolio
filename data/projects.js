@@ -253,17 +253,6 @@ SITE.PROJECTS = [
     featured: false, tags: ['dashboard', 'process', 'healthcare'], year: '', format: 'Scorecard · Image', status: 'live'
   },
   {
-    kit: 'HR / People Operations Tools',
-    id: 'comp-framework', title: 'Compensation + Job Architecture Framework', category: 'People + HR',
-    career_lane: ['people'], company_or_project: 'Collabera · Spiro Senior',
-    thumbnail: '', short_description: 'Pay bands, levels and benchmarking that hold up to a hard question.',
-    problem: 'Pay set one hire at a time creates inequity and cost nobody can explain.',
-    what_i_built: 'A job architecture and compensation framework with benchmarking and clear bands.',
-    my_role: 'Framework designer.', tools_used: ['Advanced Excel', 'Salary benchmarking'],
-    outcome: 'Executive compensation benchmarking at Collabera improved related costs by about 45%.',
-    file_url: '', preview_url: '', featured: false, tags: ['systems'], year: '', format: 'XLSX · Framework', status: 'coming'
-  },
-  {
     kit: 'Workflow & Systems Design',
     id: 'custom-lms-healthcare', title: 'Custom-Built LMS for Healthcare', category: 'Systems + Process',
     career_lane: ['people', 'ops', 'transform'], company_or_project: 'The Wave International · illustrative figures',
@@ -276,5 +265,5 @@ SITE.PROJECTS = [
     outcome: 'One place where staff see what is required and what is due, and where leaders see compliance at a glance. Figures shown are illustrative.',
     file_url: 'assets/work/custom-lms-healthcare.jpg', preview_url: 'assets/work/custom-lms-healthcare.jpg',
     featured: false, tags: ['systems', 'healthcare', 'process'], year: '', format: 'Custom LMS · Image', status: 'live'
-  },
+  }
 ];

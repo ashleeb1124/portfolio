@@ -156,16 +156,6 @@ SITE.CREATIVE = [
   },
   {
     group: 'Brand Identity',
-    id: 'brand-identity-systems', title: 'Brand Identity Systems', category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: 'Snow Story Studios',
-    thumbnail: '', short_description: 'Logos, palettes, type and guidelines, built to be used by people who aren’t designers.',
-    problem: 'A brand without a system gets rebuilt every time someone makes a flyer.',
-    what_i_built: 'Identity systems: logo, palette, type, layout rules and starter templates.',
-    my_role: 'Strategy and design.', tools_used: ['Figma', 'Canva', 'Adobe Acrobat'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['presentation'], year: '', format: 'PDF · Brand guide', status: 'coming'
-  },
-  {
-    group: 'Brand Identity',
     id: 'lumen-and-co-brand', title: "Lumen & Co: Home Goods Brand System", category: 'Brand + Design',
     career_lane: ['brand'], company_or_project: "Illustrative sample \u00b7 Snow Story Studios",
     thumbnail: 'assets/work/thumb-lumen-and-co-brand.jpg',
