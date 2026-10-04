@@ -146,6 +146,13 @@ em{font-style:italic;color:var(--terra)}
 .sw{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
 .sw h3{font-size:30px}
 .sw .filters{margin-top:12px}
+.toolkits{background:var(--ivory2)}
+.toolkits .support{margin-top:12px;max-width:760px;color:var(--ink);font-size:16px}
+.kg{margin-top:38px}
+.kg h3{font-size:26px;padding-left:14px;border-left:3px solid var(--gold)}
+.kg .kb{margin:4px 0 0 17px;color:var(--muted);font-size:15px}
+.kg .tiles{margin-top:16px}
+.tile.dim{opacity:.45}
 .xref{grid-column:1/-1;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:26px}
 .xref h3{font-size:26px;margin-bottom:6px}
 .xref p{color:var(--muted);max-width:640px;margin-bottom:16px}
@@ -326,7 +333,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul id="menu">
-      <li><a href="#built">Work</a></li>
+      <li class="has-sub"><a href="#built">Work</a>
+        <div class="sub" role="group" aria-label="Work">
+          <a href="#built">Work Samples</a>
+          <a href="#toolkits">Systems &amp; Toolkits</a>
+        </div>
+      </li>
       <li><a href="#story">Career</a></li>
       <li><a href="#systems">Systems</a></li>
       <li><a href="#compliance">Compliance</a></li>
@@ -384,7 +396,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div class="quote" id="lensQuote"></div>
         <div class="roles" id="lensRoles"></div>
         <div class="ctas">
-          <a class="btn gold" href="#built" id="lensWork"></a>
+          <a class="btn gold" href="#toolkits" id="lensWork"></a>
           <a class="btn ghost" href="#contact" data-book id="lensTalk"></a>
           <a class="btn ghost" id="lensResume" href="#resumes"></a>
         </div>
@@ -412,12 +424,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <div class="eyebrow">Proof</div>
     <h2>Build. Own. <em>Deliver.</em></h2>
-    <p class="lede">Real deliverables, not claims. Open any tile for the problem, what I built, my role and the outcome. Figures on dashboards are illustrative where marked.</p>
-    <div class="filters" id="filters" role="group" aria-label="Filter work samples"></div>
+    <p class="lede">Case studies and results, with the problem, what I built, my role and the outcome. The tools behind the work live in Systems &amp; Toolkits, just below.</p>
+    
     <div class="tiles" id="tiles"></div>
     <p class="empty" id="noTiles" hidden>Nothing in this filter yet.</p>
 
     <div class="video" id="video" aria-label="Introduction video"></div>
+  </div>
+</section>
+
+<section class="toolkits" id="toolkits">
+  <div class="wrap">
+    <div class="eyebrow">How the work gets done</div>
+    <h2>Systems &amp; Toolkits</h2>
+    <p class="lede">A collection of the frameworks, dashboards, playbooks, checklists, workflows, and repeatable systems I’ve built, optimized, and used to turn strategy into day-to-day execution.</p>
+    <p class="support">These are the tools behind the work — the operating structures that help teams stay aligned, track performance, launch efficiently, improve processes, and scale with more consistency. Some were built from scratch, others were redesigned or optimized to solve specific operational challenges.</p>
+    <div class="filters" id="kitFilters" role="group" aria-label="Filter by type"></div>
+    <div id="kitGroups"></div>
   </div>
 </section>
 <section id="services">
@@ -693,7 +716,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     return d.lane?p.career_lane.indexOf(d.lane)>-1:p.tags.indexOf(d.tag)>-1;
   }
   function renderFilters(){
-    var box=$('filters');clear(box);
+    var box=$('filters');if(!box)return;clear(box);
     S.FILTERS.forEach(function(f){
       var b=el('button','chip',f.label);b.type='button';b.setAttribute('aria-pressed',String(filter===f.id));
       b.addEventListener('click',function(){filter=f.id;renderFilters();renderTiles()});box.appendChild(b);
@@ -711,6 +734,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     t.addEventListener('click',function(){openWork(p)});
     return t;
   }
+  var kitSel='all';
+  function renderKits(){
+    var cats=S.KIT_CATEGORIES.filter(function(c){return S.PROJECTS.some(function(p){return p.kit===c.label})});
+    var fl=$('kitFilters');clear(fl);
+    [{label:'All'}].concat(cats).forEach(function(c){
+      var id=c.label==='All'?'all':c.label,b=el('button','chip',c.label);b.type='button';b.setAttribute('aria-pressed',String(kitSel===id));
+      b.addEventListener('click',function(){kitSel=id;renderKits()});fl.appendChild(b);
+    });
+    var box=$('kitGroups');clear(box);
+    var start=lens&&L[lens]?L[lens].startHere:[];
+    cats.forEach(function(c){
+      if(kitSel!=='all'&&kitSel!==c.label)return;
+      var g=el('div','kg');g.appendChild(el('h3',null,c.label));g.appendChild(el('p','kb',c.blurb));
+      var tiles=el('div','tiles');
+      S.PROJECTS.filter(function(p){return p.kit===c.label}).sort(function(a,b){return (a.status==='live'?0:1)-(b.status==='live'?0:1)}).forEach(function(p){
+        var t=makeTile(p,start);
+        if(lens&&lens!=='brand'&&p.career_lane.indexOf(lens)<0)t.classList.add('dim');
+        tiles.appendChild(t);
+      });
+      g.appendChild(tiles);box.appendChild(g);
+    });
+  }
   function renderTiles(){
     var box=$('tiles');clear(box);
     if(lens==='brand'){
@@ -722,13 +767,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       x.appendChild(go);box.appendChild(x);return;
     }
     var start=lens?L[lens].startHere:[];
-    var list=S.PROJECTS.filter(function(p){return filterMatch(p,filter)}).map(function(p,i){return {p:p,i:i}});
+    var list=S.PROJECTS.filter(function(p){return !p.kit&&p.status!=='coming'&&filterMatch(p,filter)}).map(function(p,i){return {p:p,i:i}});
     list.sort(function(a,b){
       function w(x){var s=0;if(x.p.status==='live')s-=8;if(start.indexOf(x.p.id)>-1)s-=4;if(lens&&x.p.career_lane.indexOf(lens)>-1)s-=2;return s}
       return w(a)-w(b)||a.i-b.i;
     });
-    $('noTiles').hidden=list.length>0;
+    $('noTiles').hidden=true;
     list.forEach(function(x){box.appendChild(makeTile(x.p,start))});
+    var x=el('div','xref');x.appendChild(el('h3',null,'The tools behind this work.'));
+    x.appendChild(el('p',null,'Dashboards, launch playbooks, implementation plans, workflows and HR tools: the systems I built and run, organized by type.'));
+    var go=el('a','btn','See Systems & Toolkits');go.href='#toolkits';x.appendChild(go);box.appendChild(x);
   }
   function fact(dl,k,v){if(!v)return;dl.appendChild(el('dt',null,k));dl.appendChild(el('dd',null,v))}
   function openWork(p){
@@ -853,7 +901,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       $('contactTitle').appendChild(el('em',null,'Let’s talk.'));
       $('storyLede').textContent='Showing the '+l.short.toLowerCase()+' roles first; the rest are dimmed, not hidden.';
       filter=id==='brand'?'all':id;
-      var lw=$('lensWork');if(id==='brand'){lw.href='#services';lw.dataset.svc='branding'}else{lw.href='#built';delete lw.dataset.svc}
+      var lw=$('lensWork');if(id==='brand'){lw.href='#services';lw.dataset.svc='branding'}else{lw.href='#toolkits';delete lw.dataset.svc}
     }else{
       filter='all';
       $('contactTitle').textContent='The right next move is probably ';
@@ -862,7 +910,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     }
     try{if(id)history.replaceState(null,'','#'+id);else history.replaceState(null,'',location.pathname+location.search)}catch(e){}
     try{if(id)localStorage.setItem('lens',id);else localStorage.removeItem('lens')}catch(e){}
-    renderMetrics();renderFilters();renderTiles();renderStory();renderTools();renderResumes();
+    renderMetrics();renderFilters();renderTiles();renderKits();renderStory();renderTools();renderResumes();
     if(scroll&&id)sec.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
   }
 

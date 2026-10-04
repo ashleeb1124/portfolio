@@ -31,9 +31,28 @@ SITE.FILTERS = [
   { id: 'ai', label: 'AI + Automation', tag: 'ai' }
 ];
 
+/* ---------- SYSTEMS & TOOLKITS ----------
+   A project with  kit: '<category label>'  appears in Systems & Toolkits under that
+   category (categories with no items stay hidden). Without  kit  it stays in Work Samples. */
+SITE.KIT_CATEGORIES = [
+  { label: 'Dashboards & KPI Systems', blurb: 'One page of defined metrics that leaders can run the business from.' },
+  { label: 'Operating Reviews & Performance Tracking', blurb: 'Review packs that end with owners, dates and next steps.' },
+  { label: 'Launch Plans & Opening Playbooks', blurb: 'Repeatable plans for opening a site, from licensing to go-live.' },
+  { label: 'Process Optimization', blurb: 'Process maps and redesigns that remove manual work and wait time.' },
+  { label: 'Workflow & Systems Design', blurb: 'Phased workflows with decision rights, reporting and technology built in.' },
+  { label: 'HR / People Operations Tools', blurb: 'Policies, onboarding and pay structures that scale with the business.' },
+  { label: 'Implementation Plans', blurb: 'Moving a company onto a new system without missing a paycheck.' },
+  { label: 'Checklists & SOPs', blurb: 'The standard work that survives personnel changes.' },
+  { label: 'Capacity / Staffing Models', blurb: 'Demand, headcount and cost in one model.' },
+  { label: 'Budget / Variance Tracking', blurb: 'Plan against actual, with the variance explained.' },
+  { label: 'Vendor / SLA Scorecards', blurb: 'Service, cost and risk, reviewed on a fixed cadence.' },
+  { label: 'Integration / 30-60-90 Plans', blurb: 'Sequenced plans for the first 90 days of a launch, program or integration.' },
+];
+
 SITE.PROJECTS = [
   /* ---------- LIVE SAMPLES ---------- */
   {
+    kit: 'Dashboards & KPI Systems',
     id: 'operating-dashboard', title: 'Monthly Operating Dashboard', category: 'Dashboards + Data',
     career_lane: ['ops'], company_or_project: 'Multi-site healthcare operations · illustrative figures',
     thumbnail: 'assets/work/thumb-operating-dashboard.jpg',
@@ -47,6 +66,7 @@ SITE.PROJECTS = [
     featured: true, tags: ['dashboard', 'healthcare', 'systems'], year: '', format: 'Dashboard · Image', status: 'live'
   },
   {
+    kit: 'Operating Reviews & Performance Tracking',
     id: 'management-review', title: 'Management Review Pack', category: 'Dashboards + Data',
     career_lane: ['ops'], company_or_project: 'Multi-site healthcare operations · illustrative figures',
     thumbnail: 'assets/work/thumb-management-review.jpg',
@@ -60,6 +80,7 @@ SITE.PROJECTS = [
     featured: true, tags: ['dashboard', 'healthcare', 'process'], year: '', format: 'Operating review · Image', status: 'live'
   },
   {
+    kit: 'Workflow & Systems Design',
     id: 'sec-duke-bartow-workflow', title: 'Utility Project Launch Workflow', category: 'Systems + Process',
     career_lane: ['ops', 'transform'], company_or_project: 'SEC Global · utility-scale solar',
     thumbnail: 'assets/work/thumb-sec-duke-bartow-workflow.jpg',
@@ -75,6 +96,7 @@ SITE.PROJECTS = [
 
 
   {
+    kit: 'Launch Plans & Opening Playbooks',
     id: 'wave-site-launch-playbook', title: "New-Site Launch Playbook: 90-Day Checklist", category: 'Systems + Process',
     career_lane: ['ops', 'people', 'transform'], company_or_project: "The Wave International",
     thumbnail: 'assets/work/thumb-wave-site-launch-playbook.jpg',
@@ -101,6 +123,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['systems', 'process', 'energy'], year: '', format: "Case study \u00b7 PDF", status: 'live'
   },
   {
+    kit: 'Launch Plans & Opening Playbooks',
     id: 'master-opening-roadmap', title: "Master Opening Roadmap", category: 'Business Operations',
     career_lane: ['ops', 'transform'], company_or_project: "Opening plan work sample",
     thumbnail: 'assets/work/thumb-master-opening-roadmap.jpg',
@@ -114,6 +137,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['process', 'systems'], year: '', format: "Roadmap \u00b7 PDF", status: 'live'
   },
   {
+    kit: 'Implementation Plans',
     id: 'hris-implementation-plan', title: "HRIS Implementation Plan", category: 'People + HR',
     career_lane: ['people', 'ops', 'transform'], company_or_project: "Spiro Senior",
     thumbnail: 'assets/work/thumb-hris-implementation-plan.jpg',
@@ -127,6 +151,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['systems', 'process'], year: '', format: "Implementation plan \u00b7 Image", status: 'live'
   },
   {
+    kit: 'Integration / 30-60-90 Plans',
     id: 'ca-hr-90-day-roadmap', title: "90-Day HR Roadmap + California Compliance Guide", category: 'People + HR',
     career_lane: ['people'], company_or_project: "Illustrative sample \u00b7 California employers",
     thumbnail: 'assets/work/thumb-ca-hr-90-day-roadmap.jpg',
@@ -140,6 +165,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['systems', 'process', 'writing'], year: '', format: "Roadmap + guide \u00b7 Image", status: 'live'
   },
   {
+    kit: 'HR / People Operations Tools',
     id: 'ca-hr-policy-toolkit', title: "California HR Operations + Employee Handbook Toolkit", category: 'People + HR',
     career_lane: ['people'], company_or_project: "Illustrative sample \u00b7 California employers",
     thumbnail: 'assets/work/thumb-ca-hr-policy-toolkit.jpg',
@@ -153,6 +179,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['writing', 'process'], year: '', format: "Toolkit \u00b7 Image", status: 'live'
   },
   {
+    kit: 'Implementation Plans',
     id: 'peo-to-adp-playbook', title: "PEO to ADP Workforce Now Conversion Playbook", category: 'People + HR',
     career_lane: ['people', 'ops', 'transform'], company_or_project: "Illustrative sample \u00b7 payroll transition",
     thumbnail: 'assets/work/thumb-peo-to-adp-playbook.jpg',
@@ -166,6 +193,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['systems', 'process'], year: '', format: "Playbook \u00b7 Image", status: 'live'
   },
   {
+    kit: 'HR / People Operations Tools',
     id: 'onboarding-kit', title: "New-Hire Onboarding Kit", category: 'People + HR',
     career_lane: ['people'], company_or_project: "Illustrative sample \u00b7 Northline Works",
     thumbnail: 'assets/work/thumb-onboarding-kit.jpg',
@@ -182,6 +210,7 @@ SITE.PROJECTS = [
 
   /* ---------- COMING SOON (placeholders: edit in place when the sample is ready) ---------- */
   {
+    kit: 'Capacity / Staffing Models',
     id: 'workforce-model', title: 'Workforce + Capacity Planning Model', category: 'Dashboards + Data',
     career_lane: ['ops', 'people', 'transform'], company_or_project: 'Multi-state operations',
     thumbnail: '', short_description: 'Headcount, capacity and cost in one model that answers “can we take this on?”',
@@ -191,6 +220,7 @@ SITE.PROJECTS = [
     outcome: '', file_url: '', preview_url: '', featured: false, tags: ['dashboard', 'systems'], year: '', format: 'XLSX · Model', status: 'coming'
   },
   {
+    kit: 'Integration / 30-60-90 Plans',
     id: 'acquisition-integration', title: 'Acquisition Integration Plan', category: 'Business Operations',
     career_lane: ['ops', 'transform'], company_or_project: 'M&A transition',
     thumbnail: '', short_description: 'Day-one to day-90 plan for bringing an acquired business into the operating model.',
@@ -200,6 +230,7 @@ SITE.PROJECTS = [
     outcome: '', file_url: '', preview_url: '', featured: false, tags: ['process', 'systems'], year: '', format: 'PDF · Plan', status: 'coming'
   },
   {
+    kit: 'Vendor / SLA Scorecards',
     id: 'vendor-scorecard', title: 'Vendor Scorecard', category: 'Dashboards + Data',
     career_lane: ['ops'], company_or_project: 'Vendor management',
     thumbnail: '', short_description: 'One page to see which vendors earn their contract and which need a conversation.',
@@ -209,6 +240,7 @@ SITE.PROJECTS = [
     outcome: '', file_url: '', preview_url: '', featured: false, tags: ['dashboard', 'process'], year: '', format: 'XLSX · Scorecard', status: 'coming'
   },
   {
+    kit: 'HR / People Operations Tools',
     id: 'comp-framework', title: 'Compensation + Job Architecture Framework', category: 'People + HR',
     career_lane: ['people'], company_or_project: 'Collabera · Spiro Senior',
     thumbnail: '', short_description: 'Pay bands, levels and benchmarking that hold up to a hard question.',
@@ -219,6 +251,7 @@ SITE.PROJECTS = [
     file_url: '', preview_url: '', featured: false, tags: ['systems'], year: '', format: 'XLSX · Framework', status: 'coming'
   },
   {
+    kit: 'Workflow & Systems Design',
     id: 'ai-hr-workflow', title: 'AI-Assisted HR Workflow', category: 'AI + Automation',
     career_lane: ['people', 'ops', 'transform'], company_or_project: 'HR + operations',
     thumbnail: '', short_description: 'Repeatable work moved to AI, with a person reviewing every output.',
