@@ -64,6 +64,12 @@ em{font-style:italic;color:var(--terra)}
 .nav ul a:not(.btn){text-decoration:none;font-family:var(--label);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d)}
 .nav ul a:not(.btn):hover{color:var(--terra)}
 .nav .btn{padding:9px 18px;font-size:13px}
+.nav .has-sub{position:relative}
+.nav .has-sub>a:after{content:"";display:inline-block;margin-left:7px;border:4px solid transparent;border-top-color:currentColor;border-bottom:0;vertical-align:middle}
+.nav .sub{position:absolute;top:100%;left:-14px;min-width:220px;padding:8px 0;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r);box-shadow:0 14px 28px rgba(18,73,90,.16);display:none;flex-direction:column}
+.nav .has-sub:hover .sub,.nav .has-sub:focus-within .sub{display:flex}
+.nav .sub a{display:block;padding:10px 18px;white-space:nowrap}
+.nav .sub a:hover{background:var(--ivory2)}
 .menu-btn{display:none;background:none;border:0;padding:10px}
 .menu-btn span{display:block;width:24px;height:2px;background:var(--teal);margin:5px 0}
 
@@ -127,6 +133,13 @@ em{font-style:italic;color:var(--terra)}
 .does h4{font-size:20px;color:var(--gold);margin-bottom:4px}
 .does p{font-size:14px;color:var(--mist);line-height:1.5}
 .does .more{display:flex;align-items:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ivory)}
+.svc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:start}
+.svc .doc{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);box-shadow:0 10px 26px rgba(18,73,90,.12)}
+.svc .doc img{width:100%;height:auto}
+.svc .cap{margin-top:8px;font-family:var(--label);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.svc ul{margin:14px 0 0 18px;font-size:15px}
+.svc li{margin:5px 0}
+.svc .acts{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
 /* studio */
 .sss{background:var(--teal-d);color:var(--ivory)}
 .sss h2{color:var(--ivory)}
@@ -185,6 +198,8 @@ em{font-style:italic;color:var(--terra)}
 .cat:hover{border-color:var(--teal);transform:translateY(-2px)}
 .cat h4{font-size:19px;line-height:1.2}
 .cat span{display:block;margin-top:6px;font-family:var(--label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.cat span.plain{text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:13.5px;line-height:1.45;color:var(--muted);font-weight:400}
+.cat[aria-pressed=true] span.plain{color:var(--mist)}
 .cat[aria-pressed=true]{background:var(--teal);border-color:var(--teal)}
 .cat[aria-pressed=true] h4{color:var(--ivory)}
 .cat[aria-pressed=true] span{color:var(--gold)}
@@ -283,6 +298,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   .sheet{padding:28px 20px 24px}
 }
 @media (max-width:1040px){
+  .nav .has-sub>a:after{display:none}
+  .nav .sub{position:static;display:flex;min-width:0;padding:6px 0 0 16px;background:none;border:0;box-shadow:none}
+  .nav .sub a{padding:7px 0;white-space:normal;font-weight:500}
+  .nav .sub a:hover{background:none}
+  .svc{grid-template-columns:1fr}
   .paths{grid-template-columns:repeat(2,1fr)}
   .menu-btn{display:block}
   .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--ivory);padding:10px 24px 20px;box-shadow:0 12px 22px rgba(0,0,0,.1)}
@@ -308,6 +328,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <li><a href="#story">Career</a></li>
       <li><a href="#systems">Systems</a></li>
       <li><a href="#compliance">Compliance</a></li>
+      <li class="has-sub"><a href="#services" id="svcNav">Services</a>
+        <div class="sub" role="group" aria-label="Services">
+          <a href="#services" data-svc="branding">Branding &amp; Design</a>
+          <a href="#services" data-svc="consulting">Business Consulting</a>
+        </div>
+      </li>
       <li><a href="#resumes">My Resumes</a></li>
       <li><a class="btn" href="#contact" data-book>Book a conversation</a></li>
     </ul>
@@ -403,6 +429,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <button class="btn gold" id="sssWork" type="button">See studio work</button>
       <a class="btn ghost" href="#contact" data-book>Start a brand project</a>
     </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Services</div>
+    <h2>What I <em>offer.</em></h2>
+    <p class="lede">I selectively take on project and fractional work alongside my leadership roles. Each service has its own overview below.</p>
+    <div class="cats" id="svcCats"></div>
+    <div class="catpanel" id="svcPanel" aria-live="polite"></div>
   </div>
 </section>
 
@@ -502,6 +538,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <script src="data/pathways.js"></script>
 <script src="data/career.js"></script>
 <script src="data/systems.js"></script>
+<script src="data/services.js"></script>
 <script>
 (function(){
   'use strict';
@@ -586,6 +623,29 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     $('paths').appendChild(b);
   });
   $('reset').addEventListener('click',function(){setLens(null,true)});
+
+  /* ---------- services ---------- */
+  var svcSel=S.SERVICES[0].id;
+  function renderServices(){
+    var grid=$('svcCats'),panel=$('svcPanel');clear(grid);
+    S.SERVICES.forEach(function(v){
+      var b=el('button','cat');b.type='button';b.dataset.id=v.id;b.setAttribute('aria-pressed',String(svcSel===v.id));
+      b.appendChild(el('h4',null,v.title));b.appendChild(el('span','plain',v.blurb));
+      b.addEventListener('click',function(){selectService(v.id)});grid.appendChild(b);
+    });
+    var v=S.SERVICES.filter(function(x){return x.id===svcSel})[0]||S.SERVICES[0];
+    clear(panel);
+    var w=el('div','svc'),left=el('div'),a=el('a','doc');a.href=v.image;a.target='_blank';a.rel='noopener';
+    var im=el('img');im.src=v.image;im.alt=v.alt;im.loading='lazy';a.appendChild(im);left.appendChild(a);left.appendChild(el('div','cap',v.doc));
+    var r=el('div');r.appendChild(el('h3',null,v.title));r.appendChild(el('p','bl',v.summary));
+    var ul=el('ul');v.offerings.forEach(function(o){ul.appendChild(el('li',null,o))});r.appendChild(ul);
+    var acts=el('div','acts'),t=el('a','btn','Discuss a project');t.href=bookHref();if(C.BOOKING_URL){t.target='_blank';t.rel='noopener'}acts.appendChild(t);
+    var f=el('a','btn ghost','View full size');f.href=v.image;f.target='_blank';f.rel='noopener';acts.appendChild(f);r.appendChild(acts);
+    w.appendChild(left);w.appendChild(r);panel.appendChild(w);
+  }
+  function selectService(id){svcSel=id;renderServices()}
+  fold(document.querySelectorAll('[data-svc]'),function(a){a.addEventListener('click',function(){selectService(a.dataset.svc)})});
+  renderServices();
 
   /* ---------- studio ---------- */
   $('sssTag').textContent=C.SSS_TAGLINE;$('sssDesc').textContent=C.SSS_DESCRIPTOR;

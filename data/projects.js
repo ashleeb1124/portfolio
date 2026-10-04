@@ -127,32 +127,6 @@ SITE.PROJECTS = [
     file_url: 'assets/work/everbloom-governance.jpg', preview_url: 'assets/work/everbloom-governance.jpg',
     featured: false, tags: ['presentation', 'healthcare'], year: '', format: 'Investor deck · Slide', status: 'live'
   },
-  {
-    id: 'executive-portfolio', title: 'Executive Portfolio One-Pager', category: 'Presentations',
-    career_lane: ['brand', 'ops'], company_or_project: 'Executive portfolio work',
-    thumbnail: 'assets/work/thumb-executive-portfolio.jpg',
-    short_description: 'A 30/60/90-day operating plan for entering a growth-stage infrastructure business.',
-    problem: 'A new executive has about a quarter to show they understand the business and are moving it.',
-    what_i_built: 'A one-page 30/60/90-day operating plan: what gets learned, fixed and built, in what order.',
-    my_role: 'Planning and design.',
-    tools_used: ['Executive presentation design', '30/60/90 planning'],
-    outcome: 'An entry plan that fits on one page.',
-    file_url: 'assets/work/executive-portfolio.jpg', preview_url: 'assets/work/executive-portfolio.jpg',
-    featured: true, tags: ['presentation', 'energy', 'systems'], year: '', format: 'One-pager · Image', status: 'live'
-  },
-  {
-    id: 'consulting-services', title: 'Consulting Services Flyer', category: 'Brand + Design',
-    career_lane: ['brand'], company_or_project: 'Snow Story Studios',
-    thumbnail: 'assets/work/thumb-consulting-services.jpg',
-    short_description: 'Brand, operations and people services for growing businesses.',
-    problem: 'A services business has to explain what it does in the time it takes to glance at a page.',
-    what_i_built: 'A services flyer that packages brand, operations and people work for growing businesses.',
-    my_role: 'Positioning, copy and design.',
-    tools_used: ['Canva', 'Brand system', 'Marketing collateral'],
-    outcome: 'A one-page way to say what the studio does.',
-    file_url: 'assets/work/consulting-services.jpg', preview_url: 'assets/work/consulting-services.jpg',
-    featured: true, tags: ['presentation'], year: '', format: 'Flyer · Image', status: 'live'
-  },
 
 
   {
