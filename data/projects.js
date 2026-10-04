@@ -110,6 +110,7 @@ SITE.PROJECTS = [
     featured: false, tags: ['systems', 'process', 'healthcare'], year: '', format: "Playbook \u00b7 Image", status: 'live'
   },
   {
+    kit: 'Process Optimization',
     id: 'scaling-case-study', title: "Case Study: Scaling from 5 Contracts to ~40 Projects", category: 'Business Operations',
     career_lane: ['ops', 'transform'], company_or_project: "SEC Global",
     thumbnail: 'assets/work/thumb-scaling-case-study.jpg',
@@ -212,22 +213,30 @@ SITE.PROJECTS = [
   {
     kit: 'Capacity / Staffing Models',
     id: 'workforce-model', title: 'Workforce + Capacity Planning Model', category: 'Dashboards + Data',
-    career_lane: ['ops', 'people', 'transform'], company_or_project: 'Multi-state operations',
-    thumbnail: '', short_description: 'Headcount, capacity and cost in one model that answers “can we take this on?”',
+    career_lane: ['ops', 'people', 'transform'], company_or_project: 'SEC Global · illustrative figures',
+    thumbnail: 'assets/work/thumb-workforce-model.jpg',
+    short_description: 'Headcount, capacity and labor cost in one model that answers “can we take this on?”',
     problem: 'Growth decisions get made before anyone knows whether the people and capacity are there.',
-    what_i_built: 'A staffing and capacity model linking demand, headcount, hiring lead time and cost.',
-    my_role: 'Model owner.', tools_used: ['Advanced Excel', 'Power BI'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['dashboard', 'systems'], year: '', format: 'XLSX · Model', status: 'coming'
+    what_i_built: 'A staffing and capacity model linking demand, headcount, hiring lead time and cost: projected vs. required headcount, capacity vs. demand, headcount by function, a hiring plan against time-to-hire, a labor-cost forecast against budget, capacity utilization, a role-based hiring plan and a project pipeline with resource requirements.',
+    my_role: 'Model owner. Built the model and the planning view for leadership.',
+    tools_used: ['Advanced Excel', 'Power BI', 'Workforce planning'],
+    outcome: 'One view that shows whether the workforce and capacity are in place before taking on the next project. Figures shown are illustrative.',
+    file_url: 'assets/work/workforce-model.jpg', preview_url: 'assets/work/workforce-model.jpg',
+    featured: false, tags: ['dashboard', 'systems', 'energy'], year: '', format: 'Planning model · Image', status: 'live'
   },
   {
     kit: 'Integration / 30-60-90 Plans',
     id: 'acquisition-integration', title: 'Acquisition Integration Plan', category: 'Business Operations',
-    career_lane: ['ops', 'transform'], company_or_project: 'M&A transition',
-    thumbnail: '', short_description: 'Day-one to day-90 plan for bringing an acquired business into the operating model.',
+    career_lane: ['ops', 'people', 'transform'], company_or_project: 'Synergy Medical Centers · illustrative sample',
+    thumbnail: 'assets/work/thumb-acquisition-integration.jpg',
+    short_description: 'A six-workstream integration plan with owners, dates, deliverables and milestones in a Smartsheet Gantt.',
     problem: 'Acquired teams lose time and trust when systems, pay and reporting lines stay unclear.',
-    what_i_built: 'An integration plan across operations, finance, People, systems and communications.',
-    my_role: 'Integration lead.', tools_used: ['Smartsheet', 'Microsoft 365'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['process', 'systems'], year: '', format: 'PDF · Plan', status: 'coming'
+    what_i_built: 'An integration plan across six workstreams: operations, finance, people, systems, communications and stakeholder engagement, and key milestones. Each has an executive owner, task-level dates, status, percent complete, the key deliverable and a Gantt timeline.',
+    my_role: 'Integration lead. Built the plan and ran the cadence.',
+    tools_used: ['Smartsheet', 'Project planning', 'Microsoft 365'],
+    outcome: 'One plan that shows every workstream, owner and milestone from day one to full integration. Dates and statuses shown are illustrative.',
+    file_url: 'assets/work/acquisition-integration.jpg', preview_url: 'assets/work/acquisition-integration.jpg',
+    featured: false, tags: ['process', 'systems', 'healthcare'], year: '', format: 'Integration plan · Image', status: 'live'
   },
   {
     kit: 'Vendor / SLA Scorecards',
@@ -261,6 +270,7 @@ SITE.PROJECTS = [
     outcome: '', file_url: '', preview_url: '', featured: false, tags: ['ai', 'systems', 'process'], year: '', format: 'Workflow', status: 'coming'
   },
   {
+    kit: 'Operating Reviews & Performance Tracking',
     id: 'executive-brief-samples', title: 'Executive Briefs + Business Cases', category: 'Writing',
     career_lane: ['ops'], company_or_project: 'Writing + thinking',
     thumbnail: '', short_description: 'Decisions on one page, with the numbers underneath.',

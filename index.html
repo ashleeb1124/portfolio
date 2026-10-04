@@ -333,12 +333,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul id="menu">
-      <li class="has-sub"><a href="#built">Work</a>
-        <div class="sub" role="group" aria-label="Work">
-          <a href="#built">Work Samples</a>
-          <a href="#toolkits">Systems &amp; Toolkits</a>
-        </div>
-      </li>
+      <li><a href="#toolkits">Work</a></li>
       <li><a href="#story">Career</a></li>
       <li><a href="#systems">Systems</a></li>
       <li><a href="#compliance">Compliance</a></li>
@@ -372,7 +367,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <p class="sub">I build the operating system behind growth: the business, the People function and the brand. Twenty-plus years across healthcare, construction, manufacturing and technology. Choose an area of leadership below and the site reorganizes around it.</p>
       <div class="quick">
         <button class="btn gold" id="openQuick">The 30-Second Brief</button>
-        <a class="btn ghost" href="#built">See the work</a>
+        <a class="btn ghost" href="#toolkits">See the work</a>
       </div>
     </div>
 
@@ -420,15 +415,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   </div>
 </section>
 
-<section id="built">
+<section id="intro">
   <div class="wrap">
-    <div class="eyebrow">Proof</div>
-    <h2>Build. Own. <em>Deliver.</em></h2>
-    <p class="lede">Case studies and results, with the problem, what I built, my role and the outcome. The tools behind the work live in Systems &amp; Toolkits, just below.</p>
-    
-    <div class="tiles" id="tiles"></div>
-    <p class="empty" id="noTiles" hidden>Nothing in this filter yet.</p>
-
+    <div class="eyebrow">In my own words</div>
+    <h2>A short <em>introduction.</em></h2>
     <div class="video" id="video" aria-label="Introduction video"></div>
   </div>
 </section>
@@ -556,7 +546,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   'use strict';
   var S=window.SITE, C=S.CONFIG, L=S.LENSES, LANES=['ops','people','transform','brand'];
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var lens=null, filter='all', lastFocus=null;
+  var lens=null, lastFocus=null;
 
   /* ---------- helpers ---------- */
   function $(id){return document.getElementById(id)}
@@ -709,19 +699,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   }
 
   /* ---------- work tiles ---------- */
-  function filterMatch(p,f){
-    if(f==='all')return true;
-    var d=S.FILTERS.filter(function(x){return x.id===f})[0];if(!d)return true;
-    if(d.co)return p.company_or_project.indexOf(d.co)>-1;
-    return d.lane?p.career_lane.indexOf(d.lane)>-1:p.tags.indexOf(d.tag)>-1;
-  }
-  function renderFilters(){
-    var box=$('filters');if(!box)return;clear(box);
-    S.FILTERS.forEach(function(f){
-      var b=el('button','chip',f.label);b.type='button';b.setAttribute('aria-pressed',String(filter===f.id));
-      b.addEventListener('click',function(){filter=f.id;renderFilters();renderTiles()});box.appendChild(b);
-    });
-  }
   function makeTile(p,start){
     var t=el('button','tile');t.type='button';
     var th=el('div','th'+(p.thumbnail?'':' ph'));
@@ -755,28 +732,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       });
       g.appendChild(tiles);box.appendChild(g);
     });
-  }
-  function renderTiles(){
-    var box=$('tiles');clear(box);
-    if(lens==='brand'){
-      /* creative work lives under Services > Branding & Design */
-      $('noTiles').hidden=true;
-      var x=el('div','xref');x.appendChild(el('h3',null,'The creative work has its own home.'));
-      x.appendChild(el('p',null,'Brand, design and creative direction live in Services → Branding & Design: identity systems, decks, collateral and more.'));
-      var go=el('a','btn','See the Branding & Design portfolio');go.href='#services';go.addEventListener('click',function(){selectService('branding')});
-      x.appendChild(go);box.appendChild(x);return;
-    }
-    var start=lens?L[lens].startHere:[];
-    var list=S.PROJECTS.filter(function(p){return !p.kit&&p.status!=='coming'&&filterMatch(p,filter)}).map(function(p,i){return {p:p,i:i}});
-    list.sort(function(a,b){
-      function w(x){var s=0;if(x.p.status==='live')s-=8;if(start.indexOf(x.p.id)>-1)s-=4;if(lens&&x.p.career_lane.indexOf(lens)>-1)s-=2;return s}
-      return w(a)-w(b)||a.i-b.i;
-    });
-    $('noTiles').hidden=true;
-    list.forEach(function(x){box.appendChild(makeTile(x.p,start))});
-    var x=el('div','xref');x.appendChild(el('h3',null,'The tools behind this work.'));
-    x.appendChild(el('p',null,'Dashboards, launch playbooks, implementation plans, workflows and HR tools: the systems I built and run, organized by type.'));
-    var go=el('a','btn','See Systems & Toolkits');go.href='#toolkits';x.appendChild(go);box.appendChild(x);
   }
   function fact(dl,k,v){if(!v)return;dl.appendChild(el('dt',null,k));dl.appendChild(el('dd',null,v))}
   function openWork(p){
@@ -900,17 +855,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       $('contactTitle').appendChild(document.createTextNode(l.ctaTalk.replace(/ Let’s talk\.$/,'')+' '));
       $('contactTitle').appendChild(el('em',null,'Let’s talk.'));
       $('storyLede').textContent='Showing the '+l.short.toLowerCase()+' roles first; the rest are dimmed, not hidden.';
-      filter=id==='brand'?'all':id;
       var lw=$('lensWork');if(id==='brand'){lw.href='#services';lw.dataset.svc='branding'}else{lw.href='#toolkits';delete lw.dataset.svc}
     }else{
-      filter='all';
       $('contactTitle').textContent='The right next move is probably ';
       $('contactTitle').appendChild(el('em',null,'a conversation.'));
       $('storyLede').textContent='Every role, most recent first. Pick a path above and the most relevant roles come forward.';
     }
     try{if(id)history.replaceState(null,'','#'+id);else history.replaceState(null,'',location.pathname+location.search)}catch(e){}
     try{if(id)localStorage.setItem('lens',id);else localStorage.removeItem('lens')}catch(e){}
-    renderMetrics();renderFilters();renderTiles();renderKits();renderStory();renderTools();renderResumes();
+    renderMetrics();renderKits();renderStory();renderTools();renderResumes();
     if(scroll&&id)sec.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
   }
 
