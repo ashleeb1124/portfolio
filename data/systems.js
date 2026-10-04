@@ -13,7 +13,7 @@ window.SITE = window.SITE || {};
 
 SITE.SYSTEMS = [
   {
-    id: 'crm', title: 'CRM, Sales + Call Tracking', lanes: ['ops', 'brand'],
+    id: 'crm', title: 'CRM, Sales + Call Tracking', lanes: ['ops', 'brand', 'transform'],
     blurb: 'Admissions pipelines, lead tracking and call-center reporting.',
     groups: [
       { label: 'Platforms', items: ['Salesforce', 'Zoho CRM', 'Alleva CRM', 'CTM / CallTrackingMetrics', 'Matrix call tracking'] },
@@ -21,7 +21,7 @@ SITE.SYSTEMS = [
     ]
   },
   {
-    id: 'healthcare', title: 'Healthcare EHR, Billing + Credentialing', lanes: ['ops'],
+    id: 'healthcare', title: 'Healthcare EHR, Billing + Credentialing', lanes: ['ops', 'transform'],
     blurb: 'EHR / EMR, revenue cycle, utilization and provider enrollment systems.',
     groups: [
       { label: 'Platforms', items: ['Alleva EHR / EMR', 'Alleva RCM / Billing', 'Alleva Insights', 'Alleva CRM', 'PointClickCare', 'CAQH', 'PECOS', 'Medicare enrollment systems', 'Medicaid / payer portals', 'Provider credentialing systems'] },
@@ -29,7 +29,7 @@ SITE.SYSTEMS = [
     ]
   },
   {
-    id: 'hris', title: 'HRIS, Payroll + Timekeeping', lanes: ['people'],
+    id: 'hris', title: 'HRIS, Payroll + Timekeeping', lanes: ['people', 'transform'],
     blurb: 'Implementations, migrations and multi-state payroll across a dozen platforms.',
     groups: [
       { label: 'Platforms', items: ['Workday', 'ADP Workforce Now', 'ADP', 'BambooHR', 'Rippling', 'UKG / UltiPro', 'Paylocity', 'Gusto', 'Paycom', 'Paychex', 'Kronos'] },
@@ -38,7 +38,7 @@ SITE.SYSTEMS = [
     ]
   },
   {
-    id: 'finance', title: 'ERP, Finance + Financial Models', lanes: ['ops'],
+    id: 'finance', title: 'ERP, Finance + Financial Models', lanes: ['ops', 'transform'],
     blurb: 'Accounting platforms and the budgets, forecasts and models built on them.',
     groups: [
       { label: 'Platforms', items: ['Microsoft Dynamics', 'NetSuite', 'Sage', 'QuickBooks Enterprise', 'AppFolio', 'Advanced Excel'] },
@@ -47,7 +47,7 @@ SITE.SYSTEMS = [
     ]
   },
   {
-    id: 'bi', title: 'Data, BI + Executive Reporting', lanes: ['ops', 'people'],
+    id: 'bi', title: 'Data, BI + Executive Reporting', lanes: ['ops', 'people', 'transform'],
     blurb: 'Dashboards and scorecards leaders actually run the business from.',
     groups: [
       { label: 'Platforms', items: ['Microsoft Power BI', 'Advanced Microsoft Excel', 'SQL (intermediate)', 'Smartsheet'] },
@@ -55,7 +55,7 @@ SITE.SYSTEMS = [
     ]
   },
   {
-    id: 'ai', title: 'AI + Automation', lanes: ['ops', 'people', 'brand'],
+    id: 'ai', title: 'AI + Automation', lanes: ['ops', 'people', 'brand', 'transform'],
     blurb: 'Generative AI and workflow automation, always with a person reviewing the output.',
     groups: [
       { label: 'AI tools', items: ['ChatGPT', 'Claude', 'Gemini', 'Microsoft Copilot', 'Perplexity', 'Alleva Echo', 'Alleva TravisAI'] },
@@ -66,7 +66,7 @@ SITE.SYSTEMS = [
     note: 'Always with human judgment and review.'
   },
   {
-    id: 'work', title: 'Project + Work Management, Microsoft + Google', lanes: ['ops'],
+    id: 'work', title: 'Project + Work Management, Microsoft + Google', lanes: ['ops', 'transform'],
     blurb: 'Trackers, launch plans and accountability systems that keep cross-functional work moving.',
     groups: [
       { label: 'Work management', items: ['Asana', 'Monday.com', 'Smartsheet', 'Microsoft Teams', 'Slack', 'SharePoint'] },
@@ -94,7 +94,7 @@ SITE.SYSTEMS = [
     ]
   },
   {
-    id: 'built', title: 'Operating Systems I Have Built', lanes: ['ops', 'people'],
+    id: 'built', title: 'Operating Systems I Have Built', lanes: ['ops', 'people', 'transform'],
     blurb: 'The processes, programs and playbooks behind the growth.',
     groups: [
       { label: 'Launch + growth', items: ['New-site launch playbooks', 'Opening-day readiness systems', 'Acquisition / integration plans', 'Admissions pipelines', 'Billing workflows', 'Credentialing workflows', 'Payer workflows', 'Revenue-cycle processes'] },

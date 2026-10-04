@@ -87,18 +87,22 @@ em{font-style:italic;color:var(--terra)}
 .picker{margin-top:56px}
 .picker h2{text-align:center;margin-bottom:6px}
 .picker .hint{text-align:center;color:var(--muted);margin-bottom:26px}
-.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.path{text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:26px 24px 24px;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s,background .25s}
+.paths{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.path{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:26px 24px 24px;position:relative;transition:transform .25s,box-shadow .25s,border-color .25s,background .25s}
 .path:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(18,73,90,.14);border-color:var(--teal)}
 .path .n{font-family:var(--label);font-size:13px;letter-spacing:.2em;color:var(--terra);font-weight:600}
-.path h3{font-size:27px;margin:8px 0 6px}
-.path .s{font-family:var(--label);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;display:block}
+.path h3{font-size:24px;margin:2px 0 6px}
+.path .kw{display:block;margin:2px 0 12px;font-family:var(--label);font-size:13px;letter-spacing:.06em;color:var(--teal-l);font-weight:500}
+.path[aria-pressed=true] .kw{color:var(--mist)}
+.path .s{font-family:var(--label);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:8px 0 0;display:block}
 .path p{font-size:15px;color:var(--muted)}
-.path .go{display:inline-block;margin-top:14px;font-family:var(--label);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--teal)}
+.path .go{display:inline-block;margin-top:auto;padding-top:16px;font-family:var(--label);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--teal)}
 .path[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:var(--ivory)}
 .path[aria-pressed=true] h3,.path[aria-pressed=true] .go{color:var(--ivory)}
 .path[aria-pressed=true] p{color:var(--mist)}
 .path[aria-pressed=true] .n{color:var(--gold)}
+.fractional{max-width:640px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--line);text-align:center;font-size:14px;line-height:1.55;color:var(--muted)}
+.fractional a{color:var(--teal);font-weight:500;white-space:nowrap}
 .reset{display:block;margin:18px auto 0;background:none;border:0;font-family:var(--label);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:underline}
 
 /* lens */
@@ -271,7 +275,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   .hero-id{gap:18px}
   .portrait{width:min(34vw,220px)}
   .hero .name-logo{width:100%}
-  .paths,.qv{grid-template-columns:1fr}
+  .qv{grid-template-columns:1fr}
   .menu-btn{display:block}
   .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--ivory);padding:10px 24px 20px;box-shadow:0 12px 22px rgba(0,0,0,.1)}
   .nav ul.open{display:flex}
@@ -279,10 +283,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   .sheet{padding:28px 20px 24px}
 }
 @media (max-width:1040px){
+  .paths{grid-template-columns:repeat(2,1fr)}
   .menu-btn{display:block}
   .nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--ivory);padding:10px 24px 20px;box-shadow:0 12px 22px rgba(0,0,0,.1)}
   .nav ul.open{display:flex}
   .nav ul li{width:100%;padding:11px 0;border-bottom:1px solid var(--line)}
+}
+@media (max-width:620px){
+  .paths{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto!important}
@@ -320,7 +328,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     </div>
     <div class="hero-copy">
       <h1>One executive.<br><em>Three ways I build.</em></h1>
-      <p class="sub">I build the operating system behind growth: the business, the People function and the brand. Twenty-plus years across healthcare, construction, manufacturing and technology. Pick what you need built and the site reorganizes around it.</p>
+      <p class="sub">I build the operating system behind growth: the business, the People function and the brand. Twenty-plus years across healthcare, construction, manufacturing and technology. Choose an area of leadership below and the site reorganizes around it.</p>
       <div class="quick">
         <button class="btn gold" id="openQuick">The 30-Second Brief</button>
         <a class="btn ghost" href="#built">See the work</a>
@@ -329,10 +337,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     </div>
 
     <div class="picker" id="picker">
-      <h2>What do you need <em>built?</em></h2>
-      <p class="hint">Choose a path. Work samples, results, timeline and resume follow your choice.</p>
-      <div class="paths" id="paths" role="group" aria-label="Choose a career lens"></div>
+      <h2>Where I Create <em>Impact</em></h2>
+      <p class="hint">I bring operations, people, systems, and brand together to build stronger organizations. Explore the areas I’ve led, the work behind them, and the results I’ve delivered.</p>
+      <div class="paths" id="paths" role="group" aria-label="Explore areas of leadership"></div>
       <button class="reset" id="reset" hidden>Show everything</button>
+      <p class="fractional">Looking for project or fractional support? I selectively take on consulting, operations, HR, and brand engagements. <a href="#contact" data-book>Let’s talk →</a></p>
     </div>
   </div>
 </header>
@@ -353,7 +362,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         </div>
       </div>
       <div>
-        <div class="eyebrow" style="margin-bottom:14px">How I build it</div>
+        <div class="eyebrow" style="margin-bottom:14px">How I lead it</div>
         <ol class="steps" id="lensSteps"></ol>
       </div>
     </div>
@@ -496,7 +505,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <script>
 (function(){
   'use strict';
-  var S=window.SITE, C=S.CONFIG, L=S.LENSES, LANES=['ops','people','brand'];
+  var S=window.SITE, C=S.CONFIG, L=S.LENSES, LANES=['ops','people','transform','brand'];
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var lens=null, filter='all', lastFocus=null;
 
@@ -569,11 +578,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   })();
 
   /* ---------- path picker ---------- */
-  var intros={ops:'Own the P&L, the systems and the Monday meeting.',people:'HR from zero. Pay, hiring, compliance and culture that scale.',brand:'Logos, decks, collateral and web, built to be used.'};
   LANES.forEach(function(id){
     var l=L[id],b=el('button','path');b.type='button';b.dataset.lens=id;b.setAttribute('aria-pressed','false');
-    b.appendChild(el('span','n',l.num));b.appendChild(el('h3',null,l.title));b.appendChild(el('span','s',l.sub));
-    b.appendChild(el('p',null,intros[id]));b.appendChild(el('span','go','Show me →'));
+    b.appendChild(el('span','n',l.num));b.appendChild(el('span','s',l.sub));b.appendChild(el('h3',null,l.title));
+    b.appendChild(el('span','kw',l.card.keywords));b.appendChild(el('p',null,l.card.blurb));b.appendChild(el('span','go',l.card.cta));
     b.addEventListener('click',function(){setLens(lens===id?null:id,true)});
     $('paths').appendChild(b);
   });
@@ -728,7 +736,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     S.RESUMES.forEach(function(r){
       var url=resumeFor(r.key),a=el(url?'a':'div','rs');
       if(url){a.href=url;a.setAttribute('download','')}
-      if(lens&&r.lane!==lens&&r.lane!=='all')a.classList.add('dim');
+      if(lens&&r.lane!==(lens==='transform'?'ops':lens)&&r.lane!=='all')a.classList.add('dim');
       a.appendChild(el('b',null,r.label));a.appendChild(el('span',null,r.sub));
       a.appendChild(el('i',null,url?'Download PDF':'Coming soon · ask me directly'));
       box.appendChild(a);

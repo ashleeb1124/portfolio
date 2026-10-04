@@ -8,7 +8,7 @@ window.SITE = window.SITE || {};
 SITE.CAREER = [
   {
     id: 'spiro', org: 'Spiro Senior', role: 'COO / Chief Compliance Officer', when: '2026 – Present', start: 2026,
-    place: 'Florida · Geriatric in-residence medical practice', lanes: ['ops', 'people', 'brand'],
+    place: 'Florida · Geriatric in-residence medical practice', lanes: ['ops', 'people', 'brand', 'transform'],
     built: 'A medical practice, from concept to operating company.',
     bullets: [
       'Built the practice from zero: business case, financial model, EMR and data migration, intake, billing and CAQH / PECOS / Medicare credentialing.',
@@ -19,7 +19,7 @@ SITE.CAREER = [
   },
   {
     id: 'wave', org: 'The Wave International', role: 'Chief Operating Officer / Senior HR Leader', when: '2020 – Present', start: 2020,
-    place: 'Clearwater, FL · Multi-site behavioral health', lanes: ['ops', 'people'],
+    place: 'Clearwater, FL · Multi-site behavioral health', lanes: ['ops', 'people', 'transform'],
     built: 'An operating backbone for a company that grew 48x.',
     bullets: [
       'Scaled from about $500K to $24M annualized revenue, integrating existing centers and launching new ones to reach 10 facilities.',
@@ -30,7 +30,7 @@ SITE.CAREER = [
   },
   {
     id: 'sec', org: 'SEC Global', role: 'Vice President, HR & Operations', when: '2013 – 2019', start: 2013,
-    place: 'Tampa, FL · Multi-state solar construction', lanes: ['ops', 'people'],
+    place: 'Tampa, FL · Multi-state solar construction', lanes: ['ops', 'people', 'transform'],
     built: 'The mobilization engine behind ~40 concurrent projects.',
     bullets: [
       'Built the operating infrastructure for growth from ~5 Florida contracts to ~40 concurrent Southeast projects for major utility customers.',
@@ -51,7 +51,7 @@ SITE.CAREER = [
   },
   {
     id: 'collabera', org: 'Collabera Solutions', role: 'Director, Human Resources / Consultant', when: '2011 – 2013', start: 2011,
-    place: 'Pasadena, CA · Global IT staffing & delivery · Remote, concurrent', lanes: ['people', 'ops'],
+    place: 'Pasadena, CA · Global IT staffing & delivery · Remote, concurrent', lanes: ['people', 'ops', 'transform'],
     built: 'HR that ran across two countries at once.',
     bullets: [
       'Led a 14-person HR team split between the U.S. and India: 5 generalists, an HR manager and 8 offshore recruiters.',

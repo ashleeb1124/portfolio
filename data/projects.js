@@ -4,7 +4,7 @@
    No HTML to touch.
 
    Fields
-     id, title, category, career_lane ('ops' | 'people' | 'brand', one or many),
+     id, title, category, career_lane ('ops' | 'people' | 'transform' | 'brand', one or many),
      company_or_project, thumbnail, short_description, problem, what_i_built,
      my_role, tools_used[], outcome, file_url (download/open), preview_url
      (image, PDF or embeddable URL), featured, tags[], year, format,
@@ -23,6 +23,7 @@ SITE.FILTERS = [
   { id: 'sss', label: 'Snow Story Studios', co: 'Snow Story Studios' },
   { id: 'ops', label: 'Business Operations', lane: 'ops' },
   { id: 'people', label: 'People + HR', lane: 'people' },
+  { id: 'transform', label: 'Systems + Transformation', lane: 'transform' },
   { id: 'brand', label: 'Brand + Design', lane: 'brand' },
   { id: 'dashboard', label: 'Dashboards + Data', tag: 'dashboard' },
   { id: 'writing', label: 'Writing', tag: 'writing' },
@@ -63,7 +64,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'sec-duke-bartow-workflow', title: 'Utility Project Launch Workflow', category: 'Systems + Process',
-    career_lane: ['ops'], company_or_project: 'SEC Global · utility-scale solar',
+    career_lane: ['ops', 'transform'], company_or_project: 'SEC Global · utility-scale solar',
     thumbnail: 'assets/work/thumb-sec-duke-bartow-workflow.jpg',
     short_description: 'Six-phase mobilization model from contract award to steady state for a utility-scale solar project.',
     problem: 'Contracts were being won faster than the company could move awarded work into execution, with ad hoc onboarding on every project.',
@@ -169,7 +170,7 @@ SITE.PROJECTS = [
 
   {
     id: 'wave-site-launch-playbook', title: "New-Site Launch Playbook: 90-Day Checklist", category: 'Systems + Process',
-    career_lane: ['ops', 'people'], company_or_project: "The Wave International",
+    career_lane: ['ops', 'people', 'transform'], company_or_project: "The Wave International",
     thumbnail: 'assets/work/thumb-wave-site-launch-playbook.jpg',
     short_description: "A 90-day opening checklist for a new behavioral health site, with owners, vendors, licensing and go-live gates.",
     problem: "Every new site risks becoming a one-off: different hires, vendors and go-live dates.",
@@ -182,7 +183,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'scaling-case-study', title: "Case Study: Scaling from 5 Contracts to ~40 Projects", category: 'Business Operations',
-    career_lane: ['ops'], company_or_project: "SEC Global",
+    career_lane: ['ops', 'transform'], company_or_project: "SEC Global",
     thumbnail: 'assets/work/thumb-scaling-case-study.jpg',
     short_description: "Two-page operations case study: situation, challenges, my role and what I did to scale a multi-state workforce.",
     problem: "Contracts were being won in waves while onboarding stayed ad hoc, with leaders stretched across too many projects at once.",
@@ -195,7 +196,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'master-opening-roadmap', title: "Master Opening Roadmap", category: 'Business Operations',
-    career_lane: ['ops'], company_or_project: "Opening plan work sample",
+    career_lane: ['ops', 'transform'], company_or_project: "Opening plan work sample",
     thumbnail: 'assets/work/thumb-master-opening-roadmap.jpg',
     short_description: "A Gantt-style master roadmap that sequences operations, licensing, hiring and systems through opening.",
     problem: "Opening a site means dozens of dependent workstreams, and delays hide until they are expensive.",
@@ -208,7 +209,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'hris-implementation-plan', title: "HRIS Implementation Plan", category: 'People + HR',
-    career_lane: ['people', 'ops'], company_or_project: "Spiro Senior",
+    career_lane: ['people', 'ops', 'transform'], company_or_project: "Spiro Senior",
     thumbnail: 'assets/work/thumb-hris-implementation-plan.jpg',
     short_description: "BambooHR + Gusto selection, data migration, configuration and a training roadmap on one page.",
     problem: "A new practice needs a real HR and payroll system on day one, without losing a paycheck.",
@@ -247,7 +248,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'peo-to-adp-playbook', title: "PEO to ADP Workforce Now Conversion Playbook", category: 'People + HR',
-    career_lane: ['people', 'ops'], company_or_project: "Illustrative sample \u00b7 payroll transition",
+    career_lane: ['people', 'ops', 'transform'], company_or_project: "Illustrative sample \u00b7 payroll transition",
     thumbnail: 'assets/work/thumb-peo-to-adp-playbook.jpg',
     short_description: "A first-payroll command-center playbook for moving a workforce from a PEO to ADP Workforce Now.",
     problem: "Payroll conversions fail on the first pay run: missing deductions, direct deposit gaps and unanswered employee questions.",
@@ -419,7 +420,7 @@ SITE.PROJECTS = [
   /* ---------- COMING SOON (placeholders: edit in place when the sample is ready) ---------- */
   {
     id: 'workforce-model', title: 'Workforce + Capacity Planning Model', category: 'Dashboards + Data',
-    career_lane: ['ops', 'people'], company_or_project: 'Multi-state operations',
+    career_lane: ['ops', 'people', 'transform'], company_or_project: 'Multi-state operations',
     thumbnail: '', short_description: 'Headcount, capacity and cost in one model that answers “can we take this on?”',
     problem: 'Growth decisions get made before anyone knows whether the people and capacity are there.',
     what_i_built: 'A staffing and capacity model linking demand, headcount, hiring lead time and cost.',
@@ -428,7 +429,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'acquisition-integration', title: 'Acquisition Integration Plan', category: 'Business Operations',
-    career_lane: ['ops'], company_or_project: 'M&A transition',
+    career_lane: ['ops', 'transform'], company_or_project: 'M&A transition',
     thumbnail: '', short_description: 'Day-one to day-90 plan for bringing an acquired business into the operating model.',
     problem: 'Acquired teams lose time and trust when systems, pay and reporting lines stay unclear.',
     what_i_built: 'An integration plan across operations, finance, People, systems and communications.',
@@ -456,7 +457,7 @@ SITE.PROJECTS = [
   },
   {
     id: 'ai-hr-workflow', title: 'AI-Assisted HR Workflow', category: 'AI + Automation',
-    career_lane: ['people', 'ops'], company_or_project: 'HR + operations',
+    career_lane: ['people', 'ops', 'transform'], company_or_project: 'HR + operations',
     thumbnail: '', short_description: 'Repeatable work moved to AI, with a person reviewing every output.',
     problem: 'HR and operations teams lose hours to drafting, summarizing and reformatting.',
     what_i_built: 'Prompted workflows for job descriptions, policy drafts, summaries and reporting, each with a human review step.',
