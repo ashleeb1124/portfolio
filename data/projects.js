@@ -268,15 +268,5 @@ SITE.PROJECTS = [
     what_i_built: 'Prompted workflows for job descriptions, policy drafts, summaries and reporting, each with a human review step.',
     my_role: 'Designer and operator.', tools_used: ['Claude', 'ChatGPT', 'Copilot', 'Prompt engineering'],
     outcome: '', file_url: '', preview_url: '', featured: false, tags: ['ai', 'systems', 'process'], year: '', format: 'Workflow', status: 'coming'
-  },
-  {
-    kit: 'Operating Reviews & Performance Tracking',
-    id: 'executive-brief-samples', title: 'Executive Briefs + Business Cases', category: 'Writing',
-    career_lane: ['ops'], company_or_project: 'Writing + thinking',
-    thumbnail: '', short_description: 'Decisions on one page, with the numbers underneath.',
-    problem: 'Executives decide quickly. The case has to be short and survive scrutiny.',
-    what_i_built: 'Briefs and business cases: recommendation first, evidence behind it, risks named.',
-    my_role: 'Author.', tools_used: ['Microsoft 365', 'Advanced Excel'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['writing'], year: '', format: 'PDF · Brief', status: 'coming'
   }
 ];
