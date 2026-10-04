@@ -240,13 +240,17 @@ SITE.PROJECTS = [
   },
   {
     kit: 'Vendor / SLA Scorecards',
-    id: 'vendor-scorecard', title: 'Vendor Scorecard', category: 'Dashboards + Data',
-    career_lane: ['ops'], company_or_project: 'Vendor management',
-    thumbnail: '', short_description: 'One page to see which vendors earn their contract and which need a conversation.',
-    problem: 'Vendor reviews run on anecdote.',
-    what_i_built: 'A scorecard with service, cost, responsiveness and risk, reviewed on a fixed cadence.',
-    my_role: 'Designer and owner.', tools_used: ['Advanced Excel', 'Power BI'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['dashboard', 'process'], year: '', format: 'XLSX · Scorecard', status: 'coming'
+    id: 'vendor-scorecard', title: 'Vendor Scorecard + SLA', category: 'Dashboards + Data',
+    career_lane: ['ops', 'transform'], company_or_project: 'Spiro Senior · illustrative figures',
+    thumbnail: 'assets/work/thumb-vendor-scorecard.jpg',
+    short_description: 'One page to see which vendors earn their contract and which need a conversation, reviewed on a fixed cadence.',
+    problem: 'Vendor reviews run on anecdote, so the vendors that need attention get noticed late.',
+    what_i_built: 'A vendor scorecard with service, cost, responsiveness and risk scores for each strategic vendor, a weighted performance summary (service 30%, cost 25%, responsiveness 25%, risk 20%), an SLA compliance trend, a risk-versus-performance view, a governance cadence (monthly, quarterly, annual renewal) and key insights with actions.',
+    my_role: 'Designer and owner of the scorecard and the review cadence.',
+    tools_used: ['Advanced Excel', 'Power BI', 'Vendor management'],
+    outcome: 'A scorecard that flags at-risk vendors, shows SLA compliance moving over time and ends each review with named actions. Figures shown are illustrative.',
+    file_url: 'assets/work/vendor-scorecard.jpg', preview_url: 'assets/work/vendor-scorecard.jpg',
+    featured: false, tags: ['dashboard', 'process', 'healthcare'], year: '', format: 'Scorecard · Image', status: 'live'
   },
   {
     kit: 'HR / People Operations Tools',
@@ -261,12 +265,16 @@ SITE.PROJECTS = [
   },
   {
     kit: 'Workflow & Systems Design',
-    id: 'ai-hr-workflow', title: 'AI-Assisted HR Workflow', category: 'AI + Automation',
-    career_lane: ['people', 'ops', 'transform'], company_or_project: 'HR + operations',
-    thumbnail: '', short_description: 'Repeatable work moved to AI, with a person reviewing every output.',
-    problem: 'HR and operations teams lose hours to drafting, summarizing and reformatting.',
-    what_i_built: 'Prompted workflows for job descriptions, policy drafts, summaries and reporting, each with a human review step.',
-    my_role: 'Designer and operator.', tools_used: ['Claude', 'ChatGPT', 'Copilot', 'Prompt engineering'],
-    outcome: '', file_url: '', preview_url: '', featured: false, tags: ['ai', 'systems', 'process'], year: '', format: 'Workflow', status: 'coming'
-  }
+    id: 'custom-lms-healthcare', title: 'Custom-Built LMS for Healthcare', category: 'Systems + Process',
+    career_lane: ['people', 'ops', 'transform'], company_or_project: 'The Wave International · illustrative figures',
+    thumbnail: 'assets/work/thumb-custom-lms-healthcare.jpg',
+    short_description: 'The Wave University: a learning platform built for a healthcare organization, with compliance tracking, required courses and a certification tracker.',
+    problem: 'Healthcare teams have to prove training and certifications are current, and off-the-shelf learning tools were slow to fit that need.',
+    what_i_built: 'A custom learning management system for healthcare staff: a personal dashboard with compliance rate, overdue items and expiring certifications; required courses in progress; upcoming deadlines; assigned learning paths by role; training categories; featured courses; and a transcript and certification tracker.',
+    my_role: 'Product owner and builder. Designed the platform and built it.',
+    tools_used: ['Base44', 'Custom LMS development', 'Training content', 'Learning workflows'],
+    outcome: 'One place where staff see what is required and what is due, and where leaders see compliance at a glance. Figures shown are illustrative.',
+    file_url: 'assets/work/custom-lms-healthcare.jpg', preview_url: 'assets/work/custom-lms-healthcare.jpg',
+    featured: false, tags: ['systems', 'healthcare', 'process'], year: '', format: 'Custom LMS · Image', status: 'live'
+  },
 ];
