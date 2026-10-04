@@ -154,19 +154,6 @@ SITE.PROJECTS = [
     featured: true, tags: ['presentation'], year: '', format: 'Flyer · Image', status: 'live'
   },
 
-  {
-    id: 'consultant-one-pager', title: 'Strategy, Operations + Brand One-Pager', category: 'Brand + Design',
-    career_lane: ['brand', 'ops'], company_or_project: 'Snow Story Studios',
-    thumbnail: 'assets/work/consultant-one-pager.webp',
-    short_description: 'Ten services, one page: brand, operations, systems, startups and people for growing businesses.',
-    problem: 'A consultant who does brand and operations has to explain both without sounding scattered.',
-    what_i_built: 'A one-page services overview: positioning line, ten capabilities and a closing promise, designed as a single system.',
-    my_role: 'Positioning, copy and design.',
-    tools_used: ['Canva', 'Brand system', 'Marketing collateral'],
-    outcome: 'One page that says what the work is and who it is for.',
-    file_url: 'assets/work/consultant-one-pager.webp', preview_url: 'assets/work/consultant-one-pager.webp',
-    featured: true, tags: ['presentation'], year: '', format: 'One-pager · Image', status: 'live'
-  },
 
   {
     id: 'wave-site-launch-playbook', title: "New-Site Launch Playbook: 90-Day Checklist", category: 'Systems + Process',
