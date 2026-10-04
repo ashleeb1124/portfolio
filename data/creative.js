@@ -10,8 +10,7 @@ SITE.CREATIVE_GROUPS = [
   { id: 'all', label: 'All work' },
   { id: 'Brand Identity', label: 'Brand Identity + Systems' },
   { id: 'Presentations', label: 'Presentations + Decks' },
-  { id: 'Collateral', label: 'Collateral + Print' },
-  { id: 'Document Design', label: 'Resume + Document Design' }
+  { id: 'Collateral', label: 'Collateral + Print' }
 ];
 
 SITE.CREATIVE = [
