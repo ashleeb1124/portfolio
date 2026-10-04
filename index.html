@@ -374,7 +374,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <section class="results" id="results">
   <div class="wrap">
     <div class="eyebrow">Results</div>
-    <h2 id="resultsTitle">Results, <em>not responsibilities.</em></h2>
+    <h2 id="resultsTitle">From responsibility to <em>results</em></h2>
     <p class="lede">Tap any number to see what moved it.</p>
     <div class="mgrid" id="metrics"></div>
   </div>
@@ -610,9 +610,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     var order=ids.slice();
     order.forEach(function(id){var x=metricNodes.filter(function(n){return n.m.id===id})[0];if(x)$('metrics').appendChild(x.node)});
     $('results').hidden=ids.length===0;
-    $('resultsTitle').innerHTML='';
-    $('resultsTitle').appendChild(document.createTextNode(lens?'Results in '+L[lens].short.toLowerCase()+', ':'Results, '));
-    $('resultsTitle').appendChild(el('em',null,'not responsibilities.'));
     if(!reduce)metricNodes.forEach(function(x){if(!x.node.hidden&&x.big.dataset.n)countUp(x.big)});
   }
   function countUp(b){
