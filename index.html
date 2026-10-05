@@ -113,7 +113,6 @@ em{font-style:italic;color:var(--terra)}
 .path[aria-pressed=true] .n{color:var(--gold)}
 .fractional{max-width:640px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--line);text-align:center;font-size:14px;line-height:1.55;color:var(--muted)}
 .fractional a{color:var(--teal);font-weight:500;white-space:nowrap}
-.reset{display:block;margin:18px auto 0;background:none;border:0;font-family:var(--label);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:underline}
 
 /* lens */
 .lens{background:var(--teal);color:var(--ivory);padding:80px 0}
@@ -417,7 +416,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <h2>Where I Create <em>Impact</em></h2>
       <p class="hint">I bring operations, people, systems, and brand together to build stronger organizations. Explore the areas I’ve led, the work behind them, and the results I’ve delivered.</p>
       <div class="paths" id="paths" role="group" aria-label="Explore areas of leadership"></div>
-      <button class="reset" id="reset" hidden>Show everything</button>
       <p class="fractional">Looking for project or fractional support? I selectively take on consulting, operations, HR, and brand engagements. <a href="#contact" data-book>Let’s talk →</a></p>
     </div>
   </div>
@@ -708,7 +706,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     b.addEventListener('click',function(){setLens(lens===id?null:id,true)});
     $('paths').appendChild(b);
   });
-  $('reset').addEventListener('click',function(){setLens(null,true)});
 
   /* ---------- services ---------- */
   var svcSel=S.SERVICES[0].id,svcGroup='all';
@@ -969,7 +966,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   function setLens(id,scroll){
     lens=id;
     fold(document.querySelectorAll('.path'),function(b){b.setAttribute('aria-pressed',String(b.dataset.lens===id))});
-    $('reset').hidden=!id;
     var sec=$('lens');sec.hidden=!id;
     if(id){
       var l=L[id];
