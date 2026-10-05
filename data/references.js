@@ -30,13 +30,14 @@ SITE.REFERENCES = [
     name: 'Walter Johnson', title: '', company: 'Mediagistic',
     relationship: 'Professional reference',
     quote: "Ashlee is a builder. Give her a business challenge, an inefficient process, or an idea that still needs structure, and she will turn it into something practical, scalable, and usable. Her strength is not simply identifying what should change — it is designing the systems, workflows, tools, and strategy to actually make the change work. She is one of those people you want involved when something important needs to be built or fixed.",
+    phone: '727.309.4451', email: 'odmwalter@gmail.com',
     public: true
   },
-  // Hidden until her quote is supplied (no placeholder cards). Add quote and set public: true to publish.
   {
-    name: 'Rebecca Stanton', title: 'Marketing Manager', company: 'Harbourlight',
-    relationship: 'Professional reference',
-    quote: '',
-    public: false
+    name: 'Rebecca Stanton', title: 'Marketing Director', company: 'Harbourlight',
+    relationship: 'Client',
+    quote: "Working with Ashlee was such an easy and seamless experience. She took the time to understand Harbourlight, our audience, and how we wanted the brand to feel, then translated that into a cohesive marketing collateral package that felt polished, professional, and truly reflective of who we are. She was creative, responsive, incredibly easy to work with, and made the entire process feel effortless. What impressed me most was her ability to take an idea and turn it into something better than we had envisioned. I would absolutely work with her again.",
+    email: 'rebeccastanton@harbourlight.com',
+    public: true
   }
 ];
