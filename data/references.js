@@ -27,7 +27,7 @@ SITE.REFERENCES = [
     public: true
   },
   {
-    name: 'Walter Johnson', title: '', company: 'Mediagistic',
+    name: 'Walter Johnson', title: 'Software Engineer', company: 'Mediagistic',
     relationship: 'Professional reference',
     quote: "Ashlee is a builder. Give her a business challenge, an inefficient process, or an idea that still needs structure, and she will turn it into something practical, scalable, and usable. Her strength is not simply identifying what should change — it is designing the systems, workflows, tools, and strategy to actually make the change work. She is one of those people you want involved when something important needs to be built or fixed.",
     phone: '727.309.4451', email: 'odmwalter@gmail.com',
