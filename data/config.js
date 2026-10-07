@@ -8,7 +8,7 @@ SITE.CONFIG = {
   NAME: 'Ashlee Bryant',
   CREDENTIALS: 'EXEC MBA · MSHRM · SPHR · SHRM-SCP',
 
-  PHONE: '352.769.9599',
+  PHONE: '727.262.6384',
   EMAIL: 'ashlee.bryant@yahoo.com',
   LINKEDIN_URL: 'https://www.linkedin.com/in/ashleebryantmba',
   PORTFOLIO_URL: 'https://ashleebryantbrand.netlify.app',

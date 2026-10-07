@@ -39,5 +39,12 @@ SITE.REFERENCES = [
     quote: "Working with Ashlee was such an easy and seamless experience. She took the time to understand Harbourlight, our audience, and how we wanted the brand to feel, then translated that into a cohesive marketing collateral package that felt polished, professional, and truly reflective of who we are. She was creative, responsive, incredibly easy to work with, and made the entire process feel effortless. What impressed me most was her ability to take an idea and turn it into something better than we had envisioned. I would absolutely work with her again.",
     email: 'rebeccastanton@harbourlight.com',
     public: true
+  },
+  {
+    name: 'Mona Hamada', title: 'Owner', company: 'Vibes on the Beach',
+    relationship: 'Client',
+    quote: "Ashlee did more than create a beautiful brand for Vibes on the Beach. She somehow took all of the ideas I had in my head, including the ones I could not quite explain, and turned them into a brand that felt completely like us. The entire package was thoughtful, cohesive, creative, and far beyond what I expected. She has this rare ability to listen to what you say, understand what you actually mean, and then elevate it. Working with her was fun, collaborative, and genuinely exciting because every round felt like watching the business come to life. I could not have asked for a better creative partner.",
+    phone: '813.670.4024', email: 'Monahamada101@icloud.com',
+    public: true
   }
 ];
