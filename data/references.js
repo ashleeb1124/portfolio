@@ -41,7 +41,7 @@ SITE.REFERENCES = [
     public: true
   },
   {
-    name: 'Mona Hamada', title: 'Owner', company: 'Vibes on the Beach',
+    name: 'Mona Hamada', title: 'Founder', company: 'Vibes on the Beach',
     relationship: 'Client',
     quote: "Ashlee did more than create a beautiful brand for Vibes on the Beach. She somehow took all of the ideas I had in my head, including the ones I could not quite explain, and turned them into a brand that felt completely like us. The entire package was thoughtful, cohesive, creative, and far beyond what I expected. She has this rare ability to listen to what you say, understand what you actually mean, and then elevate it. Working with her was fun, collaborative, and genuinely exciting because every round felt like watching the business come to life. I could not have asked for a better creative partner.",
     phone: '813.670.4024', email: 'Monahamada101@icloud.com',
